@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  repo-url: https://github.com/rabchl/dsml-related
+  repo-actions: [issue]
+  title: DSML - Related
+  reader-mode: true
+  page-navigation: true
+
+  body-header: |
+    This page brought to you by me
+
+  page-footer: 
+    left: "Copyright 2022, rabchl"
+    right: 
+      - icon: github
+        href: https://github.com/rabchl
+      - icon: twitter
+        href: https://twitter.com
+    border: true
+
+  sidebar:
+    - title: "About"
+      subtitle: "SOTA stuff"
+      style: "floating"
+      type: dark
+      background: dark
+      foreground: light
+      border: true
+      collapse-level: 2
+      tools: 
+            - icon: twitter
+              href: https://twitter.com
+      contents:
+        - index.qmd
+        - section: "Basics"
+          contents:
+            - tutorials.qmd
+            - about.qmd
+
+format: 
+  html: 
+    page-layout: full
+
+theme: 
+  light: flatly
+  dark: darkly
