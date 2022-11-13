@@ -25,3 +25,4 @@ data
 _site
 .vscode
 .quarto
+/.quarto/
