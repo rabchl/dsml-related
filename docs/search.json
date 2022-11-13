@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "00-how-to-use-this-book.html",
+    "href": "00-how-to-use-this-book.html",
+    "title": "How to use this website",
+    "section": "",
+    "text": "There will be several topics on the sidebar navigation on the left of the screen, choose one and then copy, learn, find errors and improve."
+  },
+  {
+    "objectID": "aws-iam.html",
+    "href": "aws-iam.html",
+    "title": "Identity and Access Management (IAM)",
+    "section": "",
+    "text": "IAM is the service that provides USERS, GROUPS and POLICIES so that we can access our AWS accounts and we can do that securely."
+  },
+  {
+    "objectID": "aws-iam.html#iam-users",
+    "href": "aws-iam.html#iam-users",
+    "title": "Identity and Access Management (IAM)",
+    "section": "IAM Users",
+    "text": "IAM Users\n_It is an entity that represents a person or service (a user account that can be used by a service rather than human being) _We can apply a policy which is a list of permissions which says what this user is allowed to do on AWS _By default, users cannot do anything in the account. Users need a policy in order to do something in the account. _Up to 5000 users per AWS account. _Each user account will have a friendly name and an Amazon Resource Name (ARN) which uniquely identifies the user across AWS.\n\nA user account can be assigned:\n\nAccess key ID\nSecret access key _This is called a “keeper” and is a way a user account can programmatically access the AWS API, CLI, SDK and other development tools.\nA password for access to the AWS Management Console.\nEach user has a friendly name and an Amazon Resource Name (ARN) which uniquely identifies the user across AWS.\n\nRoot User Credentials:\n\nemail address that we used to create the account\npassword _A Root account has full administrative permissions and cannot be restricted. Do not user root user credentials. _BEST PRACTICE: Create a user account and associate a policy or administrative permissions.\n\nService Accounts:\n\nUsers accounts that are created to represent an application."
+  },
+  {
+    "objectID": "aws-iam.html#iam-groups",
+    "href": "aws-iam.html#iam-groups",
+    "title": "Identity and Access Management (IAM)",
+    "section": "IAM Groups",
+    "text": "IAM Groups\n_It is a collection of users _We can also apply a policy that is relevant to the user accounts that we have put into a particular group. These policies are attached to the users within the group. _A group is not an identity and cannot be identified as a principal in an IAM policy. Essentially, it means that a group is not something that you can write into a permissions policy but we can take a permission policy and apply it to a group which is then passed to users within the group. _We can nest groups so we cannot have groups within groups. _BEST PRACTICE: Use groups to assign permissions to users _BEST PRACTIVE: Use the principal of least privilege when assigning permissions."
+  },
+  {
+    "objectID": "aws-iam.html#iam-roles",
+    "href": "aws-iam.html#iam-roles",
+    "title": "Identity and Access Management (IAM)",
+    "section": "IAM Roles",
+    "text": "IAM Roles\n_Roles are created and then “assumed” by a trusted entity. _We use it for delegation _We can also apply a policy _Roles are esentially used by services _It defines a set of permissions for making service requests in AWS\n\nFor example:\n\nWe can have a role that provides access to the S3 storage system or DynamoDB database service or AWS Lambda.\nThis role is provided those permissions to execute the specific requests.\n\n\n_We assign that role to another AWS service and that service is then able to start Lambda and make it work. _THEREFORE: We use IAM Roles for delegate permissions to resources for users and services without using permanent credentials (e.g. username and password). IAM users or AWS Services can assume a role to obtain temporary security credentials that can be used to make AWS API calls."
+  },
+  {
+    "objectID": "aws-iam.html#iam-policy",
+    "href": "aws-iam.html#iam-policy",
+    "title": "Identity and Access Management (IAM)",
+    "section": "IAM Policy",
+    "text": "IAM Policy\n_Documents that define permissions that can be applied to users, groups and roles _Written in JSON _All permissions are implicitly denied by default _The most restrictive policy is always applied _The IAM Policy Simulator is a tool that helps us understand, test and validate the effects of access control policies _There is a Conditional Element that we can used to apply conditional logic (the permission is applied only if x argument satisfies y value)."
+  }
+]

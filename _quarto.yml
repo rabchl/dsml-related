@@ -30,8 +30,7 @@ website:
         - icon: twitter
           href: https://twitter.com
       contents:
-        - index.qmd
-        - section: "Basics"
+        - 00-how-to-use-this-book.qmd
+        - section: "AWS"
           contents:
-            - tutorials.qmd
-            - about.qmd
+            - aws-iam.qmd
