@@ -1,0 +1,26 @@
+---
+title: "Global Infrastructure"
+---
+
+1. Region
+    _It is a geographical area with 2 or more AZs, isolated from other AWS Regions.
+    
+2. Availability Zone (AZ)
+    _One or more data centers that are physically separate and isolated from other AZs
+    _They are connected with low latency, highly available, high bandwidth links
+    _We have networking connectivity between all of the AZs as well
+    
+Therefore, we can deploy our resources within a region but into separate AZs for high availability and redudancy. If there is an outage on one AZ, the resources on the other one are not affected.
+
+3. Edge Location (CloudFront)
+    _A location with a cache of content that can be delivered at low latency to users
+    _The idea is to reduce latency when accessing cached content
+    
+4. Regional Edge Cache (CloudFront)
+    _Larger caches that sit between AWS Services and Edge Locations
+    
+CloudFront is all about caching content.
+    
+5. Global Network (Private)
+    _Highly available, low-latency private global network interconnecting every data center, AZ, and AWS Region
+    

@@ -42,6 +42,13 @@
     "text": "IAM Policy\n_Documents that define permissions that can be applied to users, groups and roles _Written in JSON _All permissions are implicitly denied by default _The most restrictive policy is always applied _The IAM Policy Simulator is a tool that helps us understand, test and validate the effects of access control policies _There is a Conditional Element that we can used to apply conditional logic (the permission is applied only if x argument satisfies y value)."
   },
   {
+    "objectID": "aws-infra.html",
+    "href": "aws-infra.html",
+    "title": "Global Infrastructure",
+    "section": "",
+    "text": "Region _It is a geographical area with 2 or more AZs, isolated from other AWS Regions.\nAvailability Zone (AZ) _One or more data centers that are physically separate and isolated from other AZs _They are connected with low latency, highly available, high bandwidth links _We have networking connectivity between all of the AZs as well\n\nTherefore, we can deploy our resources within a region but into separate AZs for high availability and redudancy. If there is an outage on one AZ, the resources on the other one are not affected.\n\nEdge Location (CloudFront) _A location with a cache of content that can be delivered at low latency to users _The idea is to reduce latency when accessing cached content\nRegional Edge Cache (CloudFront) _Larger caches that sit between AWS Services and Edge Locations\n\nCloudFront is all about caching content.\n\nGlobal Network (Private) _Highly available, low-latency private global network interconnecting every data center, AZ, and AWS Region"
+  },
+  {
     "objectID": "sklearn-tuning-hps.html",
     "href": "sklearn-tuning-hps.html",
     "title": "Sklearn Hyperparameter Tuning",

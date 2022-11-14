@@ -33,7 +33,12 @@ website:
         - 00-how-to-use-this-site.qmd
         - section: "AWS"
           contents:
-            - aws-iam.qmd
+            - section: "IAM"
+              contents:
+                - aws-iam.qmd
+            - section: "Global Infrastructure"
+              contents:
+                - aws-infra.qmd
         - section: "Sklearn"
           contents:
             - sklearn-tuning-hps.ipynb
