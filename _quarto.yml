@@ -34,3 +34,6 @@ website:
         - section: "AWS"
           contents:
             - aws-iam.qmd
+        - section: "Sklearn"
+          contents:
+            - sklearn-tuning-hps.ipynb
