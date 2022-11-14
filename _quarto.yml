@@ -49,6 +49,7 @@ website:
                 - aws-infra.qmd
                 - aws-infra-vpc.qmd
 
-        - section: "Sklearn"
+        - section: "Production-Ready Development"
           contents:
-            - sklearn-tuning-hps.ipynb
+            - production-ready.qmd
+            - production-ready-mvp.qmd

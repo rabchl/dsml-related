@@ -1,0 +1,15 @@
+---
+title: "Minimum Viable Project (MVP)"
+---
+
+Every machine learning project should begin with planning and understanding the difficulty of the given problem.
+
+What is the scope of the project?
+
+Once this question is answered, the next step is to build a MVP.
+
+In the context of machine learning, the process of creating an MVP involves:
+  * Preparing a dataset
+  * Exploring various model architectures
+to come up with a working solution to the given problem
+

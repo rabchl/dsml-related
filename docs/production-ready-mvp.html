@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSML - Related - Setting Billing Alarm</title>
+<title>DSML - Related - Minimum Viable Project (MVP)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./aws-iam-creating-users.html" rel="next">
-<link href="./aws-iam-sign-in-link.html" rel="prev">
+<link href="./production-ready.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Setting Billing Alarm</h1>
+      <h1 class="quarto-secondary-nav-title">Minimum Viable Project (MVP)</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -119,12 +118,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">IAM</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">IAM</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aws-iam.html" class="sidebar-item-text sidebar-link">Identity and Access Management (IAM)</a>
@@ -147,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-iam-billing-alarm.html" class="sidebar-item-text sidebar-link active">Setting Billing Alarm</a>
+  <a href="./aws-iam-billing-alarm.html" class="sidebar-item-text sidebar-link">Setting Billing Alarm</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -199,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./production-ready-mvp.html" class="sidebar-item-text sidebar-link">Minimum Viable Project (MVP)</a>
+  <a href="./production-ready-mvp.html" class="sidebar-item-text sidebar-link active">Minimum Viable Project (MVP)</a>
   </div>
 </li>
       </ul>
@@ -214,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Setting Billing Alarm</h1>
+<h1 class="title d-none d-lg-block">Minimum Viable Project (MVP)</h1>
 </div>
 
 
@@ -229,26 +228,10 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Email alert to let us know when we reach certain dollars threshold.</p>
-<p>Only the root account has access to modify billing information</p>
-<ol type="1">
-<li>Billing dashboard</li>
-<li>Billing Preferences
-<ul>
-<li>Receive Free Tier Usage Alerts (Enter an e-mail)</li>
-<li>Receive Billing Alerts</li>
-<li>Manage Billing Alerts</li>
-<li>In CloudWatch go to Billing</li>
-<li>Create Alarm</li>
-<li>Configuration, then Next</li>
-<li>Create a New Topic</li>
-<li>Set an e-mail endpoint</li>
-<li>Set a name</li>
-<li>Create Alarm</li>
-<li>View SNS subscriptions</li>
-<li>Go to your e-mail and confirm the SNS</li>
-</ul></li>
-</ol>
+<p>Every machine learning project should begin with planning and understanding the difficulty of the given problem.</p>
+<p>What is the scope of the project?</p>
+<p>Once this question is answered, the next step is to build a MVP.</p>
+<p>In the context of machine learning, the process of creating an MVP involves: * Preparing a dataset * Exploring various model architectures to come up with a working solution to the given problem</p>
 
 
 
@@ -503,14 +486,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./aws-iam-sign-in-link.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Sign-in Link</span>
+      <a href="./production-ready.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Less Theory More Application</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./aws-iam-creating-users.html" class="pagination-link">
-        <span class="nav-page-text">Create IAM Users</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

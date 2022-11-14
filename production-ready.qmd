@@ -1,0 +1,58 @@
+---
+title: "Less Theory More Application"
+---
+
+Construct and deploy complex models in machine learning frameworks.
+
+The real difficulty with machine learning projects is not only selecting the right algorithm for the given problem but also efficiently preprocessing the necessary data in the right format and providing a stable service.
+
+The idea of this "Production-Ready" section is to walk through every step of a machine learning project
+
+* POC model written in a notebook
+* Transform the model into a service or application with a specific goal upon deployment
+* Be aware of techniques to meet strict service specifications
+* Provide a stable service
+* Monitor a system running the machine learning model after deployment
+
+Following the Production-Ready book
+
+1. How do we prepare a machine learning project?
+  * Terminologies and techniques used in project planning
+  * Construct a project playbook that summarizes the plan
+
+2. First steps of a machine learning project
+  * Setting environment
+  * Data collection
+  * Data preparation
+
+3. Develop a model
+  * Theory behind machine learning to select models
+  * Train a machine learning model
+
+4. Management of a machine learning project
+  * Experiment tracking
+  * Model management
+  * Dataset versioning
+
+5. Scaling up on AWS
+  * Data processing pipelin on AWS
+  * Set up and schedule ETL jobs in a cost-efficient manner
+
+6. Efficient model training
+  * No more MVPs
+  * Configure the training logic to utilize multiple CPU and GPU devices on different machines
+  * Distributed training: SageMaker, Horovod, Ray, Kubeflow
+
+7. Understanding machine learning models
+  * Explainable AI: What is the model doing behind the scenes?
+
+8. Simplifying model deployment with ONNX
+
+9. Creating an endpoint for the machine learning model
+  * Deploy the model as an inference endpoint with EKS and SageMaker
+
+10. Improve inference latency
+
+11. Machine Learning models on Mobile Devices
+
+12. Monitoring endpoints in production

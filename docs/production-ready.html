@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSML - Related - Setting Billing Alarm</title>
+<title>DSML - Related - Less Theory More Application</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./aws-iam-creating-users.html" rel="next">
-<link href="./aws-iam-sign-in-link.html" rel="prev">
+<link href="./production-ready-mvp.html" rel="next">
+<link href="./aws-infra-vpc.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Setting Billing Alarm</h1>
+      <h1 class="quarto-secondary-nav-title">Less Theory More Application</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -119,12 +119,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">IAM</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">IAM</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aws-iam.html" class="sidebar-item-text sidebar-link">Identity and Access Management (IAM)</a>
@@ -147,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-iam-billing-alarm.html" class="sidebar-item-text sidebar-link active">Setting Billing Alarm</a>
+  <a href="./aws-iam-billing-alarm.html" class="sidebar-item-text sidebar-link">Setting Billing Alarm</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -194,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./production-ready.html" class="sidebar-item-text sidebar-link">Less Theory More Application</a>
+  <a href="./production-ready.html" class="sidebar-item-text sidebar-link active">Less Theory More Application</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -214,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Setting Billing Alarm</h1>
+<h1 class="title d-none d-lg-block">Less Theory More Application</h1>
 </div>
 
 
@@ -229,25 +229,79 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Email alert to let us know when we reach certain dollars threshold.</p>
-<p>Only the root account has access to modify billing information</p>
-<ol type="1">
-<li>Billing dashboard</li>
-<li>Billing Preferences
+<p>Construct and deploy complex models in machine learning frameworks.</p>
+<p>The real difficulty with machine learning projects is not only selecting the right algorithm for the given problem but also efficiently preprocessing the necessary data in the right format and providing a stable service.</p>
+<p>The idea of this “Production-Ready” section is to walk through every step of a machine learning project</p>
 <ul>
-<li>Receive Free Tier Usage Alerts (Enter an e-mail)</li>
-<li>Receive Billing Alerts</li>
-<li>Manage Billing Alerts</li>
-<li>In CloudWatch go to Billing</li>
-<li>Create Alarm</li>
-<li>Configuration, then Next</li>
-<li>Create a New Topic</li>
-<li>Set an e-mail endpoint</li>
-<li>Set a name</li>
-<li>Create Alarm</li>
-<li>View SNS subscriptions</li>
-<li>Go to your e-mail and confirm the SNS</li>
-</ul></li>
+<li>POC model written in a notebook</li>
+<li>Transform the model into a service or application with a specific goal upon deployment</li>
+<li>Be aware of techniques to meet strict service specifications</li>
+<li>Provide a stable service</li>
+<li>Monitor a system running the machine learning model after deployment</li>
+</ul>
+<p>Following the Production-Ready book</p>
+<ol type="1">
+<li>How do we prepare a machine learning project?</li>
+</ol>
+<ul>
+<li>Terminologies and techniques used in project planning</li>
+<li>Construct a project playbook that summarizes the plan</li>
+</ul>
+<ol start="2" type="1">
+<li>First steps of a machine learning project</li>
+</ol>
+<ul>
+<li>Setting environment</li>
+<li>Data collection</li>
+<li>Data preparation</li>
+</ul>
+<ol start="3" type="1">
+<li>Develop a model</li>
+</ol>
+<ul>
+<li>Theory behind machine learning to select models</li>
+<li>Train a machine learning model</li>
+</ul>
+<ol start="4" type="1">
+<li>Management of a machine learning project</li>
+</ol>
+<ul>
+<li>Experiment tracking</li>
+<li>Model management</li>
+<li>Dataset versioning</li>
+</ul>
+<ol start="5" type="1">
+<li>Scaling up on AWS</li>
+</ol>
+<ul>
+<li>Data processing pipelin on AWS</li>
+<li>Set up and schedule ETL jobs in a cost-efficient manner</li>
+</ul>
+<ol start="6" type="1">
+<li>Efficient model training</li>
+</ol>
+<ul>
+<li>No more MVPs</li>
+<li>Configure the training logic to utilize multiple CPU and GPU devices on different machines</li>
+<li>Distributed training: SageMaker, Horovod, Ray, Kubeflow</li>
+</ul>
+<ol start="7" type="1">
+<li>Understanding machine learning models</li>
+</ol>
+<ul>
+<li>Explainable AI: What is the model doing behind the scenes?</li>
+</ul>
+<ol start="8" type="1">
+<li><p>Simplifying model deployment with ONNX</p></li>
+<li><p>Creating an endpoint for the machine learning model</p></li>
+</ol>
+<ul>
+<li>Deploy the model as an inference endpoint with EKS and SageMaker</li>
+</ul>
+<ol start="10" type="1">
+<li><p>Improve inference latency</p></li>
+<li><p>Machine Learning models on Mobile Devices</p></li>
+<li><p>Monitoring endpoints in production</p></li>
 </ol>
 
 
@@ -503,13 +557,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./aws-iam-sign-in-link.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Sign-in Link</span>
+      <a href="./aws-infra-vpc.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Virtual Private Cloud (VPC)</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./aws-iam-creating-users.html" class="pagination-link">
-        <span class="nav-page-text">Create IAM Users</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./production-ready-mvp.html" class="pagination-link">
+        <span class="nav-page-text">Minimum Viable Project (MVP)</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
