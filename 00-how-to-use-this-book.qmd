@@ -1,5 +1,0 @@
----
-title: "How to use this website"
----
-
-There will be several topics on the sidebar, choose one and copy, learn, find errors and improve.
