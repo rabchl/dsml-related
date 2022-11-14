@@ -40,5 +40,12 @@
     "title": "Identity and Access Management (IAM)",
     "section": "IAM Policy",
     "text": "IAM Policy\n_Documents that define permissions that can be applied to users, groups and roles _Written in JSON _All permissions are implicitly denied by default _The most restrictive policy is always applied _The IAM Policy Simulator is a tool that helps us understand, test and validate the effects of access control policies _There is a Conditional Element that we can used to apply conditional logic (the permission is applied only if x argument satisfies y value)."
+  },
+  {
+    "objectID": "sklearn-tuning-hps.html",
+    "href": "sklearn-tuning-hps.html",
+    "title": "Sklearn Hyperparameter Tuning",
+    "section": "",
+    "text": "Here we go again\n\n\nCode\nimport numpy as np\nimport pandas as pd\n\nfrom sklearn.model_selection import GridSearchCV"
   }
 ]
