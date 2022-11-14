@@ -43,7 +43,7 @@ website:
                 - aws-iam-sign-in-link.qmd
                 - aws-iam-billing-alarm.qmd
                 - aws-iam-creating-users.qmd
-                - aws-iam-password-policy.qmd
+                - aws-iam-pass-policy.qmd
             - section: "Infrastructure"
               contents:
                 - aws-infra.qmd

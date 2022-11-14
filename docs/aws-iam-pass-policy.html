@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSML - Related - Create IAM Users</title>
+<title>DSML - Related - Setting Password Policy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./aws-iam-pass-policy.html" rel="next">
-<link href="./aws-iam-billing-alarm.html" rel="prev">
+<link href="./aws-infra.html" rel="next">
+<link href="./aws-iam-creating-users.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Create IAM Users</h1>
+      <h1 class="quarto-secondary-nav-title">Setting Password Policy</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -152,12 +152,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-iam-creating-users.html" class="sidebar-item-text sidebar-link active">Create IAM Users</a>
+  <a href="./aws-iam-creating-users.html" class="sidebar-item-text sidebar-link">Create IAM Users</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-iam-pass-policy.html" class="sidebar-item-text sidebar-link">Setting Password Policy</a>
+  <a href="./aws-iam-pass-policy.html" class="sidebar-item-text sidebar-link active">Setting Password Policy</a>
   </div>
 </li>
       </ul>
@@ -209,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Create IAM Users</h1>
+<h1 class="title d-none d-lg-block">Setting Password Policy</h1>
 </div>
 
 
@@ -224,35 +224,10 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Create a user account that we can log on.</p>
+<p>A password policy is a set of rules that define the type of password an IAM user can set.</p>
 <ol type="1">
-<li><p>Within IAM go to Users</p></li>
-<li><p>Add user</p></li>
-<li><p>Give it a friendly name</p></li>
-<li><p>Select AWS access type</p>
-<ul>
-<li>Programmatic access (an access key will be created)</li>
-<li>AWS Management Console access
-<ul>
-<li>Set auto/custom password</li>
-<li>Tick Require password reset if needed</li>
-</ul></li>
-</ul></li>
-<li><p>Set permissions</p>
-<ul>
-<li>We can:
-<ul>
-<li>Add the user to a group (create a group if we haven’t created any groups yet)</li>
-<li>Copy permissions from existing user</li>
-<li>Attach existing policies directly</li>
-</ul></li>
-</ul></li>
-</ol>
-<p>5.1 We created a group a gave it AdministratorAccess</p>
-<ol start="6" type="1">
-<li><p>Create user</p></li>
-<li><p>We get an Access key ID and a Secret access key which show only once</p></li>
-<li><p>Close</p></li>
+<li><p>Go to Account Settings</p></li>
+<li><p>Specify the password policy.</p></li>
 </ol>
 
 
@@ -508,13 +483,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./aws-iam-billing-alarm.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setting Billing Alarm</span>
+      <a href="./aws-iam-creating-users.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Create IAM Users</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./aws-iam-pass-policy.html" class="pagination-link">
-        <span class="nav-page-text">Setting Password Policy</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./aws-infra.html" class="pagination-link">
+        <span class="nav-page-text">Global Infrastructure</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,10 @@
+---
+title: "Setting Password Policy"
+---
+
+A password policy is a set of rules that define the type of password an IAM user can set.
+
+1. Go to Account Settings
+
+2. Specify the password policy.
+

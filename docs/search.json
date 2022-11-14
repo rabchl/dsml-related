@@ -28,8 +28,8 @@
     "text": "Create a user account that we can log on.\n\nWithin IAM go to Users\nAdd user\nGive it a friendly name\nSelect AWS access type\n\nProgrammatic access (an access key will be created)\nAWS Management Console access\n\nSet auto/custom password\nTick Require password reset if needed\n\n\nSet permissions\n\nWe can:\n\nAdd the user to a group (create a group if we haven’t created any groups yet)\nCopy permissions from existing user\nAttach existing policies directly\n\n\n\n5.1 We created a group a gave it AdministratorAccess\n\nCreate user\nWe get an Access key ID and a Secret access key which show only once\nClose"
   },
   {
-    "objectID": "aws-iam-password-policy.html",
-    "href": "aws-iam-password-policy.html",
+    "objectID": "aws-iam-pass-policy.html",
+    "href": "aws-iam-pass-policy.html",
     "title": "Setting Password Policy",
     "section": "",
     "text": "A password policy is a set of rules that define the type of password an IAM user can set.\n\nGo to Account Settings\nSpecify the password policy."
