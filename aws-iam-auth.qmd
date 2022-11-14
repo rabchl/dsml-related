@@ -1,0 +1,22 @@
+---
+title: "What can we use to authenticate to AWS?"
+---
+
+1. IAM Access Keys 
+_It is composed of:
+    - An access key ID
+    - A secret access key
+_We use it for programmatic access to AWS. For example if we are using the command line interface to launch a service on AWS we would need to have an access key to be able to authenticate.
+_We use it for the API and when accessing AWS via the SDK
+_We can add MFA protection to the API calls.
+_We put these keys in program code or at a command prompt when using the AWS CLI or the AWS PowerShell tools.
+IMPORTANT: We can create, modify, view or rotate access keys.
+
+2. IAM Console Password
+    - User account will have a password. 
+    - We use a username and a password to access the AWS Management Console (Visual Interface in which we can interact with AWS)
+    - This can be also protected with MFA.
+
+3. IAM Server Certificate / Signing Certificate
+    - Secure Sockets Layer (SSL) / Transport Layer Security (TLS) certificates that we can use to authenticate with some AWS services
+    - We can provision, manage and deploy this authentication using the AWS Certificate Manager (ACM).

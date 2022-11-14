@@ -29,16 +29,26 @@ website:
       tools: 
         - icon: twitter
           href: https://twitter.com
+
       contents:
         - 00-how-to-use-this-site.qmd
+
         - section: "AWS"
           contents:
             - section: "IAM"
               contents:
                 - aws-iam.qmd
-            - section: "Global Infrastructure"
+                - aws-iam-auth.qmd
+                - aws-iam-sts.qmd
+                - aws-iam-sign-in-link.qmd
+                - aws-iam-billing-alarm.qmd
+                - aws-iam-creating-users.qmd
+                - aws-iam-password-policy.qmd
+            - section: "Infrastructure"
               contents:
                 - aws-infra.qmd
+                - aws-infra-vpc.qmd
+
         - section: "Sklearn"
           contents:
             - sklearn-tuning-hps.ipynb

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSML - Related - Global Infrastructure</title>
+<title>DSML - Related - Virtual Private Cloud (VPC)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./aws-infra-vpc.html" rel="next">
-<link href="./aws-iam-password-policy.html" rel="prev">
+<link href="./sklearn-tuning-hps.html" rel="next">
+<link href="./aws-infra.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Global Infrastructure</h1>
+      <h1 class="quarto-secondary-nav-title">Virtual Private Cloud (VPC)</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -172,12 +172,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-infra.html" class="sidebar-item-text sidebar-link active">Global Infrastructure</a>
+  <a href="./aws-infra.html" class="sidebar-item-text sidebar-link">Global Infrastructure</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-infra-vpc.html" class="sidebar-item-text sidebar-link">Virtual Private Cloud (VPC)</a>
+  <a href="./aws-infra-vpc.html" class="sidebar-item-text sidebar-link active">Virtual Private Cloud (VPC)</a>
   </div>
 </li>
       </ul>
@@ -209,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Global Infrastructure</h1>
+<h1 class="title d-none d-lg-block">Virtual Private Cloud (VPC)</h1>
 </div>
 
 
@@ -225,17 +225,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <ol type="1">
-<li><p>Region _It is a geographical area with 2 or more AZs, isolated from other AWS Regions.</p></li>
-<li><p>Availability Zone (AZ) _One or more data centers that are physically separate and isolated from other AZs _They are connected with low latency, highly available, high bandwidth links _We have networking connectivity between all of the AZs as well</p></li>
-</ol>
-<p>Therefore, we can deploy our resources within a region but into separate AZs for high availability and redudancy. If there is an outage on one AZ, the resources on the other one are not affected.</p>
-<ol start="3" type="1">
-<li><p>Edge Location (CloudFront) _A location with a cache of content that can be delivered at low latency to users _The idea is to reduce latency when accessing cached content</p></li>
-<li><p>Regional Edge Cache (CloudFront) _Larger caches that sit between AWS Services and Edge Locations</p></li>
-</ol>
-<p>CloudFront is all about caching content.</p>
-<ol start="5" type="1">
-<li>Global Network (Private) _Highly available, low-latency private global network interconnecting every data center, AZ, and AWS Region</li>
+<li><p>VPC _A VPC is a logically isolated section of the AWS cloud within a region where we can launch our own resources. _Within a VPC we can create our own networks using our own IP ranges. _A VPC sits within a region and we can have up to 5 VPCs within each region by default. _By default, one VPC is create by default in every one of those regions around the world. _Every VPC has a Classless Inter Domain Routing (CIDR) block.</p></li>
+<li><p>Subnets _Within a VPC we create public or private subnets which sits within AZs. _Then we launch our resources into the subnets. _Auto-assign public IPv4 will allow EC2 instances pick an IPv4 address automatically. _Each subnet will have a different block of addresses but they will be within the overall CIDR block of the VPC.</p></li>
+<li><p>VPC Router _The way we communicate between AZs and within subnets, whether they are in the same AZ or not, is through the VPC Router _Every VPC has a Route Table which has a IP address range which helps in the communication between all AZs (CIDR). _By defining the IP Range for the VPC, the route table will automatically be configured to route between all the AZs and subnets within the VPC</p></li>
+<li><p>Internet Gateway _It allows us to access the outside world. For example, send requests out to an Internet website through the IG _We need to specify the Internet Gateway ID and an IP address as a destination</p></li>
+<li><p>Incident Gateway _It allows us to be able to communicate outside of AWS to the Internet</p></li>
 </ol>
 
 
@@ -491,13 +485,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./aws-iam-password-policy.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setting Password Policy</span>
+      <a href="./aws-infra.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Global Infrastructure</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./aws-infra-vpc.html" class="pagination-link">
-        <span class="nav-page-text">Virtual Private Cloud (VPC)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sklearn-tuning-hps.html" class="pagination-link">
+        <span class="nav-page-text">Sklearn Hyperparameter Tuning</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

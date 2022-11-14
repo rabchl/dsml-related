@@ -7,6 +7,48 @@
     "text": "There will be several topics on the sidebar, choose one then copy, learn, find errors and improve."
   },
   {
+    "objectID": "aws-iam-auth.html",
+    "href": "aws-iam-auth.html",
+    "title": "What can we use to authenticate to AWS?",
+    "section": "",
+    "text": "IAM Access Keys _It is composed of:\n\nAn access key ID\nA secret access key _We use it for programmatic access to AWS. For example if we are using the command line interface to launch a service on AWS we would need to have an access key to be able to authenticate. _We use it for the API and when accessing AWS via the SDK _We can add MFA protection to the API calls. _We put these keys in program code or at a command prompt when using the AWS CLI or the AWS PowerShell tools. IMPORTANT: We can create, modify, view or rotate access keys.\n\nIAM Console Password\n\nUser account will have a password.\nWe use a username and a password to access the AWS Management Console (Visual Interface in which we can interact with AWS)\nThis can be also protected with MFA.\n\nIAM Server Certificate / Signing Certificate\n\nSecure Sockets Layer (SSL) / Transport Layer Security (TLS) certificates that we can use to authenticate with some AWS services\nWe can provision, manage and deploy this authentication using the AWS Certificate Manager (ACM)."
+  },
+  {
+    "objectID": "aws-iam-billing-alarm.html",
+    "href": "aws-iam-billing-alarm.html",
+    "title": "Setting Billing Alarm",
+    "section": "",
+    "text": "Email alert to let us know when we reach certain dollars threshold.\nOnly the root account has access to modify billing information\n\nBilling dashboard\nBilling Preferences\n\nReceive Free Tier Usage Alerts (Enter an e-mail)\nReceive Billing Alerts\nManage Billing Alerts\nIn CloudWatch go to Billing\nCreate Alarm\nConfiguration, then Next\nCreate a New Topic\nSet an e-mail endpoint\nSet a name\nCreate Alarm\nView SNS subscriptions\nGo to your e-mail and confirm the SNS"
+  },
+  {
+    "objectID": "aws-iam-creating-users.html",
+    "href": "aws-iam-creating-users.html",
+    "title": "Create IAM Users",
+    "section": "",
+    "text": "Create a user account that we can log on.\n\nWithin IAM go to Users\nAdd user\nGive it a friendly name\nSelect AWS access type\n\nProgrammatic access (an access key will be created)\nAWS Management Console access\n\nSet auto/custom password\nTick Require password reset if needed\n\n\nSet permissions\n\nWe can:\n\nAdd the user to a group (create a group if we haven’t created any groups yet)\nCopy permissions from existing user\nAttach existing policies directly\n\n\n\n5.1 We created a group a gave it AdministratorAccess\n\nCreate user\nWe get an Access key ID and a Secret access key which show only once\nClose"
+  },
+  {
+    "objectID": "aws-iam-password-policy.html",
+    "href": "aws-iam-password-policy.html",
+    "title": "Setting Password Policy",
+    "section": "",
+    "text": "A password policy is a set of rules that define the type of password an IAM user can set.\n\nGo to Account Settings\nSpecify the password policy."
+  },
+  {
+    "objectID": "aws-iam-sign-in-link.html",
+    "href": "aws-iam-sign-in-link.html",
+    "title": "Sign-in Link",
+    "section": "",
+    "text": "_This is the URL that users will use to log into the AWS account _We can modify it to be more user-friendly _The custom-value we choose does need to be unique\nhttps://custom-value.signin.aws.amazon.com/console\nThe custom-value is the alias for the account name, so any user account can be sign-in using this alias."
+  },
+  {
+    "objectID": "aws-iam-sts.html",
+    "href": "aws-iam-sts.html",
+    "title": "Security Token Service (STS)",
+    "section": "",
+    "text": "A user may need some information that is only available at another account. How does this user access that information?\nUser ————> Role ————-> AWS STS ——–> Authentication ——–> User ————> Information\n_AWS STS is a web service that enables you to request temporary, limited-privilege credentials for IAM users or users that we authenticate (federated users) _In other words, users can have temporary, limited-privilege credentials for accessing certain services. _AWS STS is a global service, and they go to a single endpoint https://sts.amazonaws.com _By default, all regions are enabled for STS but can be disabled."
+  },
+  {
     "objectID": "aws-iam.html",
     "href": "aws-iam.html",
     "title": "Identity and Access Management (IAM)",
@@ -40,6 +82,13 @@
     "title": "Identity and Access Management (IAM)",
     "section": "IAM Policy",
     "text": "IAM Policy\n_Documents that define permissions that can be applied to users, groups and roles _Written in JSON _All permissions are implicitly denied by default _The most restrictive policy is always applied _The IAM Policy Simulator is a tool that helps us understand, test and validate the effects of access control policies _There is a Conditional Element that we can used to apply conditional logic (the permission is applied only if x argument satisfies y value)."
+  },
+  {
+    "objectID": "aws-infra-vpc.html",
+    "href": "aws-infra-vpc.html",
+    "title": "Virtual Private Cloud (VPC)",
+    "section": "",
+    "text": "VPC _A VPC is a logically isolated section of the AWS cloud within a region where we can launch our own resources. _Within a VPC we can create our own networks using our own IP ranges. _A VPC sits within a region and we can have up to 5 VPCs within each region by default. _By default, one VPC is create by default in every one of those regions around the world. _Every VPC has a Classless Inter Domain Routing (CIDR) block.\nSubnets _Within a VPC we create public or private subnets which sits within AZs. _Then we launch our resources into the subnets. _Auto-assign public IPv4 will allow EC2 instances pick an IPv4 address automatically. _Each subnet will have a different block of addresses but they will be within the overall CIDR block of the VPC.\nVPC Router _The way we communicate between AZs and within subnets, whether they are in the same AZ or not, is through the VPC Router _Every VPC has a Route Table which has a IP address range which helps in the communication between all AZs (CIDR). _By defining the IP Range for the VPC, the route table will automatically be configured to route between all the AZs and subnets within the VPC\nInternet Gateway _It allows us to access the outside world. For example, send requests out to an Internet website through the IG _We need to specify the Internet Gateway ID and an IP address as a destination\nIncident Gateway _It allows us to be able to communicate outside of AWS to the Internet"
   },
   {
     "objectID": "aws-infra.html",

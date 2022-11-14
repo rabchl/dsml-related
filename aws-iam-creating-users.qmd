@@ -1,0 +1,31 @@
+---
+title: "Create IAM Users"
+---
+
+Create a user account that we can log on.
+
+1. Within IAM go to Users
+
+2. Add user
+
+3. Give it a friendly name
+
+4. Select AWS access type
+    - Programmatic access (an access key will be created)
+    - AWS Management Console access
+        * Set auto/custom password
+        * Tick Require password reset if needed
+        
+5. Set permissions
+    - We can:
+        * Add the user to a group (create a group if we haven't created any groups yet)
+        * Copy permissions from existing user
+        * Attach existing policies directly
+        
+5.1 We created a group a gave it AdministratorAccess
+
+6. Create user
+
+7. We get an Access key ID and a Secret access key which show only once
+
+8. Close

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DSML - Related - Global Infrastructure</title>
+<title>DSML - Related - Security Token Service (STS)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./aws-infra-vpc.html" rel="next">
-<link href="./aws-iam-password-policy.html" rel="prev">
+<link href="./aws-iam-sign-in-link.html" rel="next">
+<link href="./aws-iam-auth.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Global Infrastructure</h1>
+      <h1 class="quarto-secondary-nav-title">Security Token Service (STS)</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -119,12 +119,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">IAM</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">IAM</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aws-iam.html" class="sidebar-item-text sidebar-link">Identity and Access Management (IAM)</a>
@@ -137,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-iam-sts.html" class="sidebar-item-text sidebar-link">Security Token Service (STS)</a>
+  <a href="./aws-iam-sts.html" class="sidebar-item-text sidebar-link active">Security Token Service (STS)</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -164,15 +164,15 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Infrastructure</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Infrastructure</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-infra.html" class="sidebar-item-text sidebar-link active">Global Infrastructure</a>
+  <a href="./aws-infra.html" class="sidebar-item-text sidebar-link">Global Infrastructure</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -209,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Global Infrastructure</h1>
+<h1 class="title d-none d-lg-block">Security Token Service (STS)</h1>
 </div>
 
 
@@ -224,19 +224,9 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<ol type="1">
-<li><p>Region _It is a geographical area with 2 or more AZs, isolated from other AWS Regions.</p></li>
-<li><p>Availability Zone (AZ) _One or more data centers that are physically separate and isolated from other AZs _They are connected with low latency, highly available, high bandwidth links _We have networking connectivity between all of the AZs as well</p></li>
-</ol>
-<p>Therefore, we can deploy our resources within a region but into separate AZs for high availability and redudancy. If there is an outage on one AZ, the resources on the other one are not affected.</p>
-<ol start="3" type="1">
-<li><p>Edge Location (CloudFront) _A location with a cache of content that can be delivered at low latency to users _The idea is to reduce latency when accessing cached content</p></li>
-<li><p>Regional Edge Cache (CloudFront) _Larger caches that sit between AWS Services and Edge Locations</p></li>
-</ol>
-<p>CloudFront is all about caching content.</p>
-<ol start="5" type="1">
-<li>Global Network (Private) _Highly available, low-latency private global network interconnecting every data center, AZ, and AWS Region</li>
-</ol>
+<p>A user may need some information that is only available at another account. How does this user access that information?</p>
+<p>User ————&gt; Role ————-&gt; AWS STS ——–&gt; Authentication ——–&gt; User ————&gt; Information</p>
+<p>_AWS STS is a web service that enables you to request temporary, limited-privilege credentials for IAM users or users that we authenticate (federated users) _In other words, users can have temporary, limited-privilege credentials for accessing certain services. _AWS STS is a global service, and they go to a single endpoint https://sts.amazonaws.com _By default, all regions are enabled for STS but can be disabled.</p>
 
 
 
@@ -491,13 +481,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./aws-iam-password-policy.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setting Password Policy</span>
+      <a href="./aws-iam-auth.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">What can we use to authenticate to AWS?</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./aws-infra-vpc.html" class="pagination-link">
-        <span class="nav-page-text">Virtual Private Cloud (VPC)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./aws-iam-sign-in-link.html" class="pagination-link">
+        <span class="nav-page-text">Sign-in Link</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,30 @@
+---
+title: "Virtual Private Cloud (VPC)"
+---
+
+1. VPC
+    _A VPC is a logically isolated section of the AWS cloud within a region where we can launch our own resources.
+    _Within a VPC we can create our own networks using our own IP ranges.
+    _A VPC sits within a region and we can have up to 5 VPCs within each region by default.
+    _By default, one VPC is create by default in every one of those regions around the world.
+    _Every VPC has a Classless Inter Domain Routing (CIDR) block.
+
+2. Subnets 
+    _Within a VPC we create public or private subnets which sits within AZs.
+    _Then we launch our resources into the subnets.
+    _Auto-assign public IPv4 will allow EC2 instances pick an IPv4 address automatically.
+    _Each subnet will have a different block of addresses but they will be within the overall CIDR block of the VPC.
+    
+3. VPC Router
+    _The way we communicate between AZs and within subnets, whether they are in the same AZ or not, is through the VPC Router
+    _Every VPC has a Route Table which has a IP address range which helps in the communication between all AZs (CIDR).
+    _By defining the IP Range for the VPC, the route table will automatically be configured to route between all the AZs and subnets within the VPC
+
+4. Internet Gateway
+    _It allows us to access the outside world. For example, send requests out to an Internet website through the IG
+    _We need to specify the Internet Gateway ID and an IP address as a destination
+    
+5. Incident Gateway
+    _It allows us to be able to communicate outside of AWS to the Internet
+
+

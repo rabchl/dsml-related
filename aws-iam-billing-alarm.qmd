@@ -1,0 +1,22 @@
+---
+title: "Setting Billing Alarm"
+---
+
+Email alert to let us know when we reach certain dollars threshold.
+
+Only the root account has access to modify billing information
+
+1. Billing dashboard
+2. Billing Preferences
+    - Receive Free Tier Usage Alerts (Enter an e-mail)
+    - Receive Billing Alerts
+    - Manage Billing Alerts
+    - In CloudWatch go to Billing
+    - Create Alarm
+    - Configuration, then Next
+    - Create a New Topic
+    - Set an e-mail endpoint
+    - Set a name
+    - Create Alarm
+    - View SNS subscriptions
+    - Go to your e-mail and confirm the SNS

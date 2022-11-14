@@ -1,0 +1,11 @@
+---
+title: "Sign-in Link"
+---
+
+_This is the URL that users will use to log into the AWS account
+_We can modify it to be more user-friendly
+_The custom-value we choose does need to be unique
+
+https://custom-value.signin.aws.amazon.com/console
+
+The custom-value is the alias for the account name, so any user account can be sign-in using this alias.
