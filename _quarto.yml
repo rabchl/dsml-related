@@ -8,7 +8,7 @@ format:
 
 theme: 
   light: flatly
-  dark: darkly
+  dark: [darkly, theme-dark.scss]
 
 website:
   title: DSML - Related
