@@ -6,11 +6,12 @@ IAM is the service that provides USERS, GROUPS and POLICIES so that we can acces
 
 
 ## IAM Users
-_It is an entity that represents a person or service (a user account that can be used by a service rather than human being)
-_We can apply a policy which is a list of permissions which says what this user is allowed to do on AWS
-_By default, users cannot do anything in the account. Users need a policy in order to do something in the account.
-_Up to 5000 users per AWS account.
-_Each user account will have a friendly name and an Amazon Resource Name (ARN) which uniquely identifies the user across AWS.
+
+  * It is an entity that represents a person or service (a user account that can be used by a service rather than human being)
+  * We can apply a policy which is a list of permissions which says what this user is allowed to do on AWS
+  * By default, users cannot do anything in the account. Users need a policy in order to do something in the account.
+  * Up to 5000 users per AWS account.
+  * Each user account will have a friendly name and an Amazon Resource Name (ARN) which uniquely identifies the user across AWS.
 
 1. A user account can be assigned:
     - Access key ID
