@@ -1,0 +1,12 @@
+---
+title: "Build Fully Featured Products"
+---
+
+Once the _feasibility_ of the project has been _confirmed by_ the MVP, it must be packaged into an FFP.
+
+1. Polish up the MVP to build a production-ready deliverable with various optimizations
+    - Introduce additional data preparation techniques to improve the quality of input data
+    - Slightly augment the model pipeline for greater model performance if necessary
+
+2. Reimplement the whole pipeline (data preparation and model training) on web services for higher throughput and quality.
+    - AWS, for example.

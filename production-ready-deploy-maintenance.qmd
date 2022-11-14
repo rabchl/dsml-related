@@ -1,0 +1,10 @@
+---
+title: "Deployment and Maintenance"
+---
+
+1. The deployment setting are usually different from the development settings. Therefore, different sets of tools are often involved when moving a FFP to production.
+
+2. Deployment may introduce problems that weren't visible during development such as limited computational resources.
+    - Use additional time to improve user experience.
+
+3. The quality of data and model performance needs to be monitored consistently to provide stable services to targeted users.

@@ -98,6 +98,27 @@
     "text": "Region _It is a geographical area with 2 or more AZs, isolated from other AWS Regions.\nAvailability Zone (AZ) _One or more data centers that are physically separate and isolated from other AZs _They are connected with low latency, highly available, high bandwidth links _We have networking connectivity between all of the AZs as well\n\nTherefore, we can deploy our resources within a region but into separate AZs for high availability and redudancy. If there is an outage on one AZ, the resources on the other one are not affected.\n\nEdge Location (CloudFront) _A location with a cache of content that can be delivered at low latency to users _The idea is to reduce latency when accessing cached content\nRegional Edge Cache (CloudFront) _Larger caches that sit between AWS Services and Edge Locations\n\nCloudFront is all about caching content.\n\nGlobal Network (Private) _Highly available, low-latency private global network interconnecting every data center, AZ, and AWS Region"
   },
   {
+    "objectID": "production-ready-deploy-maintenance.html",
+    "href": "production-ready-deploy-maintenance.html",
+    "title": "Deployment and Maintenance",
+    "section": "",
+    "text": "The deployment setting are usually different from the development settings. Therefore, different sets of tools are often involved when moving a FFP to production.\nDeployment may introduce problems that weren’t visible during development such as limited computational resources.\n\nUse additional time to improve user experience.\n\nThe quality of data and model performance needs to be monitored consistently to provide stable services to targeted users."
+  },
+  {
+    "objectID": "production-ready-evaluation.html",
+    "href": "production-ready-evaluation.html",
+    "title": "Project Evaluation",
+    "section": "",
+    "text": "The team should revisit the discussions made during project planning to\n\nevaluate whether the project has been carried out successfully or not\n\nDetails of the project need to be recorded to\n\nsuggest and discuss potential improvements so that next projects can be achieved more efficiently."
+  },
+  {
+    "objectID": "production-ready-ffp.html",
+    "href": "production-ready-ffp.html",
+    "title": "Build Fully Featured Products",
+    "section": "",
+    "text": "Once the feasibility of the project has been confirmed by the MVP, it must be packaged into an FFP.\n\nPolish up the MVP to build a production-ready deliverable with various optimizations\n\nIntroduce additional data preparation techniques to improve the quality of input data\nSlightly augment the model pipeline for greater model performance if necessary\n\nReimplement the whole pipeline (data preparation and model training) on web services for higher throughput and quality.\n\nAWS, for example."
+  },
+  {
     "objectID": "production-ready-mvp.html",
     "href": "production-ready-mvp.html",
     "title": "Build Minimum Viable Products",

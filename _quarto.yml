@@ -56,3 +56,6 @@ website:
               contents: 
                 - production-ready-planning.qmd
                 - production-ready-mvp.qmd
+                - prodiction-ready-ffp.qmd
+                - production-ready-deploy-maintenance.qmd
+                - production-ready-evaluation.qmd
