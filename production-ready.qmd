@@ -56,3 +56,56 @@ Following the Production-Ready book
 11. Machine Learning models on Mobile Devices
 
 12. Monitoring endpoints in production
+
+Every machine learning project should begin with planning and understanding the difficulty of the given problem.
+
+What is the scope of the project?
+
+Once this question is answered, the next step is to build a MVP.
+
+In the context of machine learning, the process of creating an MVP involves:
+- Preparing a dataset
+- Exploring various model architectures
+to come up with a working solution to the given problem
+
+
+What is machine learning? How does it shapes our daily lives?
+
+How are machine learning projects typically carried out? How are they structured?
+
+Project planning
+- Comprehension of business objectives
+- Define appropriate evaluation metrics
+- Identification of stakeholders
+- Resource planning
+- Differences between a minimum viable product (MVP) and a fully featured product (FFP)
+
+Aim: Construct a machine learning project playbook that clearly describes
+- The goal of the project
+- Milestones
+- Tasks
+- Resource allocation
+- Timeline
+
+## What is machine learning?
+
+It is a set of methods within the field of artificial intelligence. By extracting meaningful patterns from historical data, the goal of machine learning is to build a model that makes sensible predictions and decisions for newly collected data.
+
+We can capture a given pattern with different techniques: deep learning which exploits artificial neural networks, decision trees, bagging or boosting ensembles, linear models, etc.
+
+One of the advantages of deep learning over traditional machine learning techniques is that ANNs enable the _automatic selection of necessary features_ whereas traditional ML techniques require features to be manually selected. ANNs are made up of components called **neurons**. A group of neurons forms a **layer** and multiple layers are linked together to form a **network**. We can understood this arquitecture as multiple steps of nested instructions, thus, as the input data passes through the network, each neuron extracts different information and the model is trained to select
+the most relevant features for the given task. If we consider neurons as the building blocks for pattern recognition then the usual believe is that deeper networks lead to greater performance as they learn the __details__ better.
+
+This advantage allows deep learning methods to adapt to a broader range of problems due to its high flexibility. But it is not free, we need __large and diverse enough training dataset__ to train a DL model properly. This leads an increase in training time.
+
+## Overview of Machine Learning Projects
+
+In general, machine learning projects can be split into the following phases:
+
+1. Project planning
+2. Building MVPs
+3. Building FFPs
+4. Deployment and maintenance
+5. Project evaluation
+
+

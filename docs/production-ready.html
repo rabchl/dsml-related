@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./production-ready-mvp.html" rel="next">
+<link href="./production-ready-planning.html" rel="next">
 <link href="./aws-infra-vpc.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -197,11 +197,21 @@ ul.task-list li input[type="checkbox"] {
   <a href="./production-ready.html" class="sidebar-item-text sidebar-link active">Less Theory More Application</a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Machine Learning Projects</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./production-ready-mvp.html" class="sidebar-item-text sidebar-link">Minimum Viable Project (MVP)</a>
+  <a href="./production-ready-planning.html" class="sidebar-item-text sidebar-link">Effective Project Planning</a>
   </div>
 </li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -303,8 +313,34 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Machine Learning models on Mobile Devices</p></li>
 <li><p>Monitoring endpoints in production</p></li>
 </ol>
+<p>Every machine learning project should begin with planning and understanding the difficulty of the given problem.</p>
+<p>What is the scope of the project?</p>
+<p>Once this question is answered, the next step is to build a MVP.</p>
+<p>In the context of machine learning, the process of creating an MVP involves: - Preparing a dataset - Exploring various model architectures to come up with a working solution to the given problem</p>
+<p>What is machine learning? How does it shapes our daily lives?</p>
+<p>How are machine learning projects typically carried out? How are they structured?</p>
+<p>Project planning - Comprehension of business objectives - Define appropriate evaluation metrics - Identification of stakeholders - Resource planning - Differences between a minimum viable product (MVP) and a fully featured product (FFP)</p>
+<p>Aim: Construct a machine learning project playbook that clearly describes - The goal of the project - Milestones - Tasks - Resource allocation - Timeline</p>
+<section id="what-is-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-machine-learning">What is machine learning?</h2>
+<p>It is a set of methods within the field of artificial intelligence. By extracting meaningful patterns from historical data, the goal of machine learning is to build a model that makes sensible predictions and decisions for newly collected data.</p>
+<p>We can capture a given pattern with different techniques: deep learning which exploits artificial neural networks, decision trees, bagging or boosting ensembles, linear models, etc.</p>
+<p>One of the advantages of deep learning over traditional machine learning techniques is that ANNs enable the <em>automatic selection of necessary features</em> whereas traditional ML techniques require features to be manually selected. ANNs are made up of components called <strong>neurons</strong>. A group of neurons forms a <strong>layer</strong> and multiple layers are linked together to form a <strong>network</strong>. We can understood this arquitecture as multiple steps of nested instructions, thus, as the input data passes through the network, each neuron extracts different information and the model is trained to select the most relevant features for the given task. If we consider neurons as the building blocks for pattern recognition then the usual believe is that deeper networks lead to greater performance as they learn the <strong>details</strong> better.</p>
+<p>This advantage allows deep learning methods to adapt to a broader range of problems due to its high flexibility. But it is not free, we need <strong>large and diverse enough training dataset</strong> to train a DL model properly. This leads an increase in training time.</p>
+</section>
+<section id="overview-of-machine-learning-projects" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-machine-learning-projects">Overview of Machine Learning Projects</h2>
+<p>In general, machine learning projects can be split into the following phases:</p>
+<ol type="1">
+<li>Project planning</li>
+<li>Building MVPs</li>
+<li>Building FFPs</li>
+<li>Deployment and maintenance</li>
+<li>Project evaluation</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -562,8 +598,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./production-ready-mvp.html" class="pagination-link">
-        <span class="nav-page-text">Minimum Viable Project (MVP)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./production-ready-planning.html" class="pagination-link">
+        <span class="nav-page-text">Effective Project Planning</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

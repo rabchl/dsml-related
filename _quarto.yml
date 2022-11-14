@@ -52,4 +52,6 @@ website:
         - section: "Production-Ready Development"
           contents:
             - production-ready.qmd
-            - production-ready-mvp.qmd
+            - section: "Machine Learning Projects"
+              contents: 
+                - production-ready-planning.qmd
