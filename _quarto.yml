@@ -55,3 +55,4 @@ website:
             - section: "Machine Learning Projects"
               contents: 
                 - production-ready-planning.qmd
+                - production-ready-mvp.qmd
