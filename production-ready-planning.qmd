@@ -2,4 +2,18 @@
 title: "Effective Project Planning"
 ---
 
+1. The project lead **must** 
+    - clearly define what needs to be achieved by the project
+    - understand groups that can affect or be affected by the project.
+
+2. The evaluations metrics need to be defined and agreed upon as they will be revisited during project evaluation.
+
+3. Team members group together to discuss
+    - individual responsabilities
+    - how to achieve business objectives using available resources.
+
+4. Establish the timeline, an estimate of how long the project would be.
+
+5. Generate a playbook, a thorough description of how the project will be carried out and evaluated.
+
 

@@ -98,6 +98,20 @@
     "text": "Region _It is a geographical area with 2 or more AZs, isolated from other AWS Regions.\nAvailability Zone (AZ) _One or more data centers that are physically separate and isolated from other AZs _They are connected with low latency, highly available, high bandwidth links _We have networking connectivity between all of the AZs as well\n\nTherefore, we can deploy our resources within a region but into separate AZs for high availability and redudancy. If there is an outage on one AZ, the resources on the other one are not affected.\n\nEdge Location (CloudFront) _A location with a cache of content that can be delivered at low latency to users _The idea is to reduce latency when accessing cached content\nRegional Edge Cache (CloudFront) _Larger caches that sit between AWS Services and Edge Locations\n\nCloudFront is all about caching content.\n\nGlobal Network (Private) _Highly available, low-latency private global network interconnecting every data center, AZ, and AWS Region"
   },
   {
+    "objectID": "production-ready-mvp.html",
+    "href": "production-ready-mvp.html",
+    "title": "Build Minimum Viable Products",
+    "section": "",
+    "text": "Assert directions is clear for everyone, then build a MVP.\n\nBuild a simplistic version of the deliverable that showcases the project’s value.\nUnderstand the project’s difficulties and reject paths with greater risks or less promising outcomes\n\nUse the fail fast, fail often philosophy\n\nWork with partially sampled datasets in development settings and ignore insignificant optimizations."
+  },
+  {
+    "objectID": "production-ready-planning.html",
+    "href": "production-ready-planning.html",
+    "title": "Effective Project Planning",
+    "section": "",
+    "text": "The project lead must\n\nclearly define what needs to be achieved by the project\nunderstand groups that can affect or be affected by the project.\n\nThe evaluations metrics need to be defined and agreed upon as they will be revisited during project evaluation.\nTeam members group together to discuss\n\nindividual responsabilities\nhow to achieve business objectives using available resources.\n\nEstablish the timeline, an estimate of how long the project would be.\nGenerate a playbook, a thorough description of how the project will be carried out and evaluated."
+  },
+  {
     "objectID": "production-ready.html",
     "href": "production-ready.html",
     "title": "Less Theory More Application",

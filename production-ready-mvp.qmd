@@ -1,0 +1,12 @@
+---
+title: "Build Minimum Viable Products"
+---
+
+Assert directions is clear for everyone, then build a MVP.
+
+1. Build a simplistic version of the deliverable that **_showcases the project's value_**.
+
+2. Understand the project's difficulties and reject paths with greater risks or less promising outcomes
+    - Use the _fail fast, fail often_ philosophy
+
+3. Work with partially sampled datasets in development settings and ignore insignificant optimizations.
