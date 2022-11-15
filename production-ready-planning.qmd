@@ -1,5 +1,6 @@
 ---
 title: "Effective Project Planning"
+date: last-modified
 ---
 
 1. The project lead **must** 
