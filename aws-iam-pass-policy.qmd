@@ -1,5 +1,6 @@
 ---
 title: "Setting Password Policy"
+date: last-modified
 ---
 
 A password policy is a set of rules that define the type of password an IAM user can set.

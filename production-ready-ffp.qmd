@@ -1,5 +1,6 @@
 ---
 title: "Build Fully Featured Products"
+date: last-modified
 ---
 
 Once the _feasibility_ of the project has been _confirmed by_ the MVP, it must be packaged into an FFP.

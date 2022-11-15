@@ -1,5 +1,6 @@
 ---
 title: "How to use this site"
+date: last-modified
 ---
 
 There will be several topics on the sidebar, choose one then copy, learn, find errors and improve.

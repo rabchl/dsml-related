@@ -1,5 +1,6 @@
 ---
 title: "Global Infrastructure"
+date: last-modified
 ---
 
 1. Region

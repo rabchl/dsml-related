@@ -1,5 +1,6 @@
 ---
 title: "Build Minimum Viable Products"
+date: last-modified
 ---
 
 Assert directions is clear for everyone, then build a MVP.

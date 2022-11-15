@@ -1,5 +1,6 @@
 ---
 title: "Less Theory More Application"
+date: last-modified
 ---
 
 Construct and deploy complex models in machine learning frameworks.

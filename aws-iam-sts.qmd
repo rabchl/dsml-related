@@ -1,5 +1,6 @@
 ---
 title: "Security Token Service (STS)"
+date: last-modified
 ---
 
 A user may need some information that is only available at another account. How does this user access that information?
