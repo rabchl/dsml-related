@@ -159,5 +159,12 @@
     "title": "Sklearn Hyperparameter Tuning",
     "section": "",
     "text": "Here we go again\n\n\nCode\nimport numpy as np\nimport pandas as pd\n\nfrom sklearn.model_selection import GridSearchCV"
+  },
+  {
+    "objectID": "venvs-conda.html",
+    "href": "venvs-conda.html",
+    "title": "Setting up virtual environments with conda",
+    "section": "",
+    "text": "foo@bar:~$ conda create --name prodenv python=3.8\nfoo@bar:~$ conda info --envs"
   }
 ]

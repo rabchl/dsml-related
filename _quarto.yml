@@ -59,3 +59,7 @@ website:
                 - production-ready-ffp.qmd
                 - production-ready-deploy-maintenance.qmd
                 - production-ready-evaluation.qmd
+        
+        - section: "Environments"
+          contents:
+            - venvs-conda.qmd

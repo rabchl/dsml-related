@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-11-15">
 
-<title>DSML - Related - Sign-in Link</title>
+<title>DSML - Related - Setting up virtual environments with conda</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./aws-iam-billing-alarm.html" rel="next">
-<link href="./aws-iam-sts.html" rel="prev">
+<link href="./production-ready-evaluation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Sign-in Link</h1>
+      <h1 class="quarto-secondary-nav-title">Setting up virtual environments with conda</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -120,12 +119,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">IAM</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">IAM</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aws-iam.html" class="sidebar-item-text sidebar-link">Identity and Access Management (IAM)</a>
@@ -143,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-iam-sign-in-link.html" class="sidebar-item-text sidebar-link active">Sign-in Link</a>
+  <a href="./aws-iam-sign-in-link.html" class="sidebar-item-text sidebar-link">Sign-in Link</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -245,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./venvs-conda.html" class="sidebar-item-text sidebar-link">Setting up virtual environments with conda</a>
+  <a href="./venvs-conda.html" class="sidebar-item-text sidebar-link active">Setting up virtual environments with conda</a>
   </div>
 </li>
       </ul>
@@ -260,7 +259,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Sign-in Link</h1>
+<h1 class="title d-none d-lg-block">Setting up virtual environments with conda</h1>
 </div>
 
 
@@ -281,9 +280,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>_This is the URL that users will use to log into the AWS account _We can modify it to be more user-friendly _The custom-value we choose does need to be unique</p>
-<p>https://custom-value.signin.aws.amazon.com/console</p>
-<p>The custom-value is the alias for the account name, so any user account can be sign-in using this alias.</p>
+<pre class="console"><code>foo@bar:~$ conda create --name prodenv python=3.8</code></pre>
+<pre class="console"><code>foo@bar:~$ conda info --envs</code></pre>
 
 
 
@@ -538,14 +536,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./aws-iam-sts.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Security Token Service (STS)</span>
+      <a href="./production-ready-evaluation.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Project Evaluation</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./aws-iam-billing-alarm.html" class="pagination-link">
-        <span class="nav-page-text">Setting Billing Alarm</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

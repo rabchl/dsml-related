@@ -1,0 +1,13 @@
+---
+title: "Setting up virtual environments with conda"
+date: last-modified
+---
+
+```console
+foo@bar:~$ conda create --name prodenv python=3.8
+```
+
+```console
+foo@bar:~$ conda info --envs
+```
+
