@@ -1,0 +1,52 @@
+---
+title: "Setting up virtual environments with conda"
+date: last-modified
+---
+
+For more information see [Managing environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
+
+Create a virtual environment (replace `venvname` with the name of environment)
+
+```console
+foo@bar:~$ conda create -n venvname python=3.9
+```
+
+Verify that the new environment was installed correctly
+
+```console
+foo@bar:~$ conda info --envs
+foo@bar:~$ conda env list
+```
+
+Activate or deactivate the environment
+
+```console
+foo@bar:~$ conda activate venvname
+foo@bar:~$ conda deactivate
+```
+
+Activate the environment and install required packages
+
+```console
+foo@bar:~$ pip install -r requirements.txt
+foo@bar:~$ conda install pytorch torchvision torchaudio cudatoolkit=11.2 -c pytorch -c nvidia
+foo@bar:~$ conda install --force-reinstall -y -q --name py39 -c conda-forge --file requirements.txt
+```
+
+Save the environment to a file
+
+```console
+foo@bar:~$ conda env export > venv.yml
+```
+
+Create a environment from a YAML file
+
+```console
+foo@bar:~$ conda env create -f venv.yml
+```
+
+Delete the environment
+
+```console
+foo@bar:~$ conda remove -n venvname --all
+```

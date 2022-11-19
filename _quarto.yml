@@ -62,4 +62,4 @@ website:
         
         - section: "Environments"
           contents:
-            - venvs-conda.qmd
+            - venv-conda.qmd

@@ -161,10 +161,10 @@
     "text": "Here we go again\n\n\nCode\nimport numpy as np\nimport pandas as pd\n\nfrom sklearn.model_selection import GridSearchCV"
   },
   {
-    "objectID": "venvs-conda.html",
-    "href": "venvs-conda.html",
+    "objectID": "venv-conda.html",
+    "href": "venv-conda.html",
     "title": "Setting up virtual environments with conda",
     "section": "",
-    "text": "foo@bar:~$ conda create --name prodenv python=3.8\nfoo@bar:~$ conda info --envs"
+    "text": "For more information see Managing environments.\nCreate a virtual environment (replace venvname with the name of environment)\nfoo@bar:~$ conda create -n venvname python=3.9\nVerify that the new environment was installed correctly\nfoo@bar:~$ conda info --envs\nfoo@bar:~$ conda env list\nActivate or deactivate the environment\nfoo@bar:~$ conda activate venvname\nfoo@bar:~$ conda deactivate\nActivate the environment and install required packages\nfoo@bar:~$ pip install -r requirements.txt\nfoo@bar:~$ conda install pytorch torchvision torchaudio cudatoolkit=11.2 -c pytorch -c nvidia\nfoo@bar:~$ conda install --force-reinstall -y -q --name py39 -c conda-forge --file requirements.txt\nSave the environment to a file\nfoo@bar:~$ conda env export > venv.yml\nCreate a environment from a YAML file\nfoo@bar:~$ conda env create -f venv.yml\nDelete the environment\nfoo@bar:~$ conda remove -n venvname --all"
   }
 ]

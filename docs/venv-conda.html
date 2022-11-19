@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-11-15">
+<meta name="dcterms.date" content="2022-11-19">
 
 <title>DSML - Related - Setting up virtual environments with conda</title>
 <style>
@@ -244,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./venvs-conda.html" class="sidebar-item-text sidebar-link active">Setting up virtual environments with conda</a>
+  <a href="./venv-conda.html" class="sidebar-item-text sidebar-link active">Setting up virtual environments with conda</a>
   </div>
 </li>
       </ul>
@@ -270,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 15, 2022</p>
+      <p class="date">November 19, 2022</p>
     </div>
   </div>
   
@@ -280,8 +280,25 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<pre class="console"><code>foo@bar:~$ conda create --name prodenv python=3.8</code></pre>
-<pre class="console"><code>foo@bar:~$ conda info --envs</code></pre>
+<p>For more information see <a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Managing environments</a>.</p>
+<p>Create a virtual environment (replace <code>venvname</code> with the name of environment)</p>
+<pre class="console"><code>foo@bar:~$ conda create -n venvname python=3.9</code></pre>
+<p>Verify that the new environment was installed correctly</p>
+<pre class="console"><code>foo@bar:~$ conda info --envs
+foo@bar:~$ conda env list</code></pre>
+<p>Activate or deactivate the environment</p>
+<pre class="console"><code>foo@bar:~$ conda activate venvname
+foo@bar:~$ conda deactivate</code></pre>
+<p>Activate the environment and install required packages</p>
+<pre class="console"><code>foo@bar:~$ pip install -r requirements.txt
+foo@bar:~$ conda install pytorch torchvision torchaudio cudatoolkit=11.2 -c pytorch -c nvidia
+foo@bar:~$ conda install --force-reinstall -y -q --name py39 -c conda-forge --file requirements.txt</code></pre>
+<p>Save the environment to a file</p>
+<pre class="console"><code>foo@bar:~$ conda env export &gt; venv.yml</code></pre>
+<p>Create a environment from a YAML file</p>
+<pre class="console"><code>foo@bar:~$ conda env create -f venv.yml</code></pre>
+<p>Delete the environment</p>
+<pre class="console"><code>foo@bar:~$ conda remove -n venvname --all</code></pre>
 
 
 
