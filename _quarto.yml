@@ -67,4 +67,4 @@ website:
         - section: "Data Engineering"
           contents:
             - deng.qmd
-            - deng-data-collection.qmd
+            - deng-data-collection.ipynb
