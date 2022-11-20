@@ -1,0 +1,10 @@
+---
+title: "Why Data Engineering is so important?"
+date: last-modified
+---
+
+The process of data engineering can be broken down into a few parts:
+
+- Data Collection
+- Data Cleaning
+- Data Preprocessing

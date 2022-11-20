@@ -63,3 +63,8 @@ website:
         - section: "Environments"
           contents:
             - venv-conda.qmd
+
+        - section: "Data Engineering"
+          contents:
+            - deng.qmd
+            - deng-data-collection.qmd
