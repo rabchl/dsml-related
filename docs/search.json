@@ -98,6 +98,13 @@
     "text": "Region _It is a geographical area with 2 or more AZs, isolated from other AWS Regions.\nAvailability Zone (AZ) _One or more data centers that are physically separate and isolated from other AZs _They are connected with low latency, highly available, high bandwidth links _We have networking connectivity between all of the AZs as well\n\nTherefore, we can deploy our resources within a region but into separate AZs for high availability and redudancy. If there is an outage on one AZ, the resources on the other one are not affected.\n\nEdge Location (CloudFront) _A location with a cache of content that can be delivered at low latency to users _The idea is to reduce latency when accessing cached content\nRegional Edge Cache (CloudFront) _Larger caches that sit between AWS Services and Edge Locations\n\nCloudFront is all about caching content.\n\nGlobal Network (Private) _Highly available, low-latency private global network interconnecting every data center, AZ, and AWS Region"
   },
   {
+    "objectID": "deng-data-cleaning.html",
+    "href": "deng-data-cleaning.html",
+    "title": "Cleaning Data",
+    "section": "",
+    "text": "Data cleaning is the process of polishing raw data to keep the entries consistent.\n\nFilling up empty fields with default values\nRemoving characters that are not alpha-numeric\nRemoving stop words\nRemoving HTML tags\n\nThe process also focuses on retaining relevant information from the collected data. Drop unnecessary components of the collected information.\nIt is important to separate whether information were missing in the original source and not missed out due to errors throughout the collection process\n\nimport pandas as pd\n\n\npdf = pd.read_csv('.csv')\npdf.some_column.fillna(value=\"na\", inplace=True)"
+  },
+  {
     "objectID": "deng-data-collection-html.html",
     "href": "deng-data-collection-html.html",
     "title": "Collecting HTML Data",
@@ -109,7 +116,7 @@
     "href": "deng-data-collection-json.html",
     "title": "Collecting JSON Data",
     "section": "",
-    "text": "JSON stores data as key-value and/or key-array fields. JSON is considered interchangeable or program independent since most programming languages support key-value data structures.\n\nimport json\nimport urllib.request as request\n\n\nresponse = request.urlopen('https://www.reddit.com/r/all.json')\n\n\nsource = response.read()\n\n\njson_data = json.loads(source)\n\n\njson_data['data']['children'][0]['data']['media_embed']\n\n{}"
+    "text": "JSON stores data as key-value and/or key-array fields. JSON is considered interchangeable or program independent since most programming languages support key-value data structures.\nDuring data collection process, the information is extracted as-is so that it can be kept in the original form.\n\nimport json\nimport urllib.request as request\n\n\nresponse = request.urlopen('https://www.reddit.com/r/all.json')\n\n\nsource = response.read()\n\n\njson_data = json.loads(source)\n\n\njson_data['data']['children'][0]['data']['media_embed']\n\n{}"
   },
   {
     "objectID": "deng.html",
