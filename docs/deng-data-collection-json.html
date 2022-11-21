@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-11-20">
 
-<title>DSML - Related - Collecting Data</title>
+<title>DSML - Related - Collecting JSON Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -94,7 +94,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./deng.html" rel="prev">
+<link href="./deng-data-collection-html.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -135,7 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Collecting Data</h1>
+      <h1 class="quarto-secondary-nav-title">Collecting JSON Data</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -327,7 +327,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./deng-data-collection.html" class="sidebar-item-text sidebar-link active">Collecting Data</a>
+  <a href="./deng-data-collection-html.html" class="sidebar-item-text sidebar-link">Collecting HTML Data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deng-data-collection-json.html" class="sidebar-item-text sidebar-link active">Collecting JSON Data</a>
   </div>
 </li>
       </ul>
@@ -342,7 +347,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Collecting Data</h1>
+<h1 class="title d-none d-lg-block">Collecting JSON Data</h1>
 </div>
 
 
@@ -363,67 +368,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>Collect HTML and JSON data, and save it in CSV format</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>JSON stores data as key-value and/or key-array fields. JSON is considered interchangeable or program independent since most programming languages support key-value data structures.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> urllib.request <span class="im">as</span> request</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="94">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url<span class="op">=</span><span class="st">'https://developer.mozilla.org/'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> request.urlopen(<span class="st">'https://www.reddit.com/r/all.json'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="95">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>html_soup <span class="op">=</span> BeautifulSoup(response.text, <span class="st">'html.parser'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> response.read()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="96">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find all &lt;a&gt; tags with href in it, returns a list</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>html_soup.find_all(<span class="st">'a'</span>, href<span class="op">=</span><span class="va">True</span>)[:<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="96">
-<pre><code>[&lt;a href="#content" id="skip-main"&gt;Skip to main content&lt;/a&gt;,
- &lt;a href="#top-nav-search-input" id="skip-search"&gt;Skip to search&lt;/a&gt;]</code></pre>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>json_data <span class="op">=</span> json.loads(source)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="97">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert a PageElement to a string and perform string operations</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(a).find(<span class="st">"something"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="97">
-<pre><code>-1</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="106">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select to extract the text inside a div tag with a specific id</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(html_soup.select(<span class="st">'div#root'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="106">
-<pre><code>1</code></pre>
-</div>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="121">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find all div tags of a specific class</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>html_soup.find_all(<span class="st">'div'</span>, class_<span class="op">=</span><span class="st">"submenu-icon"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="121">
-<pre><code>[&lt;div class="submenu-icon"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon html"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon css"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon javascript"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon http"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon apis"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon learn"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon learn"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon html"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon css"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon javascript"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon"&gt;&lt;/div&gt;,
- &lt;div class="submenu-icon"&gt;&lt;/div&gt;]</code></pre>
-</div>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="125">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Images with src attributes</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>html_soup.select(<span class="st">"img"</span>)[<span class="dv">0</span>][<span class="st">"src"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="125">
-<pre><code>'/assets/mdn_contributor.png'</code></pre>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>json_data[<span class="st">'data'</span>][<span class="st">'children'</span>][<span class="dv">0</span>][<span class="st">'data'</span>][<span class="st">'media_embed'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<pre><code>{}</code></pre>
 </div>
 </div>
 
@@ -680,8 +642,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./deng.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Why Data Engineering is so important?</span>
+      <a href="./deng-data-collection-html.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Collecting HTML Data</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
