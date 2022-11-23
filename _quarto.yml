@@ -76,3 +76,6 @@ website:
         - section: "Machine Learning Platforms"
           contents: 
             - section: "Databricks"
+              contents: 
+                - mlplatforms-databricks.qmd
+                

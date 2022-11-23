@@ -126,6 +126,27 @@
     "text": "The process of data engineering can be broken down into a few parts:\n\nData Collection\nData Cleaning\nData Preprocessing"
   },
   {
+    "objectID": "mlplatforms-databricks.html",
+    "href": "mlplatforms-databricks.html",
+    "title": "What is a data lakehouse?",
+    "section": "",
+    "text": "A data warehouse was designed to collect and consolidate the influx of data which was being generated and collected at high volumes and at a fast pace.\n\nMain advantages\n\ndata is in a production-ready state for business intelligence and analytics\ndata is structured and cleaned\nschemas are predefined\n\nMain disadvantages\n\nthey were not designed for semi-structured or unstructured data\nthey becomes very expensive if we try to store data that do not fit the schema (inflexible schemas)\nthey struggle with the volume, velocity, variety of big data and they usually take long processing time"
+  },
+  {
+    "objectID": "mlplatforms-databricks.html#data-lakes",
+    "href": "mlplatforms-databricks.html#data-lakes",
+    "title": "What is a data lakehouse?",
+    "section": "Data Lakes",
+    "text": "Data Lakes\nIn a data lake, structured, semi-structured and unstructured data can live simultaneously, collected in the volumes and speed necessary.\n\nMain advantages\n\nFlexible data storages, multiple data types can be stored in it\nCost efficiency in the cloud allows data streaming\nmain disadvantages of data warehouses are solved\n\nMain disadvantages\n\nNot support for transactional data\nDo not enforce data quality, so data reliability is questionable since there are several formats\nThen, data governance is a challenge as well as data privacy enforcement"
+  },
+  {
+    "objectID": "mlplatforms-databricks.html#data-lakehouses",
+    "href": "mlplatforms-databricks.html#data-lakehouses",
+    "title": "What is a data lakehouse?",
+    "section": "Data Lakehouses",
+    "text": "Data Lakehouses\n\nAll use cases (predictive modeling, SQL, BI, streaming, etc.) within a single platform\nOne security and governance approach for all data assets on all clouds\nOpen and reliable arquitecture which combines the benefits of a data warehouse and a data lake to efficiently handle all data types\nIt offers decoupled storage from compute, each operates on their own clusters, allowing them to scale independently to support specific needs\n\n\nDatabricks Lakehouse Platform\nFounded in 2013 by the creators of Apache Spark, Delta Lake and MLFlow.\n\nReliability and performance of Delta Lake\nGovernance for data and AI with Unity Catalog\nPersona-based uses cases for all data team members\nProvides instant and serverless compute, the compute layer is provided and managed by Databricks"
+  },
+  {
     "objectID": "production-ready-deploy-maintenance.html",
     "href": "production-ready-deploy-maintenance.html",
     "title": "Deployment and Maintenance",

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-11-15">
+<meta name="dcterms.date" content="2022-11-22">
 
-<title>DSML - Related - Virtual Private Cloud (VPC)</title>
+<title>DSML - Related - What is a data lakehouse?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./production-ready.html" rel="next">
-<link href="./aws-infra.html" rel="prev">
+<link href="./deng-data-cleaning.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Virtual Private Cloud (VPC)</h1>
+      <h1 class="quarto-secondary-nav-title">What is a data lakehouse?</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -165,12 +164,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Infrastructure</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Infrastructure</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aws-infra.html" class="sidebar-item-text sidebar-link">Global Infrastructure</a>
@@ -178,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-infra-vpc.html" class="sidebar-item-text sidebar-link active">Virtual Private Cloud (VPC)</a>
+  <a href="./aws-infra-vpc.html" class="sidebar-item-text sidebar-link">Virtual Private Cloud (VPC)</a>
   </div>
 </li>
       </ul>
@@ -293,15 +292,15 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">Databricks</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">Databricks</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mlplatforms-databricks.html" class="sidebar-item-text sidebar-link">What is a data lakehouse?</a>
+  <a href="./mlplatforms-databricks.html" class="sidebar-item-text sidebar-link active">What is a data lakehouse?</a>
   </div>
 </li>
       </ul>
@@ -318,7 +317,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Virtual Private Cloud (VPC)</h1>
+<h1 class="title d-none d-lg-block">What is a data lakehouse?</h1>
 </div>
 
 
@@ -329,7 +328,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 15, 2022</p>
+      <p class="date">November 22, 2022</p>
     </div>
   </div>
   
@@ -339,15 +338,63 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<ol type="1">
-<li><p>VPC _A VPC is a logically isolated section of the AWS cloud within a region where we can launch our own resources. _Within a VPC we can create our own networks using our own IP ranges. _A VPC sits within a region and we can have up to 5 VPCs within each region by default. _By default, one VPC is create by default in every one of those regions around the world. _Every VPC has a Classless Inter Domain Routing (CIDR) block.</p></li>
-<li><p>Subnets _Within a VPC we create public or private subnets which sits within AZs. _Then we launch our resources into the subnets. _Auto-assign public IPv4 will allow EC2 instances pick an IPv4 address automatically. _Each subnet will have a different block of addresses but they will be within the overall CIDR block of the VPC.</p></li>
-<li><p>VPC Router _The way we communicate between AZs and within subnets, whether they are in the same AZ or not, is through the VPC Router _Every VPC has a Route Table which has a IP address range which helps in the communication between all AZs (CIDR). _By defining the IP Range for the VPC, the route table will automatically be configured to route between all the AZs and subnets within the VPC</p></li>
-<li><p>Internet Gateway _It allows us to access the outside world. For example, send requests out to an Internet website through the IG _We need to specify the Internet Gateway ID and an IP address as a destination</p></li>
-<li><p>Incident Gateway _It allows us to be able to communicate outside of AWS to the Internet</p></li>
-</ol>
+<section id="data-warehouses" class="level2">
+<h2 class="anchored" data-anchor-id="data-warehouses">Data Warehouses</h2>
+<p>A data warehouse was designed to collect and consolidate the influx of data which was being generated and collected at high volumes and at a fast pace.</p>
+<ul>
+<li>Main advantages
+<ul>
+<li>data is in a production-ready state for business intelligence and analytics</li>
+<li>data is structured and cleaned</li>
+<li>schemas are predefined</li>
+</ul></li>
+<li>Main disadvantages
+<ul>
+<li>they were not designed for semi-structured or unstructured data</li>
+<li>they becomes very expensive if we try to store data that do not fit the schema (inflexible schemas)</li>
+<li>they struggle with the volume, velocity, variety of big data and they usually take long processing time</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-lakes" class="level2">
+<h2 class="anchored" data-anchor-id="data-lakes">Data Lakes</h2>
+<p>In a data lake, structured, semi-structured and unstructured data can live simultaneously, collected in the volumes and speed necessary.</p>
+<ul>
+<li>Main advantages
+<ul>
+<li>Flexible data storages, multiple data types can be stored in it</li>
+<li>Cost efficiency in the cloud allows data streaming</li>
+<li>main disadvantages of data warehouses are solved</li>
+</ul></li>
+<li>Main disadvantages
+<ul>
+<li>Not support for transactional data</li>
+<li>Do not enforce data quality, so data reliability is questionable since there are several formats</li>
+<li>Then, data governance is a challenge as well as data privacy enforcement</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-lakehouses" class="level2">
+<h2 class="anchored" data-anchor-id="data-lakehouses">Data <a href="https://www.databricks.com/research/lakehouse-a-new-generation-of-open-platforms-that-unify-data-warehousing-and-advanced-analytics">Lakehouses</a></h2>
+<ul>
+<li>All use cases (predictive modeling, SQL, BI, streaming, etc.) within a single platform</li>
+<li>One security and governance approach for <em>all</em> data assets on <em>all</em> clouds</li>
+<li>Open and reliable arquitecture which combines the benefits of a data warehouse and a data lake to efficiently handle all data types</li>
+<li>It offers decoupled storage from compute, each operates on their own clusters, allowing them to scale independently to support specific needs</li>
+</ul>
+<section id="databricks-lakehouse-platform" class="level3">
+<h3 class="anchored" data-anchor-id="databricks-lakehouse-platform">Databricks Lakehouse Platform</h3>
+<p>Founded in 2013 by the creators of Apache Spark, Delta Lake and MLFlow.</p>
+<ul>
+<li>Reliability and performance of Delta Lake</li>
+<li>Governance for data and AI with Unity Catalog</li>
+<li>Persona-based uses cases for all data team members</li>
+<li>Provides instant and serverless compute, the compute layer is provided and managed by Databricks</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -600,14 +647,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./aws-infra.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Global Infrastructure</span>
+      <a href="./deng-data-cleaning.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Cleaning Data</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./production-ready.html" class="pagination-link">
-        <span class="nav-page-text">Less Theory More Application</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

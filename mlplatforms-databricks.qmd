@@ -1,0 +1,50 @@
+---
+title: "What is a data lakehouse?"
+date: last-modified
+---
+
+## Data Warehouses
+
+A data warehouse was designed to collect and consolidate the influx of data which was being generated and collected at high volumes and at a fast pace. 
+
+- Main advantages
+  - data is in a production-ready state for business intelligence and analytics
+  - data is structured and cleaned
+  - schemas are predefined
+
+- Main disadvantages
+  - they were not designed for semi-structured or unstructured data
+  - they becomes very expensive if we try to store data that do not fit the schema (inflexible schemas)
+  - they struggle with the volume, velocity, variety of big data and they usually take long processing time
+
+## Data Lakes
+
+In a data lake, structured, semi-structured and unstructured data can live simultaneously, collected in the volumes and speed necessary.
+
+- Main advantages
+  - Flexible data storages, multiple data types can be stored in it
+  - Cost efficiency in the cloud allows data streaming
+  - main disadvantages of data warehouses are solved
+
+- Main disadvantages
+  - Not support for transactional data
+  - Do not enforce data quality, so data reliability is questionable since there are several formats 
+  - Then, data governance is a challenge as well as data privacy enforcement
+
+## Data [Lakehouses](https://www.databricks.com/research/lakehouse-a-new-generation-of-open-platforms-that-unify-data-warehousing-and-advanced-analytics)
+
+- All use cases (predictive modeling, SQL, BI, streaming, etc.) within a single platform
+- One security and governance approach for _all_ data assets on _all_ clouds
+- Open and reliable arquitecture which combines the benefits of a data warehouse and a data lake to efficiently handle all data types
+- It offers decoupled storage from compute, each operates on their own clusters, allowing them to scale independently to support specific needs
+
+
+### Databricks Lakehouse Platform
+
+Founded in 2013 by the creators of Apache Spark, Delta Lake and MLFlow. 
+
+- Reliability and performance of Delta Lake
+- Governance for data and AI with Unity Catalog
+- Persona-based uses cases for all data team members
+- Provides instant and serverless compute, the compute layer is provided and managed by Databricks
+
