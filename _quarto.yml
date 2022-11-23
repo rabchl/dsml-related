@@ -70,3 +70,9 @@ website:
             - deng-data-collection-html.ipynb
             - deng-data-collection-json.ipynb
             - deng-data-cleaning.ipynb
+          
+        - section: "Machine Learning Science"
+
+        - section: "Machine Learning Platforms"
+          contents: 
+            - section: "Databricks"
