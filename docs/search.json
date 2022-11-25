@@ -126,6 +126,20 @@
     "text": "The process of data engineering can be broken down into a few parts:\n\nData Collection\nData Cleaning\nData Preprocessing"
   },
   {
+    "objectID": "mlplatforms-databricks-arquitecture.html",
+    "href": "mlplatforms-databricks-arquitecture.html",
+    "title": "Arquitecture and Performance",
+    "section": "",
+    "text": "While data lakes are a great solution for holding large quantities of raw data, they lack important features for data reliability and quality. Also, data lakes do not offer as good of performance as that of data warehouses.\nProblems with data lakes related to data reliability - Lack of ACID transaction support. It makes it impossible to mix updates, appends and reads. - Lack of schema enforcement. It creates inconsistent and low quality data. - Lack of integration with a data catalog. It does not create a single source of truth.\nProblems with data lakes related to performance. Data is mostly kept in immutable files leading to - Ineffective partitioning. Partitioning tends to be ineffective if the wrong field was selected for partitioning or due to high cardenality columns. - Too many small files. Appending new data takes the shape of simply adding new files, usually small files.\n\n\n\n\nDelta Lake is a file-based open source storage format. It offers: - ACID transaction guarantees. No partial or corrupted files. - Scalable data and metadata handling. Spark scales out all the metadata processing. - Audit history and time travel. It provides a transaction log with details about every change to data which allows us to revert to earlier versions for rollback or to reproduce experiments. - Schema enforcement and schema evolution. - Unified streaming and batch data processing\nIt is compatible with Apache Spark, uses Delta Tables which are based on Apache Parquet. Delta Lake has a transaction log which converts it as the single source of truth. It makes it possible multi-user work.\n\n\n\nThe execution engine has to provide the same performance as a data warehouse, while still having the scalability of a data lake. Photon provides this. It is the next generation query engine.\nPhoton is compatible with Spark APIs, implementing a more general execution framework for efficient processing of data with support of the Spark APIs.\nWith Photon we see: - increased speed for use cases such as data ingestion, ETL, streaming, data science, and interactive queries"
+  },
+  {
+    "objectID": "mlplatforms-databricks-arquitecture.html#unified-governance-and-security",
+    "href": "mlplatforms-databricks-arquitecture.html#unified-governance-and-security",
+    "title": "Arquitecture and Performance",
+    "section": "Unified Governance and Security",
+    "text": "Unified Governance and Security"
+  },
+  {
     "objectID": "mlplatforms-databricks.html",
     "href": "mlplatforms-databricks.html",
     "title": "Data Lakehouse",

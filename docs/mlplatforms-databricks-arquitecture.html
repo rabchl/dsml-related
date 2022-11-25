@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-11-15">
+<meta name="dcterms.date" content="2022-11-25">
 
-<title>DSML - Related - Security Token Service (STS)</title>
+<title>DSML - Related - Arquitecture and Performance</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./aws-iam-sign-in-link.html" rel="next">
-<link href="./aws-iam-auth.html" rel="prev">
+<link href="./mlplatforms-databricks.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Security Token Service (STS)</h1>
+      <h1 class="quarto-secondary-nav-title">Arquitecture and Performance</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -120,12 +119,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">IAM</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">IAM</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aws-iam.html" class="sidebar-item-text sidebar-link">Identity and Access Management (IAM)</a>
@@ -138,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-iam-sts.html" class="sidebar-item-text sidebar-link active">Security Token Service (STS)</a>
+  <a href="./aws-iam-sts.html" class="sidebar-item-text sidebar-link">Security Token Service (STS)</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -293,12 +292,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">Databricks</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">Databricks</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mlplatforms-databricks.html" class="sidebar-item-text sidebar-link">Data Lakehouse</a>
@@ -306,7 +305,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mlplatforms-databricks-arquitecture.html" class="sidebar-item-text sidebar-link">Arquitecture and Performance</a>
+  <a href="./mlplatforms-databricks-arquitecture.html" class="sidebar-item-text sidebar-link active">Arquitecture and Performance</a>
   </div>
 </li>
       </ul>
@@ -323,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Security Token Service (STS)</h1>
+<h1 class="title d-none d-lg-block">Arquitecture and Performance</h1>
 </div>
 
 
@@ -334,7 +333,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 15, 2022</p>
+      <p class="date">November 25, 2022</p>
     </div>
   </div>
   
@@ -344,11 +343,31 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>A user may need some information that is only available at another account. How does this user access that information?</p>
-<p>User ————&gt; Role ————-&gt; AWS STS ——–&gt; Authentication ——–&gt; User ————&gt; Information</p>
-<p>_AWS STS is a web service that enables you to request temporary, limited-privilege credentials for IAM users or users that we authenticate (federated users) _In other words, users can have temporary, limited-privilege credentials for accessing certain services. _AWS STS is a global service, and they go to a single endpoint https://sts.amazonaws.com _By default, all regions are enabled for STS but can be disabled.</p>
+<section id="lack-of-data-reliability-and-performance" class="level2">
+<h2 class="anchored" data-anchor-id="lack-of-data-reliability-and-performance">Lack of Data Reliability and Performance</h2>
+<p>While data lakes are a great solution for holding large quantities of raw data, they lack important features for data reliability and quality. Also, data lakes do not offer as good of performance as that of data warehouses.</p>
+<p>Problems with data lakes related to data reliability - Lack of ACID transaction support. It makes it impossible to mix updates, appends and reads. - Lack of schema enforcement. It creates inconsistent and low quality data. - Lack of integration with a data catalog. It does not create a single source of truth.</p>
+<p>Problems with data lakes related to performance. Data is mostly kept in immutable files leading to - Ineffective partitioning. Partitioning tends to be ineffective if the wrong field was selected for partitioning or due to high cardenality columns. - Too many small files. Appending new data takes the shape of simply adding new files, usually small files.</p>
+<section id="how-dblp-solves-these-issues" class="level3">
+<h3 class="anchored" data-anchor-id="how-dblp-solves-these-issues">How DBLP solves these issues?</h3>
+<section id="delta-lake" class="level4">
+<h4 class="anchored" data-anchor-id="delta-lake">Delta Lake</h4>
+<p>Delta Lake is a file-based open source storage format. It offers: - ACID transaction guarantees. No partial or corrupted files. - Scalable data and metadata handling. Spark scales out all the metadata processing. - Audit history and time travel. It provides a transaction log with details about every change to data which allows us to revert to earlier versions for rollback or to reproduce experiments. - Schema enforcement and schema evolution. - Unified streaming and batch data processing</p>
+<p>It is compatible with Apache Spark, uses Delta Tables which are based on Apache Parquet. Delta Lake has a transaction log which converts it as the single source of truth. It makes it possible multi-user work.</p>
+</section>
+<section id="photon" class="level4">
+<h4 class="anchored" data-anchor-id="photon">Photon</h4>
+<p>The execution engine has to provide the same performance as a data warehouse, while still having the scalability of a data lake. Photon provides this. It is the next generation query engine.</p>
+<p>Photon is compatible with Spark APIs, implementing a more general execution framework for efficient processing of data with support of the Spark APIs.</p>
+<p>With Photon we see: - increased speed for use cases such as data ingestion, ETL, streaming, data science, and interactive queries</p>
+</section>
+</section>
+</section>
+<section id="unified-governance-and-security" class="level2">
+<h2 class="anchored" data-anchor-id="unified-governance-and-security">Unified Governance and Security</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -601,14 +620,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./aws-iam-auth.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">What can we use to authenticate to AWS?</span>
+      <a href="./mlplatforms-databricks.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Lakehouse</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./aws-iam-sign-in-link.html" class="pagination-link">
-        <span class="nav-page-text">Sign-in Link</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

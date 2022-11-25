@@ -78,4 +78,5 @@ website:
             - section: "Databricks"
               contents: 
                 - mlplatforms-databricks.qmd
+                - mlplatforms-databricks-arquitecture.qmd
                 
