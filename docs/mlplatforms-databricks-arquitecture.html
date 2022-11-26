@@ -31,6 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./mlplatforms-databricks-workloads-warehousing.html" rel="next">
 <link href="./mlplatforms-databricks.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -308,6 +309,21 @@ ul.task-list li input[type="checkbox"] {
   <a href="./mlplatforms-databricks-arquitecture.html" class="sidebar-item-text sidebar-link active">Arquitecture and Performance</a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">Workloads</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mlplatforms-databricks-workloads-warehousing.html" class="sidebar-item-text sidebar-link">Data Warehousing</a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
       </ul>
@@ -433,8 +449,34 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data-management-terminology" class="level2">
 <h2 class="anchored" data-anchor-id="data-management-terminology">Data Management Terminology</h2>
+<section id="metastore" class="level3">
+<h3 class="anchored" data-anchor-id="metastore">Metastore</h3>
+<p>It is the top-level logical container in Unity Catalog. It’s a construct that represents the metadata. Metadata is the information about the data objects being managed by the metastore.</p>
+</section>
+<section id="catalog" class="level3">
+<h3 class="anchored" data-anchor-id="catalog">Catalog</h3>
+<p>The next thing in the data object hierarchy is the catalog. It is the top-most container for data objects in Unity Catalog. A metastore can have as many catalogs as desired.</p>
+<p>The catalog forms the first part of the three-level namespace that data analysts use to reference data objects in Unity Catalog.</p>
+<pre class="{sql}"><code>SELECT * FROM catalog.schema.table</code></pre>
+</section>
+<section id="schema" class="level3">
+<h3 class="anchored" data-anchor-id="schema">Schema</h3>
+<p>It acts as a container for data assets like tables and views, and is the second part of the three-level namespace. Catalogs may contain many schemas as desired.</p>
+</section>
+<section id="table" class="level3">
+<h3 class="anchored" data-anchor-id="table">Table</h3>
+<p>SQL relations consisting of an ordered list of columns. Tables have two distinct elements: the metadata such as comments, tags, list of columns, associated data types, etc; and the data that populates the rows of the table. There are two types of table: managed table and external table</p>
+</section>
+<section id="views" class="level3">
+<h3 class="anchored" data-anchor-id="views">Views</h3>
+<p>They are stored queries executed when you query the view. They perform arbitrary SQL transformations on tables and other views. They are read-only.</p>
+</section>
+<section id="user-defined-functions" class="level3">
+<h3 class="anchored" data-anchor-id="user-defined-functions">User-defined functions</h3>
+<p>Custom functionality that can be invoke within queries.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -693,6 +735,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./mlplatforms-databricks-workloads-warehousing.html" class="pagination-link">
+        <span class="nav-page-text">Data Warehousing</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

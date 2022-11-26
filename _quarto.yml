@@ -79,4 +79,7 @@ website:
               contents: 
                 - mlplatforms-databricks.qmd
                 - mlplatforms-databricks-arquitecture.qmd
+                - section: "Workloads"
+                  contents: 
+                    - mlplatforms-databricks-workloads-warehousing.qmd
                 

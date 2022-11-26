@@ -151,7 +151,7 @@
     "href": "mlplatforms-databricks-arquitecture.html#data-management-terminology",
     "title": "Arquitecture and Performance",
     "section": "Data Management Terminology",
-    "text": "Data Management Terminology"
+    "text": "Data Management Terminology\n\nMetastore\nIt is the top-level logical container in Unity Catalog. It’s a construct that represents the metadata. Metadata is the information about the data objects being managed by the metastore.\n\n\nCatalog\nThe next thing in the data object hierarchy is the catalog. It is the top-most container for data objects in Unity Catalog. A metastore can have as many catalogs as desired.\nThe catalog forms the first part of the three-level namespace that data analysts use to reference data objects in Unity Catalog.\nSELECT * FROM catalog.schema.table\n\n\nSchema\nIt acts as a container for data assets like tables and views, and is the second part of the three-level namespace. Catalogs may contain many schemas as desired.\n\n\nTable\nSQL relations consisting of an ordered list of columns. Tables have two distinct elements: the metadata such as comments, tags, list of columns, associated data types, etc; and the data that populates the rows of the table. There are two types of table: managed table and external table\n\n\nViews\nThey are stored queries executed when you query the view. They perform arbitrary SQL transformations on tables and other views. They are read-only.\n\n\nUser-defined functions\nCustom functionality that can be invoke within queries."
   },
   {
     "objectID": "mlplatforms-databricks.html",
