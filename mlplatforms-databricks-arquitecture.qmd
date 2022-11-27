@@ -99,7 +99,8 @@ The next thing in the data object hierarchy is the catalog. It is the top-most c
 The catalog forms the first part of the three-level namespace that data analysts use to reference data objects in Unity Catalog.
 
 ```{sql}
-SELECT * FROM catalog.schema.table
+SELECT * 
+FROM catalog.schema.table
 ```
 
 ### Schema

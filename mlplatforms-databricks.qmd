@@ -3,48 +3,71 @@ title: "Data Lakehouse"
 date: last-modified
 ---
 
+Here we need to understand what a data lakehouse is as well as its origin and purpose. To do so, we need to study the history of data management and analytics since a data lakehouse solves many challenges of managing big data and improves the performance for many use cases.
+
 ## Data Warehouses
 
-A data warehouse was designed to collect and consolidate the influx of data which was being generated and collected at high volumes and at a fast pace. 
+One of the requisites for business success is the _ability to harness data-driven insights_ for business decisions and innovation. This motivated the creation of data warehouses or systems that could manage and analyze data that was drastically increasing in volume, velocity and variety. In other words, businees needed more than simple relational databases so data warehouses were designed to collect and consolidate this influx of data as well as provide support for BI and analytics.
 
-- Main advantages
-  - data is in a production-ready state for business intelligence and analytics
-  - data is structured and cleaned
-  - schemas are predefined
+- Properties:
+  - Data is _structured_ and cleaned with _predefined schemas_.
+  - Governance and security is given by Access-Control List (ACL) tables.
 
-- Main disadvantages
-  - they were not designed for semi-structured or unstructured data
-  - they becomes very expensive if we try to store data that do not fit the schema (inflexible schemas)
-  - they struggle with the volume, velocity, variety of big data and they usually take long processing time
+- Disadvantages:
+  - By construction, semi-structured or unstructured data is not supported.
+  - It becomes very expensive when trying to store or analyze any data that don't fit the schema.
+  - It coult take too much time to process data and provide results.
+  - Limited capabilities to handle data variety and velocity.
 
 ## Data Lakes
 
-In a data lake, structured, semi-structured and unstructured data can live simultaneously, collected in the volumes and speed necessary.
+The creation of data lakes arose by the necessity of having a system that could manage the volumes and speeds of multiple data types (structured, semi-structured and unstructured).
 
-- Main advantages
-  - Flexible data storages, multiple data types can be stored in it
-  - Cost efficiency in the cloud allows data streaming
-  - main disadvantages of data warehouses are solved
+- Properties:
+  - _Flexible_ data storages.
+  - Many different sources can be _streamed quickly and cheaply_ in low-cost cloud object stores.
+  - The storage dilemma of data warehouses is solved.
 
-- Main disadvantages
-  - Not support for transactional data
-  - Do not enforce data quality, so data reliability is questionable since there are several formats 
-  - Then, data governance is a challenge as well as data privacy enforcement
+- Disadvantages
+  - It is not supportive of transactional data.
+  - It can't enforce data quality, so data reliability of the data stored is questionable since there are several data formats.
+  - The performance of analysis is slower due to the large volume of data available.
+  - Data governance is a challenge as well as data privacy enforcement due to the unstructured nature of data.
 
 ## Data [Lakehouses](https://www.databricks.com/research/lakehouse-a-new-generation-of-open-platforms-that-unify-data-warehousing-and-advanced-analytics)
 
-- All use cases (predictive modeling, SQL, BI, streaming, etc.) within a single platform
-- One security and governance approach for _all_ data assets on _all_ clouds
-- Open and reliable arquitecture which combines the benefits of a data warehouse and a data lake to efficiently handle all data types
-- It offers decoupled storage from compute, each operates on their own clusters, allowing them to scale independently to support specific needs
+Since data lakes didn't fully replace data warehouses for reliable BI insights, businesses implemented _complex technology stack environments_. However, this introduces complexity and delay as data teams are stuck in _silos_.
 
+- Challenges
+  - Disjointed and duplicative data silos.
+  - Data has to be copied between the systems of the stack environment, impacting oversight and data usage governance.
+  - Cost of storing the same information many times.
+  - Delay actionable insights.
+
+Thus, businesses needed:
+
+- a single, flexible, high performance system to support the ever increasing use cases for data exploration, predictive modeling and predictive analytics.
+- systems to support data applications, including SQL analytics, real-time analysis, data science and machine learning.
 
 ### Databricks Lakehouse Platform
 
-Founded in 2013 by the creators of Apache Spark, Delta Lake and MLFlow. 
+The lakehouse platform is an open arquitecture which combines the analytical and control benefits of a data warehouse with the storage and flexible benefits of a data lake to efficiently handle all data types on all clouds for all use cases within a single platform, resulting in a single reliable source of truth.
+
+- Properties
+  - Transaction support, including ACID transactions for concurrent read/write interactions.
+  - Schema enforcement and governance for data integrity.
+  - Robust auditing needs.
+  - Data governance to support privacy regulation and data use metrics.
+  - BI support
+  - Decoupled storage from compute, each operating on their own clusters, allowing them to scale independently to support specific needs.
+  - Open storage formats such as Apache Parquet.
+  - Support for diverse data types.
+  - Support for diverse workloads.
+  - End-to-end streaming for real-time reports and analyses.
+
+The Databricks Lakehouse Platform (DBLP) was founded in 2013 by the creators of Apache Spark, Delta Lake and MLFlow.
 
 - Reliability and performance of Delta Lake
 - Governance for data and AI with Unity Catalog
 - Persona-based uses cases for all data team members
 - Provides instant and serverless compute, the compute layer is provided and managed by Databricks
-

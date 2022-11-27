@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2022-11-26">
 
-<title>DSML - Related - Data Lakehouse</title>
+<title>DSML - Related - Data Engineering</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./mlplatforms-databricks-arquitecture.html" rel="next">
-<link href="./deng-data-cleaning.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Data Lakehouse</h1>
+      <h1 class="quarto-secondary-nav-title">Data Engineering</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -293,15 +291,15 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">Databricks</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">Databricks</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mlplatforms-databricks.html" class="sidebar-item-text sidebar-link active">Data Lakehouse</a>
+  <a href="./mlplatforms-databricks.html" class="sidebar-item-text sidebar-link">Data Lakehouse</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -338,7 +336,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Data Lakehouse</h1>
+<h1 class="title d-none d-lg-block">Data Engineering</h1>
 </div>
 
 
@@ -359,90 +357,9 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Here we need to understand what a data lakehouse is as well as its origin and purpose. To do so, we need to study the history of data management and analytics since a data lakehouse solves many challenges of managing big data and improves the performance for many use cases.</p>
-<section id="data-warehouses" class="level2">
-<h2 class="anchored" data-anchor-id="data-warehouses">Data Warehouses</h2>
-<p>One of the requisites for business success is the <em>ability to harness data-driven insights</em> for business decisions and innovation. This motivated the creation of data warehouses or systems that could manage and analyze data that was drastically increasing in volume, velocity and variety. In other words, businees needed more than simple relational databases so data warehouses were designed to collect and consolidate this influx of data as well as provide support for BI and analytics.</p>
-<ul>
-<li>Properties:
-<ul>
-<li>Data is <em>structured</em> and cleaned with <em>predefined schemas</em>.</li>
-<li>Governance and security is given by Access-Control List (ACL) tables.</li>
-</ul></li>
-<li>Disadvantages:
-<ul>
-<li>By construction, semi-structured or unstructured data is not supported.</li>
-<li>It becomes very expensive when trying to store or analyze any data that don’t fit the schema.</li>
-<li>It coult take too much time to process data and provide results.</li>
-<li>Limited capabilities to handle data variety and velocity.</li>
-</ul></li>
-</ul>
-</section>
-<section id="data-lakes" class="level2">
-<h2 class="anchored" data-anchor-id="data-lakes">Data Lakes</h2>
-<p>The creation of data lakes arose by the necessity of having a system that could manage the volumes and speeds of multiple data types (structured, semi-structured and unstructured).</p>
-<ul>
-<li>Properties:
-<ul>
-<li><em>Flexible</em> data storages.</li>
-<li>Many different sources can be <em>streamed quickly and cheaply</em> in low-cost cloud object stores.</li>
-<li>The storage dilemma of data warehouses is solved.</li>
-</ul></li>
-<li>Disadvantages
-<ul>
-<li>It is not supportive of transactional data.</li>
-<li>It can’t enforce data quality, so data reliability of the data stored is questionable since there are several data formats.</li>
-<li>The performance of analysis is slower due to the large volume of data available.</li>
-<li>Data governance is a challenge as well as data privacy enforcement due to the unstructured nature of data.</li>
-</ul></li>
-</ul>
-</section>
-<section id="data-lakehouses" class="level2">
-<h2 class="anchored" data-anchor-id="data-lakehouses">Data <a href="https://www.databricks.com/research/lakehouse-a-new-generation-of-open-platforms-that-unify-data-warehousing-and-advanced-analytics">Lakehouses</a></h2>
-<p>Since data lakes didn’t fully replace data warehouses for reliable BI insights, businesses implemented <em>complex technology stack environments</em>. However, this introduces complexity and delay as data teams are stuck in <em>silos</em>.</p>
-<ul>
-<li>Challenges
-<ul>
-<li>Disjointed and duplicative data silos.</li>
-<li>Data has to be copied between the systems of the stack environment, impacting oversight and data usage governance.</li>
-<li>Cost of storing the same information many times.</li>
-<li>Delay actionable insights.</li>
-</ul></li>
-</ul>
-<p>Thus, businesses needed:</p>
-<ul>
-<li>a single, flexible, high performance system to support the ever increasing use cases for data exploration, predictive modeling and predictive analytics.</li>
-<li>systems to support data applications, including SQL analytics, real-time analysis, data science and machine learning.</li>
-</ul>
-<section id="databricks-lakehouse-platform" class="level3">
-<h3 class="anchored" data-anchor-id="databricks-lakehouse-platform">Databricks Lakehouse Platform</h3>
-<p>The lakehouse platform is an open arquitecture which combines the analytical and control benefits of a data warehouse with the storage and flexible benefits of a data lake to efficiently handle all data types on all clouds for all use cases within a single platform, resulting in a single reliable source of truth.</p>
-<ul>
-<li>Properties
-<ul>
-<li>Transaction support, including ACID transactions for concurrent read/write interactions.</li>
-<li>Schema enforcement and governance for data integrity.</li>
-<li>Robust auditing needs.</li>
-<li>Data governance to support privacy regulation and data use metrics.</li>
-<li>BI support</li>
-<li>Decoupled storage from compute, each operating on their own clusters, allowing them to scale independently to support specific needs.</li>
-<li>Open storage formats such as Apache Parquet.</li>
-<li>Support for diverse data types.</li>
-<li>Support for diverse workloads.</li>
-<li>End-to-end streaming for real-time reports and analyses.</li>
-</ul></li>
-</ul>
-<p>The Databricks Lakehouse Platform (DBLP) was founded in 2013 by the creators of Apache Spark, Delta Lake and MLFlow.</p>
-<ul>
-<li>Reliability and performance of Delta Lake</li>
-<li>Governance for data and AI with Unity Catalog</li>
-<li>Persona-based uses cases for all data team members</li>
-<li>Provides instant and serverless compute, the compute layer is provided and managed by Databricks</li>
-</ul>
+<p>A unified data platform with managed data ingestion, schema detection, enforcement, and evolution, paired with declarative, auto-scaling data flow integrated with a lakehouse native orchestrator that supports all kinds of workflows.</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -693,18 +610,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-page-right">
-  <div class="nav-page nav-page-previous">
-      <a href="./deng-data-cleaning.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Cleaning Data</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./mlplatforms-databricks-arquitecture.html" class="pagination-link">
-        <span class="nav-page-text">Arquitecture and Performance</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

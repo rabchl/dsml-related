@@ -1,0 +1,6 @@
+---
+title: "Data Engineering"
+date: last-modified
+---
+
+A unified data platform with managed data ingestion, schema detection, enforcement, and evolution, paired with declarative, auto-scaling data flow integrated with a lakehouse native orchestrator that supports all kinds of workflows.
