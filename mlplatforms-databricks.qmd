@@ -12,6 +12,7 @@ One of the requisites for business success is the _ability to harness data-drive
 - Properties:
   - Data is _structured_ and cleaned with _predefined schemas_.
   - Governance and security is given by Access-Control List (ACL) tables.
+  - Reliability, governance and performance.
 
 - Disadvantages:
   - By construction, semi-structured or unstructured data is not supported.
@@ -51,7 +52,7 @@ Thus, businesses needed:
 
 ### Databricks Lakehouse Platform
 
-The lakehouse platform is an open arquitecture which combines the analytical and control benefits of a data warehouse with the storage and flexible benefits of a data lake to efficiently handle all data types on all clouds for all use cases within a single platform, resulting in a single reliable source of truth.
+The lakehouse platform is an open arquitecture which combines the analytical and control benefits of a data warehouse with the storage and flexible benefits of a data lake to efficiently handle all data types on all clouds for all use cases within a single platform with a single security and governance model for all data assets, resulting in a single reliable source of truth.
 
 - Properties
   - Transaction support, including ACID transactions for concurrent read/write interactions.
@@ -65,9 +66,18 @@ The lakehouse platform is an open arquitecture which combines the analytical and
   - Support for diverse workloads.
   - End-to-end streaming for real-time reports and analyses.
 
-The Databricks Lakehouse Platform (DBLP) was founded in 2013 by the creators of Apache Spark, Delta Lake and MLFlow.
+Databricks was founded in 2013 by the creators of Apache Spark, Delta Lake and MLFlow. It is the inventor and pioneer of the data lakehouse arquitecture in 2021.
 
-- Reliability and performance of Delta Lake
-- Governance for data and AI with Unity Catalog
-- Persona-based uses cases for all data team members
-- Provides instant and serverless compute, the compute layer is provided and managed by Databricks
+The arquitectural features are _realized_ on the Databricks Lakehouse Platform, including:
+
+- Reliability and performance of Delta Lake as the Data Lake Foundation.
+- Fine-grain governance for data and AI with Unity Catalog.
+- Persona-based uses cases for all data team members.
+- Instant and serverless compute, the compute layer is provided and managed by Databricks on behalf of the customer.
+
+The benefits of DBLP
+
+- Combine the reliability, governance and security of data warehouses with the openness, flexibility and machine learning support of data lakes to provide a single platform that unifies data warehousing and AI use cases.
+- Eliminates the challenges caused by previous data environments such as data silos, complicated structures, and fractured governance and security structures.
+- It supports many workloads including data warehousing, data engineering, data streaming and data science and machine learning.
+- Provides flexibility to use the existing infraestructure and build a modern data stack with unrestricted access to open source data projects and the broad Databricks partner network.
