@@ -52,7 +52,7 @@ Thus, businesses needed:
 
 ### Databricks Lakehouse Platform
 
-The lakehouse platform is an open arquitecture which combines the analytical and control benefits of a data warehouse with the storage and flexible benefits of a data lake to efficiently handle all data types on all clouds for all use cases within a single platform with a single security and governance model for all data assets, resulting in a single reliable source of truth.
+The lakehouse platform is an open arquitecture which combines the analytical and control benefits of a data warehouse with the storage and flexible benefits of a data lake to efficiently handle all data types on all clouds for all use cases within a single platform with a one security and governance model for all data assets, resulting in a single reliable source of truth.
 
 - Properties
   - Transaction support, including ACID transactions for concurrent read/write interactions.
@@ -66,7 +66,7 @@ The lakehouse platform is an open arquitecture which combines the analytical and
   - Support for diverse workloads.
   - End-to-end streaming for real-time reports and analyses.
 
-Databricks was founded in 2013 by the creators of Apache Spark, Delta Lake and MLFlow. It is the inventor and pioneer of the data lakehouse arquitecture in 2021.
+Databricks was founded in 2013 by the creators of Apache Spark, Delta Lake and MLFlow. It was the inventor and pioneer of the data lakehouse arquitecture in 2021.
 
 The arquitectural features are _realized_ on the Databricks Lakehouse Platform, including:
 
