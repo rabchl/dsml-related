@@ -3,7 +3,7 @@ title: "Arquitecture"
 date: last-modified
 ---
 
-Here we describe the main aspects of the arquitecture behind the Databricks Lakehouse Platform. We start by showing how **Delta Lake** solves many issues related to data reliability and how **Photon** improves the performance of DBLP.
+Here we describe the main aspects of the arquitecture behind the Databricks Lakehouse Platform. We start by showing how **Delta Lake** solves many issues related to data reliability and how **Photon** improves the performance of DBLP. Then, we explain how DBLP solves many challenges of data governance and security with **Unity Catalog**, **Delta Sharing**, and the divided arquitecture into two planes: **Control Plane** and **Data Plane**.
 
 ## Data Reliability and Performance
 Data needs to be reliable and clean since it's the source for business insights. While data lakes are a great solution for holding large quantities of raw data, they lack important features for data reliability and quality (_data swamps_). Also, data lakes don't often offer as good of performance as that of data warehouses.
@@ -20,7 +20,7 @@ Problems with data lakes related to performance
 - Ineffective partitioning. Partitioning tends to be ineffective if the wrong field is selected for partitioning or due to high cardinality columns.
 - Too many small files. Appending new data takes the shape of simply adding new files, usually small. It is a known root of query performance degradation.
 
-#### Delta Lake
+### Delta Lake
 Delta Lake is a file-based open source storage format that runs on top of existing cloud data lakes. It is compatible with Apache Spark and uses Delta Tables which are based on Apache Parquet. Delta Tables provides versioning, reliability, metadata management, and time travel capabilities making all data types manageable. 
 
 Delta Lake offers
@@ -34,7 +34,7 @@ Delta Lake offers
 
 When users read a Delta Lake table for the first time or run a new query on an open table, Spark checks the transaction log for new transactions that have been posted to the table. If a change exists, Spark updates the table. This ensures users are working with the most up-to-date information and the user table is synchronized with the master record.
 
-#### Photon
+### Photon
 The DBLP arquitecture can pose challenges to the query execution engine for accessing and processing data, so the execution engine has to provide the same performance as a data warehouse, while still having the scalability of a data lake. Photon provides this.
 
 Photon is the next generation query engine and 
@@ -46,33 +46,30 @@ Photon is the next generation query engine and
 Photon is compatible with the Apache Spark Dataframes SQL APIs to allow workloads to run without having to make any code changes. It coordinates work and resources _transparently_, accelerating _portions_ of SQL and Spark queries without tuning or user intervention.
 
 ## Unified Governance and Security
+The more individual access points added to a system such as users, groups or external connectors, the higher the risk of data breaches along any of those lines.
 
-The more individual access points added to a system such as users, groups or external connectors, the higher the risk of data breaches.
+Challenges to data and AI governance
 
-Challenges to data and AI governance:
+- Diversity of data and AI assets. Data takes many forms beyond files and tables to complex structures such as dashboards, machine learning models, videos or images.
+- Disparate and incompatible data platforms. Data warehouses for BI and data lakes for AI, resulting in data duplication and unsynchronized governance models.
+- Rise of multi-cloud adoption. Each cloud has a unique governance model.
+- Fragmented tool usage for data governance. It introduces complexity and multiple integration points in the system, leading to poor performance.
 
-- Diversity of data and AI assets.
-- Disparate and incompatible data platforms.
-- Rise of multi-cloud adoption
-- Fragmented tool usage for data governance. It introduces complexity and multiple integration points in the system.
+### Unity Catalog
+A unified governance solution for all data assets.
 
-### How DBLP solves these issues?
-
-#### Unity Catalog
-A unified governance solution for all data assets
-
-#### Delta Sharing
-An open solution to securely share live data to any computing platform without copying it, with data being maintained on the provider's data lake. This ensures the datasets are reliable in real-time and provide the most current information to the data recipient.
+### Delta Sharing
+An open solution to securely _share live data_ to any computing platform without copying it, with data being maintained on the provider's data lake. This ensures the datasets are reliable in real-time and provide the most current information to the data recipient.
 
 It is a REST protocol that securely shares access to part of a cloud dataset.
 
-#### Control Plane and Data Plane
-The arquitecture of DBLP is divided into two separate planes: the control plane and the data plane, to simplify permission, avoid data duplication and reduce risk
+### Control Plane and Data Plane
+The arquitecture of DBLP is divided into two planes: the control plane and the data plane, to simplify permission, avoid data duplication and reduce risk
 
-##### Control Plane
+#### Control Plane
 It consists of the managed backend services that Databricks provides. This lives in Databricks' own cloud account. Here Databricks runs the workspace application and manages notebook, configuration, and clusters
 
-##### Data Plane
+#### Data Plane
 It is where the data is processed by clusters of compute resources (known as _classic data plane_). Unless we choose to use Serverless Compute, the compute resources in the data plane run inside the business owner's own cloud account.
 
 Databricks' clusters are typically short-lived, often terminated after a job, and do not persist data after termination. Code is launched in an unprivileged container to maintain system stability.

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-11-27">
+<meta name="dcterms.date" content="2022-11-30">
 
 <title>DSML - Related - Arquitecture</title>
 <style>
@@ -349,7 +349,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 27, 2022</p>
+      <p class="date">November 30, 2022</p>
     </div>
   </div>
   
@@ -359,7 +359,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Here we describe the main aspects of the arquitecture behind the Databricks Lakehouse Platform. We start by showing how <strong>Delta Lake</strong> solves many issues related to data reliability and how <strong>Photon</strong> improves the performance of DBLP.</p>
+<p>Here we describe the main aspects of the arquitecture behind the Databricks Lakehouse Platform. We start by showing how <strong>Delta Lake</strong> solves many issues related to data reliability and how <strong>Photon</strong> improves the performance of DBLP. Then, we explain how DBLP solves many challenges of data governance and security with <strong>Unity Catalog</strong>, <strong>Delta Sharing</strong>, and the divided arquitecture into two planes: <strong>Control Plane</strong> and <strong>Data Plane</strong>.</p>
 <section id="data-reliability-and-performance" class="level2">
 <h2 class="anchored" data-anchor-id="data-reliability-and-performance">Data Reliability and Performance</h2>
 <p>Data needs to be reliable and clean since it’s the source for business insights. While data lakes are a great solution for holding large quantities of raw data, they lack important features for data reliability and quality (<em>data swamps</em>). Also, data lakes don’t often offer as good of performance as that of data warehouses.</p>
@@ -375,8 +375,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Ineffective partitioning. Partitioning tends to be ineffective if the wrong field is selected for partitioning or due to high cardinality columns.</li>
 <li>Too many small files. Appending new data takes the shape of simply adding new files, usually small. It is a known root of query performance degradation.</li>
 </ul>
-<section id="delta-lake" class="level4">
-<h4 class="anchored" data-anchor-id="delta-lake">Delta Lake</h4>
+<section id="delta-lake" class="level3">
+<h3 class="anchored" data-anchor-id="delta-lake">Delta Lake</h3>
 <p>Delta Lake is a file-based open source storage format that runs on top of existing cloud data lakes. It is compatible with Apache Spark and uses Delta Tables which are based on Apache Parquet. Delta Tables provides versioning, reliability, metadata management, and time travel capabilities making all data types manageable.</p>
 <p>Delta Lake offers</p>
 <ul>
@@ -389,8 +389,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>When users read a Delta Lake table for the first time or run a new query on an open table, Spark checks the transaction log for new transactions that have been posted to the table. If a change exists, Spark updates the table. This ensures users are working with the most up-to-date information and the user table is synchronized with the master record.</p>
 </section>
-<section id="photon" class="level4">
-<h4 class="anchored" data-anchor-id="photon">Photon</h4>
+<section id="photon" class="level3">
+<h3 class="anchored" data-anchor-id="photon">Photon</h3>
 <p>The DBLP arquitecture can pose challenges to the query execution engine for accessing and processing data, so the execution engine has to provide the same performance as a data warehouse, while still having the scalability of a data lake. Photon provides this.</p>
 <p>Photon is the next generation query engine and</p>
 <ul>
@@ -403,38 +403,35 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="unified-governance-and-security" class="level2">
 <h2 class="anchored" data-anchor-id="unified-governance-and-security">Unified Governance and Security</h2>
-<p>The more individual access points added to a system such as users, groups or external connectors, the higher the risk of data breaches.</p>
-<p>Challenges to data and AI governance:</p>
+<p>The more individual access points added to a system such as users, groups or external connectors, the higher the risk of data breaches along any of those lines.</p>
+<p>Challenges to data and AI governance</p>
 <ul>
-<li>Diversity of data and AI assets.</li>
-<li>Disparate and incompatible data platforms.</li>
-<li>Rise of multi-cloud adoption</li>
-<li>Fragmented tool usage for data governance. It introduces complexity and multiple integration points in the system.</li>
+<li>Diversity of data and AI assets. Data takes many forms beyond files and tables to complex structures such as dashboards, machine learning models, videos or images.</li>
+<li>Disparate and incompatible data platforms. Data warehouses for BI and data lakes for AI, resulting in data duplication and unsynchronized governance models.</li>
+<li>Rise of multi-cloud adoption. Each cloud has a unique governance model.</li>
+<li>Fragmented tool usage for data governance. It introduces complexity and multiple integration points in the system, leading to poor performance.</li>
 </ul>
-<section id="how-dblp-solves-these-issues" class="level3">
-<h3 class="anchored" data-anchor-id="how-dblp-solves-these-issues">How DBLP solves these issues?</h3>
-<section id="unity-catalog" class="level4">
-<h4 class="anchored" data-anchor-id="unity-catalog">Unity Catalog</h4>
-<p>A unified governance solution for all data assets</p>
+<section id="unity-catalog" class="level3">
+<h3 class="anchored" data-anchor-id="unity-catalog">Unity Catalog</h3>
+<p>A unified governance solution for all data assets.</p>
 </section>
-<section id="delta-sharing" class="level4">
-<h4 class="anchored" data-anchor-id="delta-sharing">Delta Sharing</h4>
-<p>An open solution to securely share live data to any computing platform without copying it, with data being maintained on the provider’s data lake. This ensures the datasets are reliable in real-time and provide the most current information to the data recipient.</p>
+<section id="delta-sharing" class="level3">
+<h3 class="anchored" data-anchor-id="delta-sharing">Delta Sharing</h3>
+<p>An open solution to securely <em>share live data</em> to any computing platform without copying it, with data being maintained on the provider’s data lake. This ensures the datasets are reliable in real-time and provide the most current information to the data recipient.</p>
 <p>It is a REST protocol that securely shares access to part of a cloud dataset.</p>
 </section>
-<section id="control-plane-and-data-plane" class="level4">
-<h4 class="anchored" data-anchor-id="control-plane-and-data-plane">Control Plane and Data Plane</h4>
-<p>The arquitecture of DBLP is divided into two separate planes: the control plane and the data plane, to simplify permission, avoid data duplication and reduce risk</p>
-<section id="control-plane" class="level5">
-<h5 class="anchored" data-anchor-id="control-plane">Control Plane</h5>
+<section id="control-plane-and-data-plane" class="level3">
+<h3 class="anchored" data-anchor-id="control-plane-and-data-plane">Control Plane and Data Plane</h3>
+<p>The arquitecture of DBLP is divided into two planes: the control plane and the data plane, to simplify permission, avoid data duplication and reduce risk</p>
+<section id="control-plane" class="level4">
+<h4 class="anchored" data-anchor-id="control-plane">Control Plane</h4>
 <p>It consists of the managed backend services that Databricks provides. This lives in Databricks’ own cloud account. Here Databricks runs the workspace application and manages notebook, configuration, and clusters</p>
 </section>
-<section id="data-plane" class="level5">
-<h5 class="anchored" data-anchor-id="data-plane">Data Plane</h5>
+<section id="data-plane" class="level4">
+<h4 class="anchored" data-anchor-id="data-plane">Data Plane</h4>
 <p>It is where the data is processed by clusters of compute resources (known as <em>classic data plane</em>). Unless we choose to use Serverless Compute, the compute resources in the data plane run inside the business owner’s own cloud account.</p>
 <p>Databricks’ clusters are typically short-lived, often terminated after a job, and do not persist data after termination. Code is launched in an unprivileged container to maintain system stability.</p>
 <p>IAM instance profiles enable AWS clusters to assume an IAM Role, so users of that cluster automatically access allowed resources without explicit credentials</p>
-</section>
 </section>
 </section>
 </section>
