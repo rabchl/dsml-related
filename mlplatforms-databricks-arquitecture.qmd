@@ -140,12 +140,26 @@ With the classic data plane, compute resources are run in the business's cloud s
 
 Challenges of classic data plane:
 
-- Creating clusters is a complicated task. Choosing the correct size, instance type, and configuration.
-- Environment startup is slow after making the multitude of choices for the configuration.
-- Long running clusters
-- Over provisioning of resources.
+- Creating clusters is a complicated task. Choosing the correct size, instance type, and configuration for the cluster can be overwhelming.
+- Environment startup is slow after making the multitude of choices to configure and provision the cluster.
+- Costly behaviors, such as leaving clusters running for longer than necessary to avoid startup times and over provisiong of resources to ensure the cluster can handle spikes and data processing needs.
 
-Solution is the Databricks Serverless SQL, elastic, secure, instant compute and managed servers.
+### Serverless Data Plane
+Serverless Compute is a fully managed service that Databricks provisions and manages the compute resources for a business in the Databricks Cloud account instead of the business.
+
+- The environment starts immediately.
+- It is elastic so it scales up and down within seconds.
+- Clusters are available on-demand, and when finished, the resources are release back to Databricks.
+- Total cost of ownership decreases on average between 20-40%.
+- Admin overhead is eliminated.
+
+At the heart of Serverless Compute is a fleet of database clusters that are always running unassigned to any customer, waiting in a warm state, ready to be assigned within seconds. It has three layers of isolation
+
+- The container hosting the runtime
+- The virtual machine, hosting the container
+- Virtual network for the workspace.
+
+Each part is isolated with no sharing or cross-network traffic allowed, ensuring our work is secure.
 
 ## Data Management Terminology
 

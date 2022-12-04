@@ -511,12 +511,28 @@ ul.task-list li input[type="checkbox"] {
 <p>With the classic data plane, compute resources are run in the business’s cloud storage account, and clusters perform distributed data analysis using queries in the Databricks SQL workspace or notebooks in the data science and engineering or Databricks machine learning environments.</p>
 <p>Challenges of classic data plane:</p>
 <ul>
-<li>Creating clusters is a complicated task. Choosing the correct size, instance type, and configuration.</li>
-<li>Environment startup is slow after making the multitude of choices for the configuration.</li>
-<li>Long running clusters</li>
-<li>Over provisioning of resources.</li>
+<li>Creating clusters is a complicated task. Choosing the correct size, instance type, and configuration for the cluster can be overwhelming.</li>
+<li>Environment startup is slow after making the multitude of choices to configure and provision the cluster.</li>
+<li>Costly behaviors, such as leaving clusters running for longer than necessary to avoid startup times and over provisiong of resources to ensure the cluster can handle spikes and data processing needs.</li>
 </ul>
-<p>Solution is the Databricks Serverless SQL, elastic, secure, instant compute and managed servers.</p>
+<section id="serverless-data-plane" class="level3">
+<h3 class="anchored" data-anchor-id="serverless-data-plane">Serverless Data Plane</h3>
+<p>Serverless Compute is a fully managed service that Databricks provisions and manages the compute resources for a business in the Databricks Cloud account instead of the business.</p>
+<ul>
+<li>The environment starts immediately.</li>
+<li>It is elastic so it scales up and down within seconds.</li>
+<li>Clusters are available on-demand, and when finished, the resources are release back to Databricks.</li>
+<li>Total cost of ownership decreases on average between 20-40%.</li>
+<li>Admin overhead is eliminated.</li>
+</ul>
+<p>At the heart of Serverless Compute is a fleet of database clusters that are always running unassigned to any customer, waiting in a warm state, ready to be assigned within seconds. It has three layers of isolation</p>
+<ul>
+<li>The container hosting the runtime</li>
+<li>The virtual machine, hosting the container</li>
+<li>Virtual network for the workspace.</li>
+</ul>
+<p>Each part is isolated with no sharing or cross-network traffic allowed, ensuring our work is secure.</p>
+</section>
 </section>
 <section id="data-management-terminology" class="level2">
 <h2 class="anchored" data-anchor-id="data-management-terminology">Data Management Terminology</h2>
