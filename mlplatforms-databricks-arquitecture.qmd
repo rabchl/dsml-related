@@ -55,26 +55,83 @@ Challenges to data and AI governance
 - Rise of multi-cloud adoption. Each cloud has a unique governance model.
 - Fragmented tool usage for data governance. It introduces complexity and multiple integration points in the system, leading to poor performance.
 
+DBLP provides solutions for these challenges.
+
 ### Unity Catalog
-A unified governance solution for all data assets.
+A unified governance solution for all data assets. It provides a common governance model based on ANSI SQL to define and enforce fine-grained access control on all data and AI assets on any cloud. This enables better native performance, management, and security across clouds.
+
+- The common metatada layer for cross-workspace metadata is at the account level. It provides a single access point with a common interface for collaboration from any workspace in the platform, removing data team silos.
+- Unity Catalog allows us to restrict access to certain rows and columns to users or groups authorized to query them.
+- With attribute based access control, we can further simplify governance at scale by controlling access to multiple data items at one time.
+- Unity Catalog provides a highly detailed audit trail logging who has performed what action against the data 
+- Unity Calotog has an user interface for data search and discovery, so this way it breaks down data silos and democratized data across the organization.
+- The low latency metadata serving and auto tuning of tables enables Unity Catalog to provide 38 times faster metadata processing compared to Hive metastore.
+- All the transformations and refinements of data is encompassed in **data lineage**. All of the interactions with data, including where it came from , what other datasets it might have been combined with, who created it and when, what transformations were performed, and other events and attributes are included in a dataset's data lineage.
 
 ### Delta Sharing
-An open solution to securely _share live data_ to any computing platform without copying it, with data being maintained on the provider's data lake. This ensures the datasets are reliable in real-time and provide the most current information to the data recipient.
+An open solution to securely _share live data_ to any computing platform. 
 
-It is a REST protocol that securely shares access to part of a cloud dataset.
+Benefits
 
-### Control Plane and Data Plane
-The arquitecture of DBLP is divided into two planes: the control plane and the data plane, to simplify permission, avoid data duplication and reduce risk
+- Open cross-platform sharing, allowing us to share existing data in Delta Lake and Apache Parquet formats without having to establish new ingestion processes to consume data since it provides native integration with many tools.
+- Data is shared live without copying it, with data being maintained and governed on the provider's data lake. This ensures the datasets are reliable in real-time and provide the most current information to the data recipient. Recipients dont have to be on the same cloud or even use the DBLP.
+- It provides centralized administration and governance to the data provider as the data is governed, tracked, and audited from a single location.
+- It is safe and secure with privacy-safe data clean rooms. This means collaboration between data providers and recipients is hosted in a secure environment while safeguarding data privacy.
+- It is a REST protocol that securely shares access to part of a cloud dataset.
+
+### Divided Security Arquitecture
+DBLP provides security by dividing the arquitecture into two separate planes: the control plane and the data plane.
 
 #### Control Plane
-It consists of the managed backend services that Databricks provides. This lives in Databricks' own cloud account. Here Databricks runs the workspace application and manages notebook, configuration, and clusters
+It consists of the managed backend services that Databricks provides. This lives in Databricks' own cloud account and are aligned with whatever cloud service the customer is using. Here Databricks runs the workspace application and manages notebook, logs, configuration, user information and clusters.
 
 #### Data Plane
-It is where the data is processed by clusters of compute resources (known as _classic data plane_). Unless we choose to use Serverless Compute, the compute resources in the data plane run inside the business owner's own cloud account.
+It is where the data is processed by clusters of compute resources (known as _classic data plane_). Unless we choose to use Serverless Compute, the compute resources in the data plane run inside the business owner's own cloud account. 
 
-Databricks' clusters are typically short-lived, often terminated after a job, and do not persist data after termination. Code is launched in an unprivileged container to maintain system stability.
+##### Security of the Data Plane
+Security key points: Networking, Servers, Databricks. 
 
-IAM instance profiles enable AWS clusters to assume an IAM Role, so users of that cluster automatically access allowed resources without explicit credentials
+- **_For the networking of the environment_**, if the business decides to host the data plane, Databricks will configure the networking by default. The serverless data plane networking infrastructure is managed by Databricks in a Databricks cloud service provider account and shared among customers with additional network boundaries between workspaces and clusters.
+- **_For servers_**, Databricks' clusters are run using the lastest hardened system images. Databricks' clusters are typically short-lived, often terminated after a job, and do not persist data after termination. Code is launched in an unprivileged container to maintain system stability. This security design provides protection against persistent attackers and privilege scalation.
+- **_For Databricks' support cases_**, Databricks' access to the environment is limited to cloud service provider APIs for automation and support access. Databricks has a custom-built system, allowing their staff access to fix issues or handle support requests, and it requires either a support ticket or an engineering ticket tied expressly to our workspace. Access is limited to a specific group of employees for limited periods of time. Besides, with security audit logs, the initial access event and the support team members actions are tracked.
+
+### User Identity and Access
+
+- Table ACLs feature uses traditional SQL-based statements to manage access to data and enable fine-grained view-based access.
+- IAM instance profiles enable AWS clusters to assume an IAM Role, so users of that cluster automatically access allowed resources without explicit credentials.
+- External storage can be mounted in access using a securely stored access key.
+- Secrets API separates credentials from code when accessing external resources
+
+### Data Security
+Databricks provides encryption, isolation, and auditing throughout the governance and security structure. User can also be isolated at different levels such as
+
+- The workspace level, where each team or department uses a different workspace.
+- The cluster level, where clusters ACLs can restrict users who attach notebooks to a given cluster. For high concurrency clusters, process isolation, JVM white listings and language limitations can be used for safe coexistence of users with different access levels. Single user clusters, if permitted, allow users to create a private dedicated cluster.
+
+Databricks encryption capabilities are in place both at rest and in motion
+
+- For data-at-rest encryption
+  - Control plane is encrypted.
+  - Data plane supports local encryption.
+  - Customers can use encrypted storage buckets.
+  - Customers at some tiers can configure customer-managed keys for managed services.
+
+- For data-in-motion encryption
+  - Communication between control plane and data plane is encrypted.
+  - Offers optional intra-cluster encryption.
+  - Customer code can be written to avoid unencrypted services (e.g., FTP)
+
+### Compliance
+
+- SOC 2 Type II
+- ISO 27001
+- ISO 27017
+- ISO 27018
+- FedRAMP High
+- HITRUST
+- HiPAA
+- PCI
+- GDPR and CCPA ready
 
 
 ## Instant Compute and Serverless
