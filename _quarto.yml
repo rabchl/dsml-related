@@ -82,4 +82,8 @@ website:
                 - section: "Workloads"
                   contents: 
                     - mlplatforms-databricks-workloads-warehousing.qmd
+
+        - section: "Tools & Resources"
+          contents: 
+            - tools-mlops.qmd
                 

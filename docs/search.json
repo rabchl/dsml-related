@@ -252,6 +252,13 @@
     "text": "Overview of Machine Learning Projects\nIn general, machine learning projects can be split into the following phases:\n\nProject planning\nBuilding MVPs\nBuilding FFPs\nDeployment and maintenance\nProject evaluation"
   },
   {
+    "objectID": "tools-mlops.html",
+    "href": "tools-mlops.html",
+    "title": "MLOps",
+    "section": "",
+    "text": "Weights & Biases\nPapermill"
+  },
+  {
     "objectID": "venv-conda.html",
     "href": "venv-conda.html",
     "title": "Setting up virtual environments with conda",
