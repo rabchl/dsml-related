@@ -163,13 +163,24 @@ Each part is isolated with no sharing or cross-network traffic allowed, ensuring
 
 ## Data Management Terminology
 
+Unity Catalog provides a common governance model to define and enforce fine-grained access control on all data and AI assets on any cloud. It supports one consistent place for governing all workspaces to discover access and share data, enabling better native performance, management and security across clouds. Key elements of Unity Catalog are metastore, catalogs, schemas, tables, views and functions.
+
 ### Metastore
-It is the top-level logical container in Unity Catalog. It's a construct that represents the metadata. Metadata is the information about the data objects being managed by the metastore.
+It is the top-level logical container in Unity Catalog. It's a construct that represents the metadata. Metadata is the information about the data objects being managed by the metastore and the ACLs governing those lists.
+
+### Storage Credentials
+Created by admins and are used to authenticate with cloud storage containers, either external storage, user supplied storage or the managed storage location for the metastore.
+
+### External Location
+It is used to provide access control at the file level.
+
+### Share and Recipient
+Related to Delta Sharing. It is used to explicitly declare shares, read only logical collections of tables. These can be shared with one or more recipients inside or outside the organization. Shares can be used for two main purposes, namely, to secure shared data outside the organization in a performant way, or to provide linkage between metastores and different parts of the world.
 
 ### Catalog
-The next thing in the data object hierarchy is the catalog. It is the top-most container for data objects in Unity Catalog. A metastore can have as many catalogs as desired.
+The next thing in the addressable data object hierarchy is the catalog. It is the top-most container for data objects in Unity Catalog. A metastore can have as many catalogs as desired, although only those with appropriate permissions can create them.
 
-The catalog forms the first part of the three-level namespace that data analysts use to reference data objects in Unity Catalog.
+The catalog forms the first part of the _three-level namespace_ that data analysts use to reference data objects in Unity Catalog. Unity Catalog introduces a third level to provide improved data segregation capabilities.
 
 ```{sql}
 SELECT * 
@@ -177,13 +188,13 @@ FROM catalog.schema.table
 ```
 
 ### Schema
-It acts as a container for data assets like tables and views, and is the second part of the three-level namespace. Catalogs may contain many schemas as desired.
+It acts as a container for data assets like tables and views, and is the second part of the three-level namespace. Catalogs may contain many schemas as desired. A schema is part of traditional SQL and is unchanged by Unity Catalog.
 
 ### Table
-SQL relations consisting of an ordered list of columns. Tables have two distinct elements: the metadata such as comments, tags, list of columns, associated data types, etc; and the data that populates the rows of the table. There are two types of table: managed table and external table
+SQL relations consisting of an ordered list of columns. Tables are defined by two distinct elements: the metadata such as comments, tags, list of columns, associated data types, etc; and the data that populates the rows of the table. There are two types of table in the structure: managed table and external table both with the metadata managed by the metastore in the control plane, the difference lies in where the data is stored. In the former, data files are stored in the metastores managed stores location. For the latter, data files is stored in an external storage location.
 
 ### Views
-They are stored queries executed when you query the view. They perform arbitrary SQL transformations on tables and other views. They are read-only.
+They are stored queries executed when you query the view. They perform arbitrary SQL transformations on tables and other views. They are read-only. They do not have the ability to modify the underlying data.
 
 ### User-defined functions
-Custom functionality that can be invoke within queries.
+It allows us to encapsulate custom functionality that can be invoke within queries.

@@ -551,32 +551,45 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data-management-terminology" class="level2">
 <h2 class="anchored" data-anchor-id="data-management-terminology">Data Management Terminology</h2>
+<p>Unity Catalog provides a common governance model to define and enforce fine-grained access control on all data and AI assets on any cloud. It supports one consistent place for governing all workspaces to discover access and share data, enabling better native performance, management and security across clouds. Key elements of Unity Catalog are metastore, catalogs, schemas, tables, views and functions.</p>
 <section id="metastore" class="level3">
 <h3 class="anchored" data-anchor-id="metastore">Metastore</h3>
-<p>It is the top-level logical container in Unity Catalog. It’s a construct that represents the metadata. Metadata is the information about the data objects being managed by the metastore.</p>
+<p>It is the top-level logical container in Unity Catalog. It’s a construct that represents the metadata. Metadata is the information about the data objects being managed by the metastore and the ACLs governing those lists.</p>
+</section>
+<section id="storage-credentials" class="level3">
+<h3 class="anchored" data-anchor-id="storage-credentials">Storage Credentials</h3>
+<p>Created by admins and are used to authenticate with cloud storage containers, either external storage, user supplied storage or the managed storage location for the metastore.</p>
+</section>
+<section id="external-location" class="level3">
+<h3 class="anchored" data-anchor-id="external-location">External Location</h3>
+<p>It is used to provide access control at the file level.</p>
+</section>
+<section id="share-and-recipient" class="level3">
+<h3 class="anchored" data-anchor-id="share-and-recipient">Share and Recipient</h3>
+<p>Related to Delta Sharing. It is used to explicitly declare shares, read only logical collections of tables. These can be shared with one or more recipients inside or outside the organization. Shares can be used for two main purposes, namely, to secure shared data outside the organization in a performant way, or to provide linkage between metastores and different parts of the world.</p>
 </section>
 <section id="catalog" class="level3">
 <h3 class="anchored" data-anchor-id="catalog">Catalog</h3>
-<p>The next thing in the data object hierarchy is the catalog. It is the top-most container for data objects in Unity Catalog. A metastore can have as many catalogs as desired.</p>
-<p>The catalog forms the first part of the three-level namespace that data analysts use to reference data objects in Unity Catalog.</p>
+<p>The next thing in the addressable data object hierarchy is the catalog. It is the top-most container for data objects in Unity Catalog. A metastore can have as many catalogs as desired, although only those with appropriate permissions can create them.</p>
+<p>The catalog forms the first part of the <em>three-level namespace</em> that data analysts use to reference data objects in Unity Catalog. Unity Catalog introduces a third level to provide improved data segregation capabilities.</p>
 <pre class="{sql}"><code>SELECT * 
 FROM catalog.schema.table</code></pre>
 </section>
 <section id="schema" class="level3">
 <h3 class="anchored" data-anchor-id="schema">Schema</h3>
-<p>It acts as a container for data assets like tables and views, and is the second part of the three-level namespace. Catalogs may contain many schemas as desired.</p>
+<p>It acts as a container for data assets like tables and views, and is the second part of the three-level namespace. Catalogs may contain many schemas as desired. A schema is part of traditional SQL and is unchanged by Unity Catalog.</p>
 </section>
 <section id="table" class="level3">
 <h3 class="anchored" data-anchor-id="table">Table</h3>
-<p>SQL relations consisting of an ordered list of columns. Tables have two distinct elements: the metadata such as comments, tags, list of columns, associated data types, etc; and the data that populates the rows of the table. There are two types of table: managed table and external table</p>
+<p>SQL relations consisting of an ordered list of columns. Tables are defined by two distinct elements: the metadata such as comments, tags, list of columns, associated data types, etc; and the data that populates the rows of the table. There are two types of table in the structure: managed table and external table both with the metadata managed by the metastore in the control plane, the difference lies in where the data is stored. In the former, data files are stored in the metastores managed stores location. For the latter, data files is stored in an external storage location.</p>
 </section>
 <section id="views" class="level3">
 <h3 class="anchored" data-anchor-id="views">Views</h3>
-<p>They are stored queries executed when you query the view. They perform arbitrary SQL transformations on tables and other views. They are read-only.</p>
+<p>They are stored queries executed when you query the view. They perform arbitrary SQL transformations on tables and other views. They are read-only. They do not have the ability to modify the underlying data.</p>
 </section>
 <section id="user-defined-functions" class="level3">
 <h3 class="anchored" data-anchor-id="user-defined-functions">User-defined functions</h3>
-<p>Custom functionality that can be invoke within queries.</p>
+<p>It allows us to encapsulate custom functionality that can be invoke within queries.</p>
 
 
 </section>
