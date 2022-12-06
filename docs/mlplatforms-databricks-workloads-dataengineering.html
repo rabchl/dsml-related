@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-11-26">
+<meta name="dcterms.date" content="2022-12-05">
 
 <title>DSML - Related - Data Engineering</title>
 <style>
@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./mlplatforms-databricks-workloads-datastreaming.html" rel="next">
+<link href="./mlplatforms-databricks-workloads-warehousing.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -291,12 +293,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">Databricks</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">Databricks</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mlplatforms-databricks.html" class="sidebar-item-text sidebar-link">Data Lakehouse</a>
@@ -309,15 +311,30 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">Workloads</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">Workloads</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mlplatforms-databricks-workloads-warehousing.html" class="sidebar-item-text sidebar-link">Data Warehousing</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mlplatforms-databricks-workloads-dataengineering.html" class="sidebar-item-text sidebar-link active">Data Engineering</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mlplatforms-databricks-workloads-datastreaming.html" class="sidebar-item-text sidebar-link">Data Streaming</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mlplatforms-databricks-workloads-machinelearning.html" class="sidebar-item-text sidebar-link">Machine Learning</a>
   </div>
 </li>
       </ul>
@@ -362,7 +379,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 26, 2022</p>
+      <p class="date">December 5, 2022</p>
     </div>
   </div>
   
@@ -372,9 +389,49 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>A unified data platform with managed data ingestion, schema detection, enforcement, and evolution, paired with declarative, auto-scaling data flow integrated with a lakehouse native orchestrator that supports all kinds of workflows.</p>
+<p>The data engineering workload focuses around ingesting data coming from many sources, transforming it, and <strong>orchestrating</strong> it out to the different data teams that utilize it for day-to-day insights, innovation, and tasks.</p>
+<p>Challenges for the data engineering workload</p>
+<ul>
+<li>Complex data ingestion methods. Use of an always-running streaming platform or keep track of which files haven’t been ingested yet or having to spend time hand-coding error prone repetitive data ingestion tasks.</li>
+<li>Data engineering principles need to be supported such as agile development methods, isolated development and production environments, CI/CD, and version control transformations.</li>
+<li>Third-party orchestration tools increases complexity.</li>
+<li>Performance tuning of pipelines and architectures requires knowledge of the underlying arquitecture and constantly observing throughput parameters.</li>
+</ul>
+<p>DBLP offers</p>
+<ul>
+<li>A unified data platform with managed data ingestion, schema detection, enforcement, and evolution, paired with declarative, auto-scaling data flow integrated with a lakehouse native orchestrator that supports all kinds of workflows.</li>
+</ul>
+<p>Benefits of using data engineering on the lakehouse</p>
+<ul>
+<li>Easy data ingestion</li>
+<li>Automated ETL pipelines</li>
+<li>Data quality checks. Errors can be automatically address so data teams can confidently trust the information they are using.</li>
+<li>Batch and streaming data latency can be tuned with cost controls without data engineers having to know complex stream processing details.</li>
+<li>Automatic recovery.</li>
+<li>Data pipeline observability. It allows data engineers to monitor overall data pipeline status and visually track pipeline health.</li>
+<li>Simplified operations for deploying data pipelines to production or for rolling back.</li>
+<li>Scheduling and orchestration.</li>
+</ul>
+<p>Data engineering on the lakehouse</p>
+<ul>
+<li>BRONZE: Raw ingestion and history</li>
+<li>SILVER: Filtered, cleaned, augmented</li>
+<li>GOLD: Business-level aggregates</li>
+</ul>
+<p>Ingestion and transformation with Delta Live Tables and the orchestration is given by Databricks Workflows.</p>
+<p>As data loads into the Delta Lake Lakehouse, Databricks automatically infers the schema and evolves it as the data come in.</p>
+<p><strong>Auto Loader</strong>, an optmized data ingestion tool that processes new data files as they arrive in the lakehouse cloud storage. It auto detects the schema and enforces it on your data guaranteeing data quality.</p>
+<p>COPY INTO SQL command follows the lake-first approach and loads data from a folder into a Delta Lake table. When run, only new files from the source will be processed.</p>
+<section id="delta-live-tables" class="level2">
+<h2 class="anchored" data-anchor-id="delta-live-tables">Delta Live Tables</h2>
+<p>Data engineering time is spent on tooling and managing infrastructure instead of transformation. Delta Live Tables (DLT) uses a simple declarative approach to build reliable data pipelines. DLT automatically auto scale the infrastructure so we can focus on data transformations. Engineers treat their data as code and apply software engineering best practices to deploy reliable pipelines at scale.</p>
+</section>
+<section id="databricks-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="databricks-workflows">Databricks Workflows</h2>
+<p>Fully managed orchestration services embedded in DBLP.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -625,6 +682,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation column-page-right">
+  <div class="nav-page nav-page-previous">
+      <a href="./mlplatforms-databricks-workloads-warehousing.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Warehousing</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./mlplatforms-databricks-workloads-datastreaming.html" class="pagination-link">
+        <span class="nav-page-text">Data Streaming</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

@@ -3,3 +3,11 @@ title: "Data Warehousing"
 date: last-modified
 ---
 
+When we refer to data warehousing workload, we are referencing SQL analytics and BI tasks, such as ingesting, transforming and querying data, building dashboards and delivering business insights. DBLP supports theses tasks with Databricks SQL and Databricks Serverless SQL.
+
+Benefits
+
+- Best price for performance. Cloud data warehouses provide greater scale and elasticity needed to handle the rapid influx of new data.
+- Built-in governance. Delta Lake and Unity Catalog.
+- A rich ecosystem. Many tools for BI.
+- Break down of silos.

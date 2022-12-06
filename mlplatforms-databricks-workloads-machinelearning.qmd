@@ -1,0 +1,14 @@
+---
+title: "Machine Learning"
+date: last-modified
+---
+
+Challenges to successful machine learning and AI endeavors
+
+- Siloed and disparate data systems.
+- Complex experimentation environments.
+- Getting models served to a production setting.
+- Many tools available.
+- Experiments are hard to track
+- Reproducing results is difficult.
+- ML is hard to deploy.

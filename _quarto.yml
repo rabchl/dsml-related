@@ -82,6 +82,9 @@ website:
                 - section: "Workloads"
                   contents: 
                     - mlplatforms-databricks-workloads-warehousing.qmd
+                    - mlplatforms-databricks-workloads-dataengineering.qmd
+                    - mlplatforms-databricks-workloads-datastreaming.qmd
+                    - mlplatforms-databricks-workloads-machinelearning.qmd
 
         - section: "Tools & Resources"
           contents: 

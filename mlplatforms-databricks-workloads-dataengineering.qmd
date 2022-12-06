@@ -3,4 +3,48 @@ title: "Data Engineering"
 date: last-modified
 ---
 
-A unified data platform with managed data ingestion, schema detection, enforcement, and evolution, paired with declarative, auto-scaling data flow integrated with a lakehouse native orchestrator that supports all kinds of workflows.
+The data engineering workload focuses around ingesting data coming from many sources, transforming it, and **orchestrating** it out to the different data teams that utilize it for day-to-day insights, innovation, and tasks.
+
+Challenges for the data engineering workload
+
+- Complex data ingestion methods. Use of an always-running streaming platform or keep track of which files haven't been ingested yet or having to spend time hand-coding error prone repetitive data ingestion tasks.
+- Data engineering principles need to be supported such as agile development methods, isolated development and production environments, CI/CD, and version control transformations.
+- Third-party orchestration tools increases complexity.
+- Performance tuning of pipelines and architectures requires knowledge of the underlying arquitecture and constantly observing throughput parameters.
+
+DBLP offers
+
+- A unified data platform with managed data ingestion, schema detection, enforcement, and evolution, paired with declarative, auto-scaling data flow integrated with a lakehouse native orchestrator that supports all kinds of workflows.
+
+Benefits of using data engineering on the lakehouse
+
+- Easy data ingestion
+- Automated ETL pipelines
+- Data quality checks. Errors can be automatically address so data teams can confidently trust the information they are using.
+- Batch and streaming data latency can be tuned with cost controls without data engineers having to know complex stream processing details.
+- Automatic recovery.
+- Data pipeline observability. It allows data engineers to monitor overall data pipeline status and visually track pipeline health.
+- Simplified operations for deploying data pipelines to production or for rolling back.
+- Scheduling and orchestration.
+
+Data engineering on the lakehouse
+
+- BRONZE: Raw ingestion and history
+- SILVER: Filtered, cleaned, augmented
+- GOLD: Business-level aggregates
+
+Ingestion and transformation with Delta Live Tables and the orchestration is given by Databricks Workflows.
+
+As data loads into the Delta Lake Lakehouse, Databricks automatically infers the schema and evolves it as the data come in.
+
+**Auto Loader**, an optmized data ingestion tool that processes new data files as they arrive in the lakehouse cloud storage. It auto detects the schema and enforces it on your data guaranteeing data quality.
+
+COPY INTO SQL command follows the lake-first approach and loads data from a folder into a Delta Lake table. When run, only new files from the source will be processed.
+
+## Delta Live Tables
+
+Data engineering time is spent on tooling and managing infrastructure instead of transformation. Delta Live Tables (DLT) uses a simple declarative approach to build reliable data pipelines. DLT automatically auto scale the infrastructure so we can focus on data transformations. Engineers treat their data as code and apply software engineering best practices to deploy reliable pipelines at scale. 
+
+## Databricks Workflows
+
+Fully managed orchestration services embedded in DBLP.

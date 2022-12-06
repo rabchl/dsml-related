@@ -165,7 +165,63 @@
     "href": "mlplatforms-databricks-workloads-dataengineering.html",
     "title": "Data Engineering",
     "section": "",
-    "text": "A unified data platform with managed data ingestion, schema detection, enforcement, and evolution, paired with declarative, auto-scaling data flow integrated with a lakehouse native orchestrator that supports all kinds of workflows."
+    "text": "The data engineering workload focuses around ingesting data coming from many sources, transforming it, and orchestrating it out to the different data teams that utilize it for day-to-day insights, innovation, and tasks.\nChallenges for the data engineering workload\nDBLP offers\nBenefits of using data engineering on the lakehouse\nData engineering on the lakehouse\nIngestion and transformation with Delta Live Tables and the orchestration is given by Databricks Workflows.\nAs data loads into the Delta Lake Lakehouse, Databricks automatically infers the schema and evolves it as the data come in.\nAuto Loader, an optmized data ingestion tool that processes new data files as they arrive in the lakehouse cloud storage. It auto detects the schema and enforces it on your data guaranteeing data quality.\nCOPY INTO SQL command follows the lake-first approach and loads data from a folder into a Delta Lake table. When run, only new files from the source will be processed."
+  },
+  {
+    "objectID": "mlplatforms-databricks-workloads-dataengineering.html#delta-live-tables",
+    "href": "mlplatforms-databricks-workloads-dataengineering.html#delta-live-tables",
+    "title": "Data Engineering",
+    "section": "Delta Live Tables",
+    "text": "Delta Live Tables\nData engineering time is spent on tooling and managing infrastructure instead of transformation. Delta Live Tables (DLT) uses a simple declarative approach to build reliable data pipelines. DLT automatically auto scale the infrastructure so we can focus on data transformations. Engineers treat their data as code and apply software engineering best practices to deploy reliable pipelines at scale."
+  },
+  {
+    "objectID": "mlplatforms-databricks-workloads-dataengineering.html#databricks-workflows",
+    "href": "mlplatforms-databricks-workloads-dataengineering.html#databricks-workflows",
+    "title": "Data Engineering",
+    "section": "Databricks Workflows",
+    "text": "Databricks Workflows\nFully managed orchestration services embedded in DBLP."
+  },
+  {
+    "objectID": "mlplatforms-databricks-workloads-datastreaming.html",
+    "href": "mlplatforms-databricks-workloads-datastreaming.html",
+    "title": "Data Streaming",
+    "section": "",
+    "text": "Explosion of real-time data and businesses require this data."
+  },
+  {
+    "objectID": "mlplatforms-databricks-workloads-datastreaming.html#real-time-analytics",
+    "href": "mlplatforms-databricks-workloads-datastreaming.html#real-time-analytics",
+    "title": "Data Streaming",
+    "section": "Real-Time Analytics",
+    "text": "Real-Time Analytics\nAnalyze streaming data for instant insights and faster decisions."
+  },
+  {
+    "objectID": "mlplatforms-databricks-workloads-datastreaming.html#real-time-machine-learning",
+    "href": "mlplatforms-databricks-workloads-datastreaming.html#real-time-machine-learning",
+    "title": "Data Streaming",
+    "section": "Real-Time Machine Learning",
+    "text": "Real-Time Machine Learning\nTrain models on the freshest data. Score in real-time."
+  },
+  {
+    "objectID": "mlplatforms-databricks-workloads-datastreaming.html#real-time-applications",
+    "href": "mlplatforms-databricks-workloads-datastreaming.html#real-time-applications",
+    "title": "Data Streaming",
+    "section": "Real-Time Applications",
+    "text": "Real-Time Applications\nEmbed automatic and real-time actions into business applications."
+  },
+  {
+    "objectID": "mlplatforms-databricks-workloads-machinelearning.html",
+    "href": "mlplatforms-databricks-workloads-machinelearning.html",
+    "title": "Machine Learning",
+    "section": "",
+    "text": "Challenges to successful machine learning and AI endeavors\n\nSiloed and disparate data systems.\nComplex experimentation environments.\nGetting models served to a production setting.\nMany tools available.\nExperiments are hard to track\nReproducing results is difficult.\nML is hard to deploy."
+  },
+  {
+    "objectID": "mlplatforms-databricks-workloads-warehousing.html",
+    "href": "mlplatforms-databricks-workloads-warehousing.html",
+    "title": "Data Warehousing",
+    "section": "",
+    "text": "When we refer to data warehousing workload, we are referencing SQL analytics and BI tasks, such as ingesting, transforming and querying data, building dashboards and delivering business insights. DBLP supports theses tasks with Databricks SQL and Databricks Serverless SQL.\nBenefits\n\nBest price for performance. Cloud data warehouses provide greater scale and elasticity needed to handle the rapid influx of new data.\nBuilt-in governance. Delta Lake and Unity Catalog.\nA rich ecosystem. Many tools for BI.\nBreak down of silos."
   },
   {
     "objectID": "mlplatforms-databricks.html",

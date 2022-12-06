@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-11-15">
+<meta name="dcterms.date" content="2022-12-05">
 
-<title>DSML - Related - What can we use to authenticate to AWS?</title>
+<title>DSML - Related - Machine Learning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./aws-iam-sts.html" rel="next">
-<link href="./aws-iam.html" rel="prev">
+<link href="./tools-mlops.html" rel="next">
+<link href="./mlplatforms-databricks-workloads-datastreaming.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">What can we use to authenticate to AWS?</h1>
+      <h1 class="quarto-secondary-nav-title">Machine Learning</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -120,12 +120,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">IAM</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">IAM</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./aws-iam.html" class="sidebar-item-text sidebar-link">Identity and Access Management (IAM)</a>
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-iam-auth.html" class="sidebar-item-text sidebar-link active">What can we use to authenticate to AWS?</a>
+  <a href="./aws-iam-auth.html" class="sidebar-item-text sidebar-link">What can we use to authenticate to AWS?</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -293,12 +293,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">Databricks</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">Databricks</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mlplatforms-databricks.html" class="sidebar-item-text sidebar-link">Data Lakehouse</a>
@@ -311,12 +311,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">Workloads</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">Workloads</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mlplatforms-databricks-workloads-warehousing.html" class="sidebar-item-text sidebar-link">Data Warehousing</a>
@@ -334,7 +334,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mlplatforms-databricks-workloads-machinelearning.html" class="sidebar-item-text sidebar-link">Machine Learning</a>
+  <a href="./mlplatforms-databricks-workloads-machinelearning.html" class="sidebar-item-text sidebar-link active">Machine Learning</a>
   </div>
 </li>
       </ul>
@@ -368,7 +368,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">What can we use to authenticate to AWS?</h1>
+<h1 class="title d-none d-lg-block">Machine Learning</h1>
 </div>
 
 
@@ -379,7 +379,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 15, 2022</p>
+      <p class="date">December 5, 2022</p>
     </div>
   </div>
   
@@ -389,24 +389,16 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<ol type="1">
-<li>IAM Access Keys _It is composed of:
+<p>Challenges to successful machine learning and AI endeavors</p>
 <ul>
-<li>An access key ID</li>
-<li>A secret access key _We use it for programmatic access to AWS. For example if we are using the command line interface to launch a service on AWS we would need to have an access key to be able to authenticate. _We use it for the API and when accessing AWS via the SDK _We can add MFA protection to the API calls. _We put these keys in program code or at a command prompt when using the AWS CLI or the AWS PowerShell tools. IMPORTANT: We can create, modify, view or rotate access keys.</li>
-</ul></li>
-<li>IAM Console Password
-<ul>
-<li>User account will have a password.</li>
-<li>We use a username and a password to access the AWS Management Console (Visual Interface in which we can interact with AWS)</li>
-<li>This can be also protected with MFA.</li>
-</ul></li>
-<li>IAM Server Certificate / Signing Certificate
-<ul>
-<li>Secure Sockets Layer (SSL) / Transport Layer Security (TLS) certificates that we can use to authenticate with some AWS services</li>
-<li>We can provision, manage and deploy this authentication using the AWS Certificate Manager (ACM).</li>
-</ul></li>
-</ol>
+<li>Siloed and disparate data systems.</li>
+<li>Complex experimentation environments.</li>
+<li>Getting models served to a production setting.</li>
+<li>Many tools available.</li>
+<li>Experiments are hard to track</li>
+<li>Reproducing results is difficult.</li>
+<li>ML is hard to deploy.</li>
+</ul>
 
 
 
@@ -661,13 +653,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./aws-iam.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Identity and Access Management (IAM)</span>
+      <a href="./mlplatforms-databricks-workloads-datastreaming.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Streaming</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./aws-iam-sts.html" class="pagination-link">
-        <span class="nav-page-text">Security Token Service (STS)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tools-mlops.html" class="pagination-link">
+        <span class="nav-page-text">MLOps</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,19 @@
+---
+title: "Data Streaming"
+date: last-modified
+---
+
+Explosion of real-time data and businesses require this data.
+
+- Build streaming pipelines and applications faster.
+- Simplify operations with automation.
+- Unified governance for real time and historical data.
+
+## Real-Time Analytics
+Analyze streaming data for instant insights and faster decisions.
+
+## Real-Time Machine Learning
+Train models on the freshest data. Score in real-time.
+
+## Real-Time Applications
+Embed automatic and real-time actions into business applications.
