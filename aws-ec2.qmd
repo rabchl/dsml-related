@@ -1,0 +1,82 @@
+---
+title: "Elastic Compute Cloud"
+date: last-modified
+---
+
+It is an elastic service that allows us to launch compute resources on the AWS Cloud. These compute resources are called "instances" and they are very similar to virtual machines (VMs) (VMware or hyper-V infrastructure on prem)
+
+Each instance has:
+
+- An operating system
+- Some storage
+- Certain amount of virtual hardware associated with it including:
+  - CPU
+  - RAM
+  - Network capabilities
+        
+## Lauching an instance
+
+1. Choose an Amazon Machine Image (AMI)
+
+  - An AMI is a template that contains the configuration for our instance. Templates with OSs and sotfware.
+
+2. Choose the instance type to get the correct virtual hardware configuration we need (CPU, memory, storage and network performance)
+  
+  - They are optimized for different use cases
+    - Compute optimized
+    - Memory optimized
+    - Storage optimized
+    - GPU instances
+    - Machine Learning ASIC instances
+    - General purpose
+    - Micro instances
+
+## Types of launching instances
+
+1. On-demand, we create and delete them at any time
+
+2. Reserved Instances
+  - Purchase a reserved instance and we can choose the amount of time that we want to reserve it for. We pay for the instances for that period of time.
+  - For this commitment, we get a big discount (Up to 75% off the on-demand price)
+
+3. Spot request
+  - Purchase some spare capacity on AWS (capacity that is not being used) at a much discount rate. If somebody wants to pay the full rate, AWS will shutdown the spot instances.
+  - The state of the processed can be saved somewhere to avoid problems after shutdown.
+
+4. Saving Plans
+
+5. Dedicated Hosts
+  - A physical server in EC2 dedicated for us. The underlying hardware is dedicated to us.
+
+6. Scheduled Instances
+
+  - Instances on a recurring basis
+
+7. Capacity reservations
+  - Reserved some capacity for when we actually need that capacity
+    
+    
+We attached an Internet Gateway to a public subnet.
+We have an entry in the route table that points to that IG.
+Our EC2 instances have public IP addresses (must have).
+The route table is assigned to the public subnet.
+
+
+Step by step
+
+  - Click on Launch Instance
+  - Give a name or tag to the instance. A tag is a label that you assign to an AWS resource. Each tag consists of a key and an optional value, both of which you define.
+  - Choose an OS Image (Amazon Machine Image). An AMI is a template that contains the software configuration (operating system, application server, and applications) required to launch your instance.
+  - Select an instance type that meets your computing, memory, networking, or storage needs.
+  - Choose the network settings.
+  - Configure storage.
+
+```console
+foo@bar:~$ cd ./path/to/pemfile
+foo@bar:~$ ssh ec2-user@PublicIP -i kp.pem
+```
+
+```console
+foo@bar:~$ sudo su
+foo@bar:~$ yum update -y
+```

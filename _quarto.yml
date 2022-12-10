@@ -48,6 +48,11 @@ website:
               contents:
                 - aws-infra.qmd
                 - aws-infra-vpc.qmd
+            - section: "EC2"
+              contents:
+                - aws-ec2.qmd
+                - aws-ec2-ebs.qmd
+                - aws-ec2-security.qmd
 
         - section: "Production-Ready Development"
           contents:
@@ -83,7 +88,7 @@ website:
                   contents: 
                     - mlplatforms-databricks-workloads-warehousing.qmd
                     - mlplatforms-databricks-workloads-dataengineering.qmd
-                    - mlplatforms-databricks-workloads-datastreaming.qmd
+                    - mlplatforms-databricks-workloads-streaming.qmd
                     - mlplatforms-databricks-workloads-machinelearning.qmd
 
         - section: "Tools & Resources"

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-12-05">
+<meta name="dcterms.date" content="2022-12-10">
 
-<title>DSML - Related - Data Streaming</title>
+<title>DSML - Related - Elastic Compute Cloud</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./mlplatforms-databricks-workloads-machinelearning.html" rel="next">
-<link href="./mlplatforms-databricks-workloads-dataengineering.html" rel="prev">
+<link href="./aws-ec2-ebs.html" rel="next">
+<link href="./aws-infra-vpc.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Data Streaming</h1>
+      <h1 class="quarto-secondary-nav-title">Elastic Compute Cloud</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -183,16 +183,41 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
+          <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Production-Ready Development</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">EC2</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aws-ec2.html" class="sidebar-item-text sidebar-link active">Elastic Compute Cloud</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aws-ec2-ebs.html" class="sidebar-item-text sidebar-link">Elastic Block Store</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aws-ec2-security.html" class="sidebar-item-text sidebar-link">Security</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Production-Ready Development</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./production-ready.html" class="sidebar-item-text sidebar-link">Less Theory More Application</a>
@@ -200,12 +225,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Machine Learning Projects</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">Machine Learning Projects</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./production-ready-planning.html" class="sidebar-item-text sidebar-link">Effective Project Planning</a>
@@ -237,12 +262,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Environments</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">Environments</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./venv-conda.html" class="sidebar-item-text sidebar-link">Setting up virtual environments with conda</a>
@@ -252,12 +277,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">Data Engineering</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">Data Engineering</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./deng.html" class="sidebar-item-text sidebar-link">Why Data Engineering is so important?</a>
@@ -285,20 +310,20 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">Machine Learning Platforms</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">Databricks</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">Machine Learning Platforms</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">Databricks</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mlplatforms-databricks.html" class="sidebar-item-text sidebar-link">Data Lakehouse</a>
@@ -311,12 +336,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">Workloads</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">Workloads</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mlplatforms-databricks-workloads-warehousing.html" class="sidebar-item-text sidebar-link">Data Warehousing</a>
@@ -329,7 +354,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mlplatforms-databricks-workloads-datastreaming.html" class="sidebar-item-text sidebar-link active">Data Streaming</a>
+  <a href="./mlplatforms-databricks-workloads-streaming.html" class="sidebar-item-text sidebar-link">Data Streaming</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -345,12 +370,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">Tools &amp; Resources</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true">Tools &amp; Resources</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tools-mlops.html" class="sidebar-item-text sidebar-link">MLOps</a>
@@ -368,7 +393,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Data Streaming</h1>
+<h1 class="title d-none d-lg-block">Elastic Compute Cloud</h1>
 </div>
 
 
@@ -379,7 +404,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 5, 2022</p>
+      <p class="date">December 10, 2022</p>
     </div>
   </div>
   
@@ -389,23 +414,92 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Explosion of real-time data and businesses require this data.</p>
+<p>It is an elastic service that allows us to launch compute resources on the AWS Cloud. These compute resources are called “instances” and they are very similar to virtual machines (VMs) (VMware or hyper-V infrastructure on prem)</p>
+<p>Each instance has:</p>
 <ul>
-<li>Build streaming pipelines and applications faster.</li>
-<li>Simplify operations with automation.</li>
-<li>Unified governance for real time and historical data.</li>
+<li>An operating system</li>
+<li>Some storage</li>
+<li>Certain amount of virtual hardware associated with it including:
+<ul>
+<li>CPU</li>
+<li>RAM</li>
+<li>Network capabilities</li>
+</ul></li>
 </ul>
-<section id="real-time-analytics" class="level2">
-<h2 class="anchored" data-anchor-id="real-time-analytics">Real-Time Analytics</h2>
-<p>Analyze streaming data for instant insights and faster decisions.</p>
+<section id="lauching-an-instance" class="level2">
+<h2 class="anchored" data-anchor-id="lauching-an-instance">Lauching an instance</h2>
+<ol type="1">
+<li>Choose an Amazon Machine Image (AMI)</li>
+</ol>
+<ul>
+<li>An AMI is a template that contains the configuration for our instance. Templates with OSs and sotfware.</li>
+</ul>
+<ol start="2" type="1">
+<li>Choose the instance type to get the correct virtual hardware configuration we need (CPU, memory, storage and network performance)</li>
+</ol>
+<ul>
+<li>They are optimized for different use cases
+<ul>
+<li>Compute optimized</li>
+<li>Memory optimized</li>
+<li>Storage optimized</li>
+<li>GPU instances</li>
+<li>Machine Learning ASIC instances</li>
+<li>General purpose</li>
+<li>Micro instances</li>
+</ul></li>
+</ul>
 </section>
-<section id="real-time-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="real-time-machine-learning">Real-Time Machine Learning</h2>
-<p>Train models on the freshest data. Score in real-time.</p>
-</section>
-<section id="real-time-applications" class="level2">
-<h2 class="anchored" data-anchor-id="real-time-applications">Real-Time Applications</h2>
-<p>Embed automatic and real-time actions into business applications.</p>
+<section id="types-of-launching-instances" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-launching-instances">Types of launching instances</h2>
+<ol type="1">
+<li><p>On-demand, we create and delete them at any time</p></li>
+<li><p>Reserved Instances</p></li>
+</ol>
+<ul>
+<li>Purchase a reserved instance and we can choose the amount of time that we want to reserve it for. We pay for the instances for that period of time.</li>
+<li>For this commitment, we get a big discount (Up to 75% off the on-demand price)</li>
+</ul>
+<ol start="3" type="1">
+<li>Spot request</li>
+</ol>
+<ul>
+<li>Purchase some spare capacity on AWS (capacity that is not being used) at a much discount rate. If somebody wants to pay the full rate, AWS will shutdown the spot instances.</li>
+<li>The state of the processed can be saved somewhere to avoid problems after shutdown.</li>
+</ul>
+<ol start="4" type="1">
+<li><p>Saving Plans</p></li>
+<li><p>Dedicated Hosts</p></li>
+</ol>
+<ul>
+<li>A physical server in EC2 dedicated for us. The underlying hardware is dedicated to us.</li>
+</ul>
+<ol start="6" type="1">
+<li>Scheduled Instances</li>
+</ol>
+<ul>
+<li>Instances on a recurring basis</li>
+</ul>
+<ol start="7" type="1">
+<li>Capacity reservations</li>
+</ol>
+<ul>
+<li>Reserved some capacity for when we actually need that capacity</li>
+</ul>
+<p>We attached an Internet Gateway to a public subnet. We have an entry in the route table that points to that IG. Our EC2 instances have public IP addresses (must have). The route table is assigned to the public subnet.</p>
+<p>Step by step</p>
+<ul>
+<li>Click on Launch Instance</li>
+<li>Give a name or tag to the instance. A tag is a label that you assign to an AWS resource. Each tag consists of a key and an optional value, both of which you define.</li>
+<li>Choose an OS Image (Amazon Machine Image). An AMI is a template that contains the software configuration (operating system, application server, and applications) required to launch your instance.</li>
+<li>Select an instance type that meets your computing, memory, networking, or storage needs.</li>
+<li>Choose the network settings.</li>
+<li>Configure storage.</li>
+</ul>
+<pre class="console"><code>foo@bar:~$ cd ./path/to/pemfile
+foo@bar:~$ ssh ec2-user@PublicIP -i kp.pem</code></pre>
+<pre class="console"><code>foo@bar:~$ sudo su
+foo@bar:~$ yum update -y</code></pre>
 
 
 </section>
@@ -661,13 +755,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./mlplatforms-databricks-workloads-dataengineering.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Engineering</span>
+      <a href="./aws-infra-vpc.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Virtual Private Cloud (VPC)</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./mlplatforms-databricks-workloads-machinelearning.html" class="pagination-link">
-        <span class="nav-page-text">Machine Learning</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./aws-ec2-ebs.html" class="pagination-link">
+        <span class="nav-page-text">Elastic Block Store</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

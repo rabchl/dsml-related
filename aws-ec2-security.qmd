@@ -1,0 +1,12 @@
+---
+title: "Security"
+date: last-modified
+---
+
+## Security Groups 
+
+- They are instance-level firewalls
+
+## Elastic IPs
+
+- They are static public IP addresses that we can allocate to our account

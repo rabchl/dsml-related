@@ -1,0 +1,8 @@
+---
+title: "Elastic Block Store"
+date: last-modified
+---
+
+- It is the underlying storage that is used with EC2 instances.
+- This is block-based storage and we can choose from a different types of EBS Volumes (SSDs and HDDs)
+- In some cases we can choose the IOPS (Input/Output Per Second)value

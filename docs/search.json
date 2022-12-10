@@ -7,6 +7,48 @@
     "text": "There will be several topics on the sidebar, choose one then copy, learn, find errors and improve."
   },
   {
+    "objectID": "aws-ec2-ebs.html",
+    "href": "aws-ec2-ebs.html",
+    "title": "Elastic Block Store",
+    "section": "",
+    "text": "It is the underlying storage that is used with EC2 instances.\nThis is block-based storage and we can choose from a different types of EBS Volumes (SSDs and HDDs)\nIn some cases we can choose the IOPS (Input/Output Per Second)value"
+  },
+  {
+    "objectID": "aws-ec2-security.html",
+    "href": "aws-ec2-security.html",
+    "title": "Security",
+    "section": "",
+    "text": "They are instance-level firewalls"
+  },
+  {
+    "objectID": "aws-ec2-security.html#elastic-ips",
+    "href": "aws-ec2-security.html#elastic-ips",
+    "title": "Security",
+    "section": "Elastic IPs",
+    "text": "Elastic IPs\n\nThey are static public IP addresses that we can allocate to our account"
+  },
+  {
+    "objectID": "aws-ec2.html",
+    "href": "aws-ec2.html",
+    "title": "Elastic Compute Cloud",
+    "section": "",
+    "text": "It is an elastic service that allows us to launch compute resources on the AWS Cloud. These compute resources are called “instances” and they are very similar to virtual machines (VMs) (VMware or hyper-V infrastructure on prem)\nEach instance has:"
+  },
+  {
+    "objectID": "aws-ec2.html#lauching-an-instance",
+    "href": "aws-ec2.html#lauching-an-instance",
+    "title": "Elastic Compute Cloud",
+    "section": "Lauching an instance",
+    "text": "Lauching an instance\n\nChoose an Amazon Machine Image (AMI)\n\n\nAn AMI is a template that contains the configuration for our instance. Templates with OSs and sotfware.\n\n\nChoose the instance type to get the correct virtual hardware configuration we need (CPU, memory, storage and network performance)\n\n\nThey are optimized for different use cases\n\nCompute optimized\nMemory optimized\nStorage optimized\nGPU instances\nMachine Learning ASIC instances\nGeneral purpose\nMicro instances"
+  },
+  {
+    "objectID": "aws-ec2.html#types-of-launching-instances",
+    "href": "aws-ec2.html#types-of-launching-instances",
+    "title": "Elastic Compute Cloud",
+    "section": "Types of launching instances",
+    "text": "Types of launching instances\n\nOn-demand, we create and delete them at any time\nReserved Instances\n\n\nPurchase a reserved instance and we can choose the amount of time that we want to reserve it for. We pay for the instances for that period of time.\nFor this commitment, we get a big discount (Up to 75% off the on-demand price)\n\n\nSpot request\n\n\nPurchase some spare capacity on AWS (capacity that is not being used) at a much discount rate. If somebody wants to pay the full rate, AWS will shutdown the spot instances.\nThe state of the processed can be saved somewhere to avoid problems after shutdown.\n\n\nSaving Plans\nDedicated Hosts\n\n\nA physical server in EC2 dedicated for us. The underlying hardware is dedicated to us.\n\n\nScheduled Instances\n\n\nInstances on a recurring basis\n\n\nCapacity reservations\n\n\nReserved some capacity for when we actually need that capacity\n\nWe attached an Internet Gateway to a public subnet. We have an entry in the route table that points to that IG. Our EC2 instances have public IP addresses (must have). The route table is assigned to the public subnet.\nStep by step\n\nClick on Launch Instance\nGive a name or tag to the instance. A tag is a label that you assign to an AWS resource. Each tag consists of a key and an optional value, both of which you define.\nChoose an OS Image (Amazon Machine Image). An AMI is a template that contains the software configuration (operating system, application server, and applications) required to launch your instance.\nSelect an instance type that meets your computing, memory, networking, or storage needs.\nChoose the network settings.\nConfigure storage.\n\nfoo@bar:~$ cd ./path/to/pemfile\nfoo@bar:~$ ssh ec2-user@PublicIP -i kp.pem\nfoo@bar:~$ sudo su\nfoo@bar:~$ yum update -y"
+  },
+  {
     "objectID": "aws-iam-auth.html",
     "href": "aws-iam-auth.html",
     "title": "What can we use to authenticate to AWS?",
@@ -182,39 +224,39 @@
     "text": "Databricks Workflows\nFully managed orchestration services embedded in DBLP."
   },
   {
-    "objectID": "mlplatforms-databricks-workloads-datastreaming.html",
-    "href": "mlplatforms-databricks-workloads-datastreaming.html",
-    "title": "Data Streaming",
-    "section": "",
-    "text": "Explosion of real-time data and businesses require this data."
-  },
-  {
-    "objectID": "mlplatforms-databricks-workloads-datastreaming.html#real-time-analytics",
-    "href": "mlplatforms-databricks-workloads-datastreaming.html#real-time-analytics",
-    "title": "Data Streaming",
-    "section": "Real-Time Analytics",
-    "text": "Real-Time Analytics\nAnalyze streaming data for instant insights and faster decisions."
-  },
-  {
-    "objectID": "mlplatforms-databricks-workloads-datastreaming.html#real-time-machine-learning",
-    "href": "mlplatforms-databricks-workloads-datastreaming.html#real-time-machine-learning",
-    "title": "Data Streaming",
-    "section": "Real-Time Machine Learning",
-    "text": "Real-Time Machine Learning\nTrain models on the freshest data. Score in real-time."
-  },
-  {
-    "objectID": "mlplatforms-databricks-workloads-datastreaming.html#real-time-applications",
-    "href": "mlplatforms-databricks-workloads-datastreaming.html#real-time-applications",
-    "title": "Data Streaming",
-    "section": "Real-Time Applications",
-    "text": "Real-Time Applications\nEmbed automatic and real-time actions into business applications."
-  },
-  {
     "objectID": "mlplatforms-databricks-workloads-machinelearning.html",
     "href": "mlplatforms-databricks-workloads-machinelearning.html",
     "title": "Machine Learning",
     "section": "",
     "text": "Challenges to successful machine learning and AI endeavors\n\nSiloed and disparate data systems.\nComplex experimentation environments.\nGetting models served to a production setting.\nMany tools available.\nExperiments are hard to track\nReproducing results is difficult.\nML is hard to deploy."
+  },
+  {
+    "objectID": "mlplatforms-databricks-workloads-streaming.html",
+    "href": "mlplatforms-databricks-workloads-streaming.html",
+    "title": "Data Streaming",
+    "section": "",
+    "text": "Explosion of real-time data and businesses require this data."
+  },
+  {
+    "objectID": "mlplatforms-databricks-workloads-streaming.html#real-time-analytics",
+    "href": "mlplatforms-databricks-workloads-streaming.html#real-time-analytics",
+    "title": "Data Streaming",
+    "section": "Real-Time Analytics",
+    "text": "Real-Time Analytics\nAnalyze streaming data for instant insights and faster decisions."
+  },
+  {
+    "objectID": "mlplatforms-databricks-workloads-streaming.html#real-time-machine-learning",
+    "href": "mlplatforms-databricks-workloads-streaming.html#real-time-machine-learning",
+    "title": "Data Streaming",
+    "section": "Real-Time Machine Learning",
+    "text": "Real-Time Machine Learning\nTrain models on the freshest data. Score in real-time."
+  },
+  {
+    "objectID": "mlplatforms-databricks-workloads-streaming.html#real-time-applications",
+    "href": "mlplatforms-databricks-workloads-streaming.html#real-time-applications",
+    "title": "Data Streaming",
+    "section": "Real-Time Applications",
+    "text": "Real-Time Applications\nEmbed automatic and real-time actions into business applications."
   },
   {
     "objectID": "mlplatforms-databricks-workloads-warehousing.html",
