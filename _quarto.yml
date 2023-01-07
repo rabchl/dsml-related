@@ -84,6 +84,8 @@ website:
             - section: XGBoost
               contents:
                 - mlscience-xgb-data-interface.ipynb
+                - mlscience-xgb-parameters.ipynb
+                - mlscience-xgb-training.ipynb
 
         - section: "Machine Learning Platforms"
           contents: 
