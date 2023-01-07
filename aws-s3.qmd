@@ -1,0 +1,151 @@
+---
+title: "Simple Storage Service"
+date: last-modified
+---
+
+- Every object (files) in S3 is stored in a bucket (directory). To upload files and folders to S3, we need to create a bucket where the objects will be stored.
+
+- Buckets must have a **globally unique name**.
+
+- Objects have a Key. The key is the full path of that file, e.g., <BUCKET>/path/to/file.txt.
+
+- Keys are interesting for partitioning when we use queries on Athena, or partioning our data to better query it.
+
+- Max object size is 5TB. If we have very large data then we split it into different objects.
+
+- We can add Object Tags which are key-value pairs for classifying our data and for security/lifecycle.
+
+## S3 for Machine Learning
+
+- S3 is the backbone for many AWS ML services, e.g., SageMaker.
+
+- It is helpful to create a Data Lake of infinite size with no provisioning.
+
+- S3 has 11-nines durability. This means data is secure and that we will not lose an object in a long time.
+
+- Decoupling of storage (S3) to compute (EC2, Athena, Redshift, Spectrum, Rekognition, Glue).
+
+- Centralized arquitecture.
+
+- Object storage that means we support any file format (CSV, JSON, Parquet, ORC, Avro, Protobuf).
+
+## S3 Data Partitioning
+
+Data partitioning is a pattern for speeding up range queries.
+
+s3://bucket/dataset/year/month/day/hour/data_00.csv
+
+It allows us to quickly find the right dataset based on the partition.
+
+Data partitioning will be handled by some tools we use (AWS Glue, AWS Kinesis). S3 doesn't automatically create partitions, but tools that write into S3 are responsible for partitioning. Kinesis has partitioning built-in but it doesn't maintain partitions in S3, it has its own AWS technology to partition data.
+
+## Creating a Bucket in S3
+
+- Click on Create Bucket.
+- On general configuration give a bucket name, choose a AWS region.
+- Leave everything else as default.
+- Once created, we can start creating folders manually.
+- We can add levels of partitioning by creating folders inside folders.
+
+## Durability and Availability
+
+Durability represents how many times an object will be lost by Amazon S3. S3 has 11-nines durability. On average, if we store 10 million objects with Amazon S3, we can expect to lose a single object once every 10 thousands years. The durability _is the same_ for all storage classes.
+
+Availability, on the other hand, measures how readily available a service is. Thus, it depends on the storage class. S3 has 4-nines availability. This means that on average S3 will be not available 53 minutes a year.
+
+## Storage Classes for Amazon S3
+
+Objects can be moved between classes manually or we can use S3 Lifecycle configurations to move objects automatically.
+
+### Amazon S3 Standard - General Purpose
+
+- It has 4-nines availability.
+- Used for frequently accessed data.
+- Low latency
+- High throughput (data transfered from one place to another).
+- Sustain two concurrent facility failures. It means it guarantee that a stored object will be available in 3 data centers so even if 2 data centers are lost due to any reasons the object will still be accessible, this part is related to availability guarantee.
+- Use Cases: Big Data Analytics, Mobile and Gaming Applications, Content Distribution, etc.
+
+### Amazon S3 Infrequent Access (IA)
+
+- For data that is less frequently accessed, but requires rapid access when needed.
+- Lower cost than S3 Standard. 
+- Cost on retrieval.
+
+#### Amazon S3 Standard - Infrequent Access (IA)
+
+- It has 3-nines availability
+- Use Cases: Disaster Recovery, Backups
+
+#### Amazon S3 One Zone - Infrequent Access (IA)
+
+- It has 11-nines durability in a single AZ.
+- Data is lost when AZ is destroyed.
+- It has two and a half nines availability.
+- Use Cases: Storing secondary backup copies of on-premise data, data that we can recreate.
+
+### Amazon S3 Glacier
+
+- Low-cost object storage meant for archiving or backup.
+- Pricing: Price for storage + Object retrieval cost.
+
+#### Amazon S3 Glacier Instant Retrieval
+
+- Millisecond retrieval, great for data accessed once a quarter.
+- Minimum storage duration is 90 days.
+
+#### Amazon S3 Glacier Flexible Retrieval
+
+- Formerly known as AWS Glacier
+- It has three flexibilities: Expedited (1 to 5 minutes), Standard (3 to 5 hours), Bulk (5 to 12 hours) to get the data. The latter is free.
+- Minimum storage duration is 90 days.
+- Here we are willing to wait some time to get data.
+
+#### Amazon S3 Glacier Deep Archive
+
+- For long term storage.
+- Standard (12 hours), Bulk (48 hours)
+- Lowest cost
+- Minimum storage duration is 180 days.
+
+### Amazon S3 Intelligent Tiering
+
+- Small monthly monitoring and auto-tiering fee.
+- Allows us to move objects automatically between Access Tiers based on usage patterns.
+- There are no retrieval charges.
+- Data with changing or unknown access patterns.
+
+#### Frequent Access Tier
+
+- Automatic. Default Tier. 
+
+#### Frequent Access Tier
+
+- For objects not accessed for 30 days
+
+#### Archive Instant Access Tier
+
+- For objects not accessed for 90 days
+
+#### Archive Access Tier
+
+- Optional
+- Configurable for objects not accessed from 90 to 700+ days.
+
+#### Deep Archive Access Tier
+
+- Optional
+- Configurable for objects not accessed from 180 to 700+ days.
+
+
+## Retrieval Fees
+
+The retrieval here is divided into two parts.
+
+- **Data Retrieval Fee** is measured by the amount of data (in GB) retrieved from AWS S3. It means data retrieval from AWS S3 so it will be ready to be delivered to you. This is free for both S3 Standard and S3 Intelligent Tiering, for other S3 Storage Classes you paid per GB retrieved from AWS S3.
+
+- **Retrieval Fee** is the number of requests you made against AWS S3. This is measured by 1000 requests/second and pricing is based on the number of requests and the request type.
+
+[S3 Pricing - Requests & Data Retrievals](https://aws.amazon.com/s3/pricing/) 
+
+

@@ -5,7 +5,7 @@ date: last-modified
 
 ## Security Groups 
 
-- They are instance-level firewalls
+- They are firewalls that are applied at the instance-level. They look for traffic that is going into and out of the elastic interface is connected to the instance. We can have multiple instances in the same security group and we can have multiple security groups applied to an instance.
 
 ## Elastic IPs
 

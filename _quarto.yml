@@ -53,6 +53,9 @@ website:
                 - aws-ec2.qmd
                 - aws-ec2-ebs.qmd
                 - aws-ec2-security.qmd
+            - section: "S3"
+              contents:
+                - aws-s3.qmd
 
         - section: "Production-Ready Development"
           contents:
@@ -77,6 +80,10 @@ website:
             - deng-data-cleaning.ipynb
           
         - section: "Machine Learning Science"
+          contents:
+            - section: XGBoost
+              contents:
+                - mlscience-xgb-data-interface.ipynb
 
         - section: "Machine Learning Platforms"
           contents: 
