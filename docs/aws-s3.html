@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-11-15">
+<meta name="dcterms.date" content="2022-12-12">
 
-<title>DSML - Related - Project Evaluation</title>
+<title>DSML - Related - Simple Storage Service</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./venv-conda.html" rel="next">
-<link href="./production-ready-deploy-maintenance.html" rel="prev">
+<link href="./production-ready.html" rel="next">
+<link href="./aws-ec2-security.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Project Evaluation</h1>
+      <h1 class="quarto-secondary-nav-title">Simple Storage Service</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -210,15 +210,15 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">S3</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">S3</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aws-s3.html" class="sidebar-item-text sidebar-link">Simple Storage Service</a>
+  <a href="./aws-s3.html" class="sidebar-item-text sidebar-link active">Simple Storage Service</a>
   </div>
 </li>
       </ul>
@@ -240,12 +240,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">Machine Learning Projects</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">Machine Learning Projects</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./production-ready-planning.html" class="sidebar-item-text sidebar-link">Effective Project Planning</a>
@@ -268,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./production-ready-evaluation.html" class="sidebar-item-text sidebar-link active">Project Evaluation</a>
+  <a href="./production-ready-evaluation.html" class="sidebar-item-text sidebar-link">Project Evaluation</a>
   </div>
 </li>
       </ul>
@@ -430,7 +430,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Project Evaluation</h1>
+<h1 class="title d-none d-lg-block">Simple Storage Service</h1>
 </div>
 
 
@@ -441,7 +441,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 15, 2022</p>
+      <p class="date">December 12, 2022</p>
     </div>
   </div>
   
@@ -451,18 +451,170 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<ol type="1">
-<li>The team should revisit the discussions made during project planning to
 <ul>
-<li>evaluate whether the project has been carried out successfully or not</li>
-</ul></li>
-<li>Details of the project need to be recorded to
+<li><p>Every object (files) in S3 is stored in a bucket (directory). To upload files and folders to S3, we need to create a bucket where the objects will be stored.</p></li>
+<li><p>Buckets must have a <strong>globally unique name</strong>.</p></li>
+<li><p>Objects have a Key. The key is the full path of that file, e.g., <bucket>/path/to/file.txt.</bucket></p></li>
+<li><p>Keys are interesting for partitioning when we use queries on Athena, or partioning our data to better query it.</p></li>
+<li><p>Max object size is 5TB. If we have very large data then we split it into different objects.</p></li>
+<li><p>We can add Object Tags which are key-value pairs for classifying our data and for security/lifecycle.</p></li>
+</ul>
+<section id="s3-for-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="s3-for-machine-learning">S3 for Machine Learning</h2>
 <ul>
-<li>suggest and discuss potential improvements so that next projects can be achieved more efficiently.</li>
-</ul></li>
-</ol>
+<li><p>S3 is the backbone for many AWS ML services, e.g., SageMaker.</p></li>
+<li><p>It is helpful to create a Data Lake of infinite size with no provisioning.</p></li>
+<li><p>S3 has 11-nines durability. This means data is secure and that we will not lose an object in a long time.</p></li>
+<li><p>Decoupling of storage (S3) to compute (EC2, Athena, Redshift, Spectrum, Rekognition, Glue).</p></li>
+<li><p>Centralized arquitecture.</p></li>
+<li><p>Object storage that means we support any file format (CSV, JSON, Parquet, ORC, Avro, Protobuf).</p></li>
+</ul>
+</section>
+<section id="s3-data-partitioning" class="level2">
+<h2 class="anchored" data-anchor-id="s3-data-partitioning">S3 Data Partitioning</h2>
+<p>Data partitioning is a pattern for speeding up range queries.</p>
+<p>s3://bucket/dataset/year/month/day/hour/data_00.csv</p>
+<p>It allows us to quickly find the right dataset based on the partition.</p>
+<p>Data partitioning will be handled by some tools we use (AWS Glue, AWS Kinesis). S3 doesn’t automatically create partitions, but tools that write into S3 are responsible for partitioning. Kinesis has partitioning built-in but it doesn’t maintain partitions in S3, it has its own AWS technology to partition data.</p>
+</section>
+<section id="creating-a-bucket-in-s3" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-bucket-in-s3">Creating a Bucket in S3</h2>
+<ul>
+<li>Click on Create Bucket.</li>
+<li>On general configuration give a bucket name, choose a AWS region.</li>
+<li>Leave everything else as default.</li>
+<li>Once created, we can start creating folders manually.</li>
+<li>We can add levels of partitioning by creating folders inside folders.</li>
+</ul>
+</section>
+<section id="durability-and-availability" class="level2">
+<h2 class="anchored" data-anchor-id="durability-and-availability">Durability and Availability</h2>
+<p>Durability represents how many times an object will be lost by Amazon S3. S3 has 11-nines durability. On average, if we store 10 million objects with Amazon S3, we can expect to lose a single object once every 10 thousands years. The durability <em>is the same</em> for all storage classes.</p>
+<p>Availability, on the other hand, measures how readily available a service is. Thus, it depends on the storage class. S3 has 4-nines availability. This means that on average S3 will be not available 53 minutes a year.</p>
+</section>
+<section id="storage-classes-for-amazon-s3" class="level2">
+<h2 class="anchored" data-anchor-id="storage-classes-for-amazon-s3">Storage Classes for Amazon S3</h2>
+<p>Objects can be moved between classes manually or we can use S3 Lifecycle configurations to move objects automatically.</p>
+<section id="amazon-s3-standard---general-purpose" class="level3">
+<h3 class="anchored" data-anchor-id="amazon-s3-standard---general-purpose">Amazon S3 Standard - General Purpose</h3>
+<ul>
+<li>It has 4-nines availability.</li>
+<li>Used for frequently accessed data.</li>
+<li>Low latency</li>
+<li>High throughput (data transfered from one place to another).</li>
+<li>Sustain two concurrent facility failures. It means it guarantee that a stored object will be available in 3 data centers so even if 2 data centers are lost due to any reasons the object will still be accessible, this part is related to availability guarantee.</li>
+<li>Use Cases: Big Data Analytics, Mobile and Gaming Applications, Content Distribution, etc.</li>
+</ul>
+</section>
+<section id="amazon-s3-infrequent-access-ia" class="level3">
+<h3 class="anchored" data-anchor-id="amazon-s3-infrequent-access-ia">Amazon S3 Infrequent Access (IA)</h3>
+<ul>
+<li>For data that is less frequently accessed, but requires rapid access when needed.</li>
+<li>Lower cost than S3 Standard.</li>
+<li>Cost on retrieval.</li>
+</ul>
+<section id="amazon-s3-standard---infrequent-access-ia" class="level4">
+<h4 class="anchored" data-anchor-id="amazon-s3-standard---infrequent-access-ia">Amazon S3 Standard - Infrequent Access (IA)</h4>
+<ul>
+<li>It has 3-nines availability</li>
+<li>Use Cases: Disaster Recovery, Backups</li>
+</ul>
+</section>
+<section id="amazon-s3-one-zone---infrequent-access-ia" class="level4">
+<h4 class="anchored" data-anchor-id="amazon-s3-one-zone---infrequent-access-ia">Amazon S3 One Zone - Infrequent Access (IA)</h4>
+<ul>
+<li>It has 11-nines durability in a single AZ.</li>
+<li>Data is lost when AZ is destroyed.</li>
+<li>It has two and a half nines availability.</li>
+<li>Use Cases: Storing secondary backup copies of on-premise data, data that we can recreate.</li>
+</ul>
+</section>
+</section>
+<section id="amazon-s3-glacier" class="level3">
+<h3 class="anchored" data-anchor-id="amazon-s3-glacier">Amazon S3 Glacier</h3>
+<ul>
+<li>Low-cost object storage meant for archiving or backup.</li>
+<li>Pricing: Price for storage + Object retrieval cost.</li>
+</ul>
+<section id="amazon-s3-glacier-instant-retrieval" class="level4">
+<h4 class="anchored" data-anchor-id="amazon-s3-glacier-instant-retrieval">Amazon S3 Glacier Instant Retrieval</h4>
+<ul>
+<li>Millisecond retrieval, great for data accessed once a quarter.</li>
+<li>Minimum storage duration is 90 days.</li>
+</ul>
+</section>
+<section id="amazon-s3-glacier-flexible-retrieval" class="level4">
+<h4 class="anchored" data-anchor-id="amazon-s3-glacier-flexible-retrieval">Amazon S3 Glacier Flexible Retrieval</h4>
+<ul>
+<li>Formerly known as AWS Glacier</li>
+<li>It has three flexibilities: Expedited (1 to 5 minutes), Standard (3 to 5 hours), Bulk (5 to 12 hours) to get the data. The latter is free.</li>
+<li>Minimum storage duration is 90 days.</li>
+<li>Here we are willing to wait some time to get data.</li>
+</ul>
+</section>
+<section id="amazon-s3-glacier-deep-archive" class="level4">
+<h4 class="anchored" data-anchor-id="amazon-s3-glacier-deep-archive">Amazon S3 Glacier Deep Archive</h4>
+<ul>
+<li>For long term storage.</li>
+<li>Standard (12 hours), Bulk (48 hours)</li>
+<li>Lowest cost</li>
+<li>Minimum storage duration is 180 days.</li>
+</ul>
+</section>
+</section>
+<section id="amazon-s3-intelligent-tiering" class="level3">
+<h3 class="anchored" data-anchor-id="amazon-s3-intelligent-tiering">Amazon S3 Intelligent Tiering</h3>
+<ul>
+<li>Small monthly monitoring and auto-tiering fee.</li>
+<li>Allows us to move objects automatically between Access Tiers based on usage patterns.</li>
+<li>There are no retrieval charges.</li>
+<li>Data with changing or unknown access patterns.</li>
+</ul>
+<section id="frequent-access-tier" class="level4">
+<h4 class="anchored" data-anchor-id="frequent-access-tier">Frequent Access Tier</h4>
+<ul>
+<li>Automatic. Default Tier.</li>
+</ul>
+</section>
+<section id="frequent-access-tier-1" class="level4">
+<h4 class="anchored" data-anchor-id="frequent-access-tier-1">Frequent Access Tier</h4>
+<ul>
+<li>For objects not accessed for 30 days</li>
+</ul>
+</section>
+<section id="archive-instant-access-tier" class="level4">
+<h4 class="anchored" data-anchor-id="archive-instant-access-tier">Archive Instant Access Tier</h4>
+<ul>
+<li>For objects not accessed for 90 days</li>
+</ul>
+</section>
+<section id="archive-access-tier" class="level4">
+<h4 class="anchored" data-anchor-id="archive-access-tier">Archive Access Tier</h4>
+<ul>
+<li>Optional</li>
+<li>Configurable for objects not accessed from 90 to 700+ days.</li>
+</ul>
+</section>
+<section id="deep-archive-access-tier" class="level4">
+<h4 class="anchored" data-anchor-id="deep-archive-access-tier">Deep Archive Access Tier</h4>
+<ul>
+<li>Optional</li>
+<li>Configurable for objects not accessed from 180 to 700+ days.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="retrieval-fees" class="level2">
+<h2 class="anchored" data-anchor-id="retrieval-fees">Retrieval Fees</h2>
+<p>The retrieval here is divided into two parts.</p>
+<ul>
+<li><p><strong>Data Retrieval Fee</strong> is measured by the amount of data (in GB) retrieved from AWS S3. It means data retrieval from AWS S3 so it will be ready to be delivered to you. This is free for both S3 Standard and S3 Intelligent Tiering, for other S3 Storage Classes you paid per GB retrieved from AWS S3.</p></li>
+<li><p><strong>Retrieval Fee</strong> is the number of requests you made against AWS S3. This is measured by 1000 requests/second and pricing is based on the number of requests and the request type.</p></li>
+</ul>
+<p><a href="https://aws.amazon.com/s3/pricing/">S3 Pricing - Requests &amp; Data Retrievals</a></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -715,13 +867,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./production-ready-deploy-maintenance.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Deployment and Maintenance</span>
+      <a href="./aws-ec2-security.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Security</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./venv-conda.html" class="pagination-link">
-        <span class="nav-page-text">Setting up virtual environments with conda</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./production-ready.html" class="pagination-link">
+        <span class="nav-page-text">Less Theory More Application</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

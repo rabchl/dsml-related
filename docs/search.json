@@ -18,7 +18,7 @@
     "href": "aws-ec2-security.html",
     "title": "Security",
     "section": "",
-    "text": "They are instance-level firewalls"
+    "text": "They are firewalls that are applied at the instance-level. They look for traffic that is going into and out of the elastic interface is connected to the instance. We can have multiple instances in the same security group and we can have multiple security groups applied to an instance."
   },
   {
     "objectID": "aws-ec2-security.html#elastic-ips",
@@ -138,6 +138,55 @@
     "title": "Global Infrastructure",
     "section": "",
     "text": "Region _It is a geographical area with 2 or more AZs, isolated from other AWS Regions.\nAvailability Zone (AZ) _One or more data centers that are physically separate and isolated from other AZs _They are connected with low latency, highly available, high bandwidth links _We have networking connectivity between all of the AZs as well\n\nTherefore, we can deploy our resources within a region but into separate AZs for high availability and redudancy. If there is an outage on one AZ, the resources on the other one are not affected.\n\nEdge Location (CloudFront) _A location with a cache of content that can be delivered at low latency to users _The idea is to reduce latency when accessing cached content\nRegional Edge Cache (CloudFront) _Larger caches that sit between AWS Services and Edge Locations\n\nCloudFront is all about caching content.\n\nGlobal Network (Private) _Highly available, low-latency private global network interconnecting every data center, AZ, and AWS Region"
+  },
+  {
+    "objectID": "aws-s3.html",
+    "href": "aws-s3.html",
+    "title": "Simple Storage Service",
+    "section": "",
+    "text": "Every object (files) in S3 is stored in a bucket (directory). To upload files and folders to S3, we need to create a bucket where the objects will be stored.\nBuckets must have a globally unique name.\nObjects have a Key. The key is the full path of that file, e.g., /path/to/file.txt.\nKeys are interesting for partitioning when we use queries on Athena, or partioning our data to better query it.\nMax object size is 5TB. If we have very large data then we split it into different objects.\nWe can add Object Tags which are key-value pairs for classifying our data and for security/lifecycle."
+  },
+  {
+    "objectID": "aws-s3.html#s3-for-machine-learning",
+    "href": "aws-s3.html#s3-for-machine-learning",
+    "title": "Simple Storage Service",
+    "section": "S3 for Machine Learning",
+    "text": "S3 for Machine Learning\n\nS3 is the backbone for many AWS ML services, e.g., SageMaker.\nIt is helpful to create a Data Lake of infinite size with no provisioning.\nS3 has 11-nines durability. This means data is secure and that we will not lose an object in a long time.\nDecoupling of storage (S3) to compute (EC2, Athena, Redshift, Spectrum, Rekognition, Glue).\nCentralized arquitecture.\nObject storage that means we support any file format (CSV, JSON, Parquet, ORC, Avro, Protobuf)."
+  },
+  {
+    "objectID": "aws-s3.html#s3-data-partitioning",
+    "href": "aws-s3.html#s3-data-partitioning",
+    "title": "Simple Storage Service",
+    "section": "S3 Data Partitioning",
+    "text": "S3 Data Partitioning\nData partitioning is a pattern for speeding up range queries.\ns3://bucket/dataset/year/month/day/hour/data_00.csv\nIt allows us to quickly find the right dataset based on the partition.\nData partitioning will be handled by some tools we use (AWS Glue, AWS Kinesis). S3 doesn’t automatically create partitions, but tools that write into S3 are responsible for partitioning. Kinesis has partitioning built-in but it doesn’t maintain partitions in S3, it has its own AWS technology to partition data."
+  },
+  {
+    "objectID": "aws-s3.html#creating-a-bucket-in-s3",
+    "href": "aws-s3.html#creating-a-bucket-in-s3",
+    "title": "Simple Storage Service",
+    "section": "Creating a Bucket in S3",
+    "text": "Creating a Bucket in S3\n\nClick on Create Bucket.\nOn general configuration give a bucket name, choose a AWS region.\nLeave everything else as default.\nOnce created, we can start creating folders manually.\nWe can add levels of partitioning by creating folders inside folders."
+  },
+  {
+    "objectID": "aws-s3.html#durability-and-availability",
+    "href": "aws-s3.html#durability-and-availability",
+    "title": "Simple Storage Service",
+    "section": "Durability and Availability",
+    "text": "Durability and Availability\nDurability represents how many times an object will be lost by Amazon S3. S3 has 11-nines durability. On average, if we store 10 million objects with Amazon S3, we can expect to lose a single object once every 10 thousands years. The durability is the same for all storage classes.\nAvailability, on the other hand, measures how readily available a service is. Thus, it depends on the storage class. S3 has 4-nines availability. This means that on average S3 will be not available 53 minutes a year."
+  },
+  {
+    "objectID": "aws-s3.html#storage-classes-for-amazon-s3",
+    "href": "aws-s3.html#storage-classes-for-amazon-s3",
+    "title": "Simple Storage Service",
+    "section": "Storage Classes for Amazon S3",
+    "text": "Storage Classes for Amazon S3\nObjects can be moved between classes manually or we can use S3 Lifecycle configurations to move objects automatically.\n\nAmazon S3 Standard - General Purpose\n\nIt has 4-nines availability.\nUsed for frequently accessed data.\nLow latency\nHigh throughput (data transfered from one place to another).\nSustain two concurrent facility failures. It means it guarantee that a stored object will be available in 3 data centers so even if 2 data centers are lost due to any reasons the object will still be accessible, this part is related to availability guarantee.\nUse Cases: Big Data Analytics, Mobile and Gaming Applications, Content Distribution, etc.\n\n\n\nAmazon S3 Infrequent Access (IA)\n\nFor data that is less frequently accessed, but requires rapid access when needed.\nLower cost than S3 Standard.\nCost on retrieval.\n\n\nAmazon S3 Standard - Infrequent Access (IA)\n\nIt has 3-nines availability\nUse Cases: Disaster Recovery, Backups\n\n\n\nAmazon S3 One Zone - Infrequent Access (IA)\n\nIt has 11-nines durability in a single AZ.\nData is lost when AZ is destroyed.\nIt has two and a half nines availability.\nUse Cases: Storing secondary backup copies of on-premise data, data that we can recreate.\n\n\n\n\nAmazon S3 Glacier\n\nLow-cost object storage meant for archiving or backup.\nPricing: Price for storage + Object retrieval cost.\n\n\nAmazon S3 Glacier Instant Retrieval\n\nMillisecond retrieval, great for data accessed once a quarter.\nMinimum storage duration is 90 days.\n\n\n\nAmazon S3 Glacier Flexible Retrieval\n\nFormerly known as AWS Glacier\nIt has three flexibilities: Expedited (1 to 5 minutes), Standard (3 to 5 hours), Bulk (5 to 12 hours) to get the data. The latter is free.\nMinimum storage duration is 90 days.\nHere we are willing to wait some time to get data.\n\n\n\nAmazon S3 Glacier Deep Archive\n\nFor long term storage.\nStandard (12 hours), Bulk (48 hours)\nLowest cost\nMinimum storage duration is 180 days.\n\n\n\n\nAmazon S3 Intelligent Tiering\n\nSmall monthly monitoring and auto-tiering fee.\nAllows us to move objects automatically between Access Tiers based on usage patterns.\nThere are no retrieval charges.\nData with changing or unknown access patterns.\n\n\nFrequent Access Tier\n\nAutomatic. Default Tier.\n\n\n\nFrequent Access Tier\n\nFor objects not accessed for 30 days\n\n\n\nArchive Instant Access Tier\n\nFor objects not accessed for 90 days\n\n\n\nArchive Access Tier\n\nOptional\nConfigurable for objects not accessed from 90 to 700+ days.\n\n\n\nDeep Archive Access Tier\n\nOptional\nConfigurable for objects not accessed from 180 to 700+ days."
+  },
+  {
+    "objectID": "aws-s3.html#retrieval-fees",
+    "href": "aws-s3.html#retrieval-fees",
+    "title": "Simple Storage Service",
+    "section": "Retrieval Fees",
+    "text": "Retrieval Fees\nThe retrieval here is divided into two parts.\n\nData Retrieval Fee is measured by the amount of data (in GB) retrieved from AWS S3. It means data retrieval from AWS S3 so it will be ready to be delivered to you. This is free for both S3 Standard and S3 Intelligent Tiering, for other S3 Storage Classes you paid per GB retrieved from AWS S3.\nRetrieval Fee is the number of requests you made against AWS S3. This is measured by 1000 requests/second and pricing is based on the number of requests and the request type.\n\nS3 Pricing - Requests & Data Retrievals"
   },
   {
     "objectID": "deng-data-cleaning.html",
@@ -292,6 +341,13 @@
     "title": "Data Lakehouse",
     "section": "Data Lakehouses",
     "text": "Data Lakehouses\nSince data lakes didn’t fully replace data warehouses for reliable BI insights, businesses implemented complex technology stack environments. However, this introduces complexity and delay as data teams are stuck in silos.\n\nChallenges\n\nDisjointed and duplicative data silos.\nData has to be copied between the systems of the stack environment, impacting oversight and data usage governance.\nCost of storing the same information many times.\nDelay actionable insights.\n\n\nThus, businesses needed:\n\na single, flexible, high performance system to support the ever increasing use cases for data exploration, predictive modeling and predictive analytics.\nsystems to support data applications, including SQL analytics, real-time analysis, data science and machine learning.\n\n\nDatabricks Lakehouse Platform\nThe lakehouse platform is an open arquitecture which combines the analytical and control benefits of a data warehouse with the storage and flexible benefits of a data lake to efficiently handle all data types on all clouds for all use cases within a single platform with a one security and governance model for all data assets, resulting in a single reliable source of truth.\n\nProperties\n\nTransaction support, including ACID transactions for concurrent read/write interactions.\nSchema enforcement and governance for data integrity.\nRobust auditing needs.\nData governance to support privacy regulation and data use metrics.\nBI support\nDecoupled storage from compute, each operating on their own clusters, allowing them to scale independently to support specific needs.\nOpen storage formats such as Apache Parquet.\nSupport for diverse data types.\nSupport for diverse workloads.\nEnd-to-end streaming for real-time reports and analyses.\n\n\nDatabricks was founded in 2013 by the creators of Apache Spark, Delta Lake and MLFlow. It was the inventor and pioneer of the data lakehouse arquitecture in 2021.\nThe arquitectural features are realized on the Databricks Lakehouse Platform, including:\n\nReliability and performance of Delta Lake as the Data Lake Foundation.\nFine-grain governance for data and AI with Unity Catalog.\nPersona-based uses cases for all data team members.\nInstant and serverless compute, the compute layer is provided and managed by Databricks on behalf of the customer.\n\nThe benefits of DBLP\n\nCombine the reliability, governance and security of data warehouses with the openness, flexibility and machine learning support of data lakes to provide a single platform that unifies data warehousing and AI use cases.\nEliminates the challenges caused by previous data environments such as data silos, complicated structures, and fractured governance and security structures.\nIt supports many workloads including data warehousing, data engineering, data streaming and data science and machine learning.\nProvides flexibility to use the existing infraestructure and build a modern data stack with unrestricted access to open source data projects and the broad Databricks partner network."
+  },
+  {
+    "objectID": "mlscience-xgb-data-interface.html",
+    "href": "mlscience-xgb-data-interface.html",
+    "title": "Data Interface",
+    "section": "",
+    "text": "import numpy as np\nimport pandas as pd\n\nimport xgboost as xgb\n\n\nUSING NUMPY\n\ndata = np.random.rand(20, 5)\nlabel = np.random.randint(2, size=20)\nweights = np.random.rand(20, 1)\n\n\ndtrain = xgb.DMatrix(data=data, label=label, missing=np.NaN, weight=weights)\n\n\n\nUSING PANDAS\n\ndata = pd.DataFrame(np.random.rand(20, 5), columns=['cola', 'colb', 'colc', 'cold', 'cole'])\nlabel = pd.DataFrame(np.random.randint(2, size=20))\nweights = pd.DataFrame(np.random.rand(20, 1), columns=['weight'])\n\n\ndtrain = xgb.DMatrix(data=data, label=label, missing=np.NaN, weight=weights)\n\n\n\nSAVING DMatrix INTO A XGBOOST BINARY FILE\n\ndtrain.save_binary('train.buffer')\n\n\n\nLOADING A XGBOOST BINARY FILE INTO DMatrix\n\ndtrain = xgb.DMatrix('train.buffer')"
   },
   {
     "objectID": "production-ready-deploy-maintenance.html",
