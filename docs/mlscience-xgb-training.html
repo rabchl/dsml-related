@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-01-07">
+<meta name="dcterms.date" content="2023-01-11">
 
 <title>DSML - Related - Training</title>
 <style>
@@ -517,7 +517,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 7, 2023</p>
+      <p class="date">January 11, 2023</p>
     </div>
   </div>
   
@@ -573,55 +573,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bst <span class="op">=</span> xgb.train(params, dtrain, NUM_BOOST_ROUND, evals<span class="op">=</span>evallist, early_stopping_rounds<span class="op">=</span>EARLY_STOPPING_ROUNDS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[0] train-auc:0.74797   train-aucpr:0.74677 test-auc:0.60417    test-aucpr:0.45374
-[1] train-auc:0.83218   train-aucpr:0.84135 test-auc:0.48438    test-aucpr:0.38465
-[2] train-auc:0.88312   train-aucpr:0.88933 test-auc:0.43750    test-aucpr:0.34783
-[3] train-auc:0.91071   train-aucpr:0.90216 test-auc:0.49479    test-aucpr:0.40930
-[4] train-auc:0.93547   train-aucpr:0.94238 test-auc:0.54167    test-aucpr:0.57946
-[5] train-auc:0.95394   train-aucpr:0.96630 test-auc:0.50521    test-aucpr:0.55558
-[6] train-auc:0.96895   train-aucpr:0.97380 test-auc:0.45312    test-aucpr:0.44828
-[7] train-auc:0.96510   train-aucpr:0.96587 test-auc:0.45833    test-aucpr:0.44480
-[8] train-auc:0.98052   train-aucpr:0.98376 test-auc:0.48958    test-aucpr:0.46581
-[9] train-auc:0.98985   train-aucpr:0.99153 test-auc:0.50000    test-aucpr:0.47493
-[10]    train-auc:0.99148   train-aucpr:0.99276 test-auc:0.45833    test-aucpr:0.45846
-[11]    train-auc:0.99148   train-aucpr:0.99214 test-auc:0.47917    test-aucpr:0.48396
-[12]    train-auc:0.99391   train-aucpr:0.99478 test-auc:0.44792    test-aucpr:0.47871
-[13]    train-auc:0.99513   train-aucpr:0.99596 test-auc:0.46875    test-aucpr:0.52820</code></pre>
+<pre><code>[0] train-auc:0.66954   train-aucpr:0.63223 test-auc:0.45000    test-aucpr:0.47214
+[1] train-auc:0.73337   train-aucpr:0.73544 test-auc:0.45500    test-aucpr:0.47955
+[2] train-auc:0.81486   train-aucpr:0.82001 test-auc:0.51000    test-aucpr:0.49078
+[3] train-auc:0.86494   train-aucpr:0.84077 test-auc:0.52000    test-aucpr:0.48684
+[4] train-auc:0.90558   train-aucpr:0.87932 test-auc:0.34000    test-aucpr:0.39197
+[5] train-auc:0.93719   train-aucpr:0.91281 test-auc:0.33000    test-aucpr:0.39475
+[6] train-auc:0.95033   train-aucpr:0.93645 test-auc:0.33000    test-aucpr:0.38466
+[7] train-auc:0.94992   train-aucpr:0.94102 test-auc:0.35000    test-aucpr:0.38874
+[8] train-auc:0.95998   train-aucpr:0.95181 test-auc:0.39000    test-aucpr:0.40416
+[9] train-auc:0.96613   train-aucpr:0.95756 test-auc:0.39000    test-aucpr:0.40416
+[10]    train-auc:0.96880   train-aucpr:0.96532 test-auc:0.43000    test-aucpr:0.43488
+[11]    train-auc:0.97455   train-aucpr:0.97430 test-auc:0.47000    test-aucpr:0.44865
+[12]    train-auc:0.98727   train-aucpr:0.98742 test-auc:0.48000    test-aucpr:0.45806</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="39">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>bst.best_iteration</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
-<pre><code>3</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>2</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="40">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>bst.best_score</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="40">
-<pre><code>0.6095077293305602</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>0.4907757515714366</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="51">
+<div class="cell" data-tags="[]" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> xgb.XGBClassifier(n_estimators<span class="op">=</span>NUM_BOOST_ROUND, missing<span class="op">=</span>np.NaN, early_stopping_rounds<span class="op">=</span>EARLY_STOPPING_ROUNDS, tree_method<span class="op">=</span><span class="st">'gpu_hist'</span>, <span class="op">**</span>params)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>clf.fit(datatrain, labeltrain, eval_set<span class="op">=</span>[(datatest, labeltest)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[0] validation_0-auc:0.45455    validation_0-aucpr:0.49829
-[1] validation_0-auc:0.53535    validation_0-aucpr:0.52777
-[2] validation_0-auc:0.57071    validation_0-aucpr:0.54746
-[3] validation_0-auc:0.59091    validation_0-aucpr:0.61996
-[4] validation_0-auc:0.57071    validation_0-aucpr:0.54430
-[5] validation_0-auc:0.64646    validation_0-aucpr:0.57075
-[6] validation_0-auc:0.58586    validation_0-aucpr:0.54497
-[7] validation_0-auc:0.55556    validation_0-aucpr:0.53406
-[8] validation_0-auc:0.54545    validation_0-aucpr:0.53186
-[9] validation_0-auc:0.56566    validation_0-aucpr:0.54329
-[10]    validation_0-auc:0.54545    validation_0-aucpr:0.53397
-[11]    validation_0-auc:0.50505    validation_0-aucpr:0.52639
-[12]    validation_0-auc:0.55556    validation_0-aucpr:0.54172
-[13]    validation_0-auc:0.52525    validation_0-aucpr:0.52578</code></pre>
+<pre><code>[0] validation_0-auc:0.45000    validation_0-aucpr:0.47214
+[1] validation_0-auc:0.45500    validation_0-aucpr:0.47955
+[2] validation_0-auc:0.44500    validation_0-aucpr:0.46638
+[3] validation_0-auc:0.46000    validation_0-aucpr:0.53426
+[4] validation_0-auc:0.27000    validation_0-aucpr:0.36721
+[5] validation_0-auc:0.27000    validation_0-aucpr:0.36733
+[6] validation_0-auc:0.36000    validation_0-aucpr:0.39953
+[7] validation_0-auc:0.39000    validation_0-aucpr:0.41427
+[8] validation_0-auc:0.44000    validation_0-aucpr:0.43541
+[9] validation_0-auc:0.41000    validation_0-aucpr:0.41381
+[10]    validation_0-auc:0.41000    validation_0-aucpr:0.41305
+[11]    validation_0-auc:0.37000    validation_0-aucpr:0.40028
+[12]    validation_0-auc:0.38000    validation_0-aucpr:0.40333
+[13]    validation_0-auc:0.37000    validation_0-aucpr:0.39811</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="51">
-<style>#sk-container-id-3 {color: black;background-color: white;}#sk-container-id-3 pre{padding: 0;}#sk-container-id-3 div.sk-toggleable {background-color: white;}#sk-container-id-3 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-3 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-3 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-3 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-3 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-3 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-3 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-3 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-3 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-3 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-3 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-3 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-3 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-3 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-3 div.sk-item {position: relative;z-index: 1;}#sk-container-id-3 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-3 div.sk-item::before, #sk-container-id-3 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-3 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-3 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-3 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-3 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-3 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-3 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-3 div.sk-label-container {text-align: center;}#sk-container-id-3 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-3 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-3" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>XGBClassifier(base_score=0.5, booster='gbtree', callbacks=None,
+<div class="cell-output cell-output-display" data-execution_count="8">
+<style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>XGBClassifier(base_score=0.5, booster='gbtree', callbacks=None,
               colsample_bylevel=1, colsample_bynode=1, colsample_bytree=1,
               early_stopping_rounds=10, enable_categorical=False, eta=1,
               eval_metric=['auc', 'aucpr'], feature_types=None, gamma=0,
@@ -630,7 +629,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
               max_cat_threshold=64, max_cat_to_onehot=4, max_delta_step=0,
               max_depth=2, max_leaves=0, min_child_weight=1, missing=nan,
               monotone_constraints='()', n_estimators=500, n_jobs=4, nthread=4,
-              num_parallel_tree=1, ...)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" checked=""><label for="sk-estimator-id-3" class="sk-toggleable__label sk-toggleable__label-arrow">XGBClassifier</label><div class="sk-toggleable__content"><pre>XGBClassifier(base_score=0.5, booster='gbtree', callbacks=None,
+              num_parallel_tree=1, ...)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">XGBClassifier</label><div class="sk-toggleable__content"><pre>XGBClassifier(base_score=0.5, booster='gbtree', callbacks=None,
               colsample_bylevel=1, colsample_bynode=1, colsample_bytree=1,
               early_stopping_rounds=10, enable_categorical=False, eta=1,
               eval_metric=['auc', 'aucpr'], feature_types=None, gamma=0,
@@ -642,19 +641,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
               num_parallel_tree=1, ...)</pre></div></div></div></div></div>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="52">
+<div class="cell" data-tags="[]" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>clf.best_iteration</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="52">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>3</code></pre>
 </div>
 </div>
-<div class="cell" data-tags="[]" data-execution_count="53">
+<div class="cell" data-tags="[]" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>clf.best_score</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="53">
-<pre><code>0.6199609259353032</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>0.5342577697455242</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="54">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>bst <span class="op">=</span> clf.get_booster()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -682,74 +681,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>When <code>pred_leaf=True</code>, the output will be a matrix of <code>(nsample, ntrees)</code> with each record indicating the predicted leaf index of each sample in each tree. Note that the leaf index of a tree is unique per tree, so you may find leaf 1 in both tree 1 and tree 0.</li>
 </ul>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.random.rand(<span class="dv">50</span>, <span class="dv">5</span>)</span>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.random.rand(<span class="dv">5</span>, <span class="dv">5</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>dnew <span class="op">=</span> xgb.DMatrix(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>ypred <span class="op">=</span> bst.predict(dnew, iteration_range<span class="op">=</span>(<span class="dv">0</span>, bst.best_iteration <span class="op">+</span> <span class="dv">1</span>), pred_leaf<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ypred</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
-<pre><code>array([[5., 4., 4., 4., 5.],
-       [4., 4., 3., 3., 5.],
-       [4., 3., 3., 4., 3.],
-       [4., 4., 5., 5., 5.],
-       [4., 5., 3., 4., 6.],
-       [5., 5., 5., 5., 6.],
-       [4., 6., 5., 5., 6.],
-       [4., 4., 5., 5., 5.],
-       [4., 4., 5., 4., 5.],
-       [4., 6., 3., 4., 6.],
-       [5., 5., 4., 3., 5.],
-       [4., 4., 3., 4., 4.],
-       [5., 4., 5., 5., 4.],
-       [5., 5., 3., 4., 6.],
-       [4., 4., 3., 4., 5.],
-       [4., 4., 3., 4., 5.],
-       [5., 4., 3., 3., 5.],
-       [3., 4., 3., 4., 5.],
-       [4., 4., 5., 4., 4.],
-       [3., 4., 3., 4., 5.],
-       [4., 4., 3., 4., 5.],
-       [5., 4., 4., 3., 5.],
-       [5., 4., 4., 3., 5.],
-       [4., 4., 5., 5., 4.],
-       [4., 4., 3., 4., 4.],
-       [4., 4., 3., 4., 5.],
-       [4., 4., 3., 4., 4.],
-       [5., 4., 3., 3., 4.],
-       [6., 4., 5., 6., 5.],
-       [5., 5., 3., 3., 6.],
-       [4., 4., 5., 6., 5.],
-       [5., 5., 6., 4., 5.],
-       [3., 4., 3., 4., 5.],
-       [4., 4., 3., 3., 4.],
-       [3., 4., 3., 3., 5.],
-       [4., 4., 3., 4., 5.],
-       [4., 3., 3., 4., 3.],
-       [3., 5., 5., 5., 6.],
-       [6., 4., 3., 4., 5.],
-       [3., 4., 3., 4., 4.],
-       [5., 6., 4., 4., 6.],
-       [4., 4., 3., 3., 5.],
-       [4., 3., 3., 4., 3.],
-       [3., 4., 3., 4., 4.],
-       [4., 4., 3., 4., 5.],
-       [6., 4., 3., 3., 4.],
-       [5., 5., 3., 4., 6.],
-       [5., 4., 3., 4., 5.],
-       [6., 4., 3., 4., 4.],
-       [5., 4., 3., 4., 5.]], dtype=float32)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>array([[3., 3., 6., 4.],
+       [4., 6., 4., 5.],
+       [4., 5., 3., 6.],
+       [3., 3., 6., 6.],
+       [4., 6., 3., 3.]], dtype=float32)</code></pre>
 </div>
 </div>
 </section>
 <section id="plotting-feature-importance" class="level4">
 <h4 class="anchored" data-anchor-id="plotting-feature-importance">PLOTTING FEATURE IMPORTANCE</h4>
-<div class="cell" data-execution_count="35">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>xgb.plot_importance(bst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="35">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>&lt;AxesSubplot: title={'center': 'Feature importance'}, xlabel='F score', ylabel='Features'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -759,14 +713,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="cross-validation-and-oot" class="level4">
 <h4 class="anchored" data-anchor-id="cross-validation-and-oot">CROSS-VALIDATION AND OOT</h4>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>datatrain <span class="op">=</span> np.random.rand(<span class="dv">1000</span>, <span class="dv">10</span>)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>dataoot <span class="op">=</span> np.random.rand(<span class="dv">200</span>, <span class="dv">10</span>)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>labeltrain <span class="op">=</span> np.random.randint(<span class="dv">2</span>, size<span class="op">=</span><span class="dv">1000</span>)</span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>labeloot <span class="op">=</span> np.random.randint(<span class="dv">2</span>, size<span class="op">=</span><span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>dtrain <span class="op">=</span> xgb.DMatrix(data<span class="op">=</span>datatrain, label<span class="op">=</span>labeltrain, missing<span class="op">=</span>np.NaN)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>doot <span class="op">=</span> xgb.DMatrix(data<span class="op">=</span>dataoot, label<span class="op">=</span>labeloot, missing<span class="op">=</span>np.NaN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -780,7 +734,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>NUM_BOOST_ROUND <span class="op">=</span> <span class="dv">500</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> xgb.cv(</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    params, </span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    dtrain, </span>
@@ -794,22 +748,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>    ]</span>
 <span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[0] train-auc:0.59549+0.00922   train-aucpr:0.57392+0.01259 test-auc:0.52287+0.02150    test-aucpr:0.50727+0.02902
-[1] train-auc:0.63518+0.00447   train-aucpr:0.62814+0.01119 test-auc:0.51993+0.03365    test-aucpr:0.51834+0.03660
-[2] train-auc:0.66577+0.00819   train-aucpr:0.66550+0.01507 test-auc:0.52432+0.05734    test-aucpr:0.52393+0.05583
-[3] train-auc:0.68884+0.00628   train-aucpr:0.68979+0.01353 test-auc:0.50710+0.04698    test-aucpr:0.51821+0.05694
-[4] train-auc:0.70636+0.00628   train-aucpr:0.71032+0.01677 test-auc:0.52474+0.05147    test-aucpr:0.52882+0.05464
-[5] train-auc:0.72509+0.00872   train-aucpr:0.72626+0.01974 test-auc:0.53069+0.04841    test-aucpr:0.52900+0.05927
-[6] train-auc:0.73596+0.00990   train-aucpr:0.73683+0.01964 test-auc:0.53218+0.05628    test-aucpr:0.52866+0.05862
-[7] train-auc:0.74893+0.00854   train-aucpr:0.74920+0.01585 test-auc:0.52048+0.05589    test-aucpr:0.52509+0.06143
-[8] train-auc:0.75881+0.01027   train-aucpr:0.76137+0.01610 test-auc:0.51687+0.05365    test-aucpr:0.52185+0.05941
-[9] train-auc:0.76834+0.01239   train-aucpr:0.77129+0.01485 test-auc:0.50854+0.05521    test-aucpr:0.51501+0.05730
-[10]    train-auc:0.77915+0.01244   train-aucpr:0.78429+0.01781 test-auc:0.50072+0.05120    test-aucpr:0.51374+0.05883</code></pre>
+<pre><code>[0] train-auc:0.55647+0.00953   train-aucpr:0.57708+0.02397 test-auc:0.49649+0.02882    test-aucpr:0.52253+0.01252
+[1] train-auc:0.59914+0.01265   train-aucpr:0.60745+0.02245 test-auc:0.49456+0.02853    test-aucpr:0.52663+0.02163
+[2] train-auc:0.63829+0.01484   train-aucpr:0.64722+0.01650 test-auc:0.48661+0.04454    test-aucpr:0.52861+0.01335
+[3] train-auc:0.66261+0.01058   train-aucpr:0.66830+0.01167 test-auc:0.52029+0.04140    test-aucpr:0.55483+0.02502
+[4] train-auc:0.68336+0.01220   train-aucpr:0.69439+0.01197 test-auc:0.51997+0.03441    test-aucpr:0.55139+0.03425
+[5] train-auc:0.69910+0.01080   train-aucpr:0.70717+0.01466 test-auc:0.50591+0.01857    test-aucpr:0.54013+0.03517
+[6] train-auc:0.70976+0.01080   train-aucpr:0.72240+0.01110 test-auc:0.51224+0.02176    test-aucpr:0.54348+0.04185
+[7] train-auc:0.72729+0.00819   train-aucpr:0.73624+0.01045 test-auc:0.52051+0.02107    test-aucpr:0.55589+0.04255
+[8] train-auc:0.74275+0.01089   train-aucpr:0.75185+0.00881 test-auc:0.50883+0.02781    test-aucpr:0.54722+0.05089
+[9] train-auc:0.75611+0.01011   train-aucpr:0.76303+0.01367 test-auc:0.50835+0.02802    test-aucpr:0.54568+0.04668
+[10]    train-auc:0.76404+0.01031   train-aucpr:0.77183+0.01504 test-auc:0.51847+0.02456    test-aucpr:0.55166+0.05187
+[11]    train-auc:0.77157+0.01082   train-aucpr:0.78107+0.01443 test-auc:0.52065+0.03343    test-aucpr:0.54940+0.05595</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>res</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="22">
 
 <div>
 
@@ -830,69 +785,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.595486</td>
-      <td>0.009224</td>
-      <td>0.573920</td>
-      <td>0.012595</td>
-      <td>0.522872</td>
-      <td>0.021503</td>
-      <td>0.507275</td>
-      <td>0.029020</td>
+      <td>0.556470</td>
+      <td>0.009534</td>
+      <td>0.577082</td>
+      <td>0.023972</td>
+      <td>0.496490</td>
+      <td>0.028815</td>
+      <td>0.522534</td>
+      <td>0.012522</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.635180</td>
-      <td>0.004473</td>
-      <td>0.628143</td>
-      <td>0.011190</td>
-      <td>0.519934</td>
-      <td>0.033654</td>
-      <td>0.518338</td>
-      <td>0.036600</td>
+      <td>0.599144</td>
+      <td>0.012653</td>
+      <td>0.607454</td>
+      <td>0.022448</td>
+      <td>0.494562</td>
+      <td>0.028526</td>
+      <td>0.526635</td>
+      <td>0.021635</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.665770</td>
-      <td>0.008189</td>
-      <td>0.665498</td>
-      <td>0.015071</td>
-      <td>0.524315</td>
-      <td>0.057342</td>
-      <td>0.523929</td>
-      <td>0.055829</td>
+      <td>0.638286</td>
+      <td>0.014843</td>
+      <td>0.647217</td>
+      <td>0.016498</td>
+      <td>0.486609</td>
+      <td>0.044537</td>
+      <td>0.528613</td>
+      <td>0.013351</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.688839</td>
-      <td>0.006285</td>
-      <td>0.689788</td>
-      <td>0.013531</td>
-      <td>0.507102</td>
-      <td>0.046984</td>
-      <td>0.518215</td>
-      <td>0.056935</td>
+      <td>0.662606</td>
+      <td>0.010579</td>
+      <td>0.668297</td>
+      <td>0.011673</td>
+      <td>0.520289</td>
+      <td>0.041399</td>
+      <td>0.554833</td>
+      <td>0.025017</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.706364</td>
-      <td>0.006279</td>
-      <td>0.710319</td>
-      <td>0.016768</td>
-      <td>0.524735</td>
-      <td>0.051473</td>
-      <td>0.528818</td>
-      <td>0.054635</td>
+      <td>0.683358</td>
+      <td>0.012200</td>
+      <td>0.694390</td>
+      <td>0.011973</td>
+      <td>0.519974</td>
+      <td>0.034414</td>
+      <td>0.551391</td>
+      <td>0.034247</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.725086</td>
-      <td>0.008716</td>
-      <td>0.726262</td>
-      <td>0.019743</td>
-      <td>0.530691</td>
-      <td>0.048409</td>
-      <td>0.528997</td>
-      <td>0.059272</td>
+      <td>0.699100</td>
+      <td>0.010802</td>
+      <td>0.707166</td>
+      <td>0.014657</td>
+      <td>0.505906</td>
+      <td>0.018565</td>
+      <td>0.540129</td>
+      <td>0.035171</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.709756</td>
+      <td>0.010800</td>
+      <td>0.722399</td>
+      <td>0.011104</td>
+      <td>0.512239</td>
+      <td>0.021760</td>
+      <td>0.543479</td>
+      <td>0.041852</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.727293</td>
+      <td>0.008187</td>
+      <td>0.736236</td>
+      <td>0.010451</td>
+      <td>0.520511</td>
+      <td>0.021068</td>
+      <td>0.555886</td>
+      <td>0.042554</td>
     </tr>
   </tbody>
 </table>
@@ -936,20 +913,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.it <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
-<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> reset(<span class="va">self</span>):</span>
-<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>        <span class="co">'''Reset the iterator'''</span></span>
-<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.it <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> data(<span class="va">self</span>):</span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>        <span class="co">'''Utility function for obtaining current batch of data.'''</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._data[<span class="va">self</span>.it]</span>
 <span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="bu">next</span>(<span class="va">self</span>, input_data):</span>
-<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>        <span class="co">'''Yield next batch of data.'''</span></span>
-<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.it <span class="op">==</span> <span class="bu">len</span>(<span class="va">self</span>._data):</span>
-<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Return 0 when there's no more batch.</span></span>
-<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>        input_data(data<span class="op">=</span><span class="va">self</span>.data(), label<span class="op">=</span><span class="va">self</span>.labels(),</span>
-<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>                   weight<span class="op">=</span><span class="va">self</span>.weights())</span>
-<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.it <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> labels(<span class="va">self</span>):</span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>        <span class="co">'''Utility function for obtaining current batch of label.'''</span></span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._labels[<span class="va">self</span>.it]</span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> weights(<span class="va">self</span>):</span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>        <span class="co">'''Utility function for obtaining current batch of weights.'''</span></span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._weights[<span class="va">self</span>.it]</span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> reset(<span class="va">self</span>):</span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>        <span class="co">'''Reset the iterator'''</span></span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.it <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="bu">next</span>(<span class="va">self</span>, input_data):</span>
+<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a>        <span class="co">'''Yield next batch of data.'''</span></span>
+<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.it <span class="op">==</span> <span class="bu">len</span>(<span class="va">self</span>._data):</span>
+<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Return 0 when there's no more batch.</span></span>
+<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a>        input_data(</span>
+<span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a>            data<span class="op">=</span><span class="va">self</span>.data(), </span>
+<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a>            label<span class="op">=</span><span class="va">self</span>.labels(),</span>
+<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a>            weight<span class="op">=</span><span class="va">self</span>.weights()</span>
+<span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.it <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb35-50"><a href="#cb35-50" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>it <span class="op">=</span> IterForDMatrixDemo()</span>
@@ -966,6 +958,118 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>predict_with_it <span class="op">=</span> reg_with_it.predict(m_with_it)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="spark-estimator-interface" class="level4">
+<h4 class="anchored" data-anchor-id="spark-estimator-interface">SPARK ESTIMATOR INTERFACE</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyspark.sql.functions <span class="im">as</span> f</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql.types <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> optuna</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> xgboost.spark <span class="im">import</span> SparkXGBClassifier</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.ml.feature <span class="im">import</span> VectorAssembler</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.ml.evaluation <span class="im">import</span> BinaryClassificationEvaluator</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.ml.tuning <span class="im">import</span> CrossValidator, ParamGridBuilder</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.ml.functions <span class="im">import</span> vector_to_array</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  data<span class="op">=</span>np.concatenate((datatrain, labeltrain.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)), axis<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  columns<span class="op">=</span>[<span class="ss">f'f</span><span class="sc">{</span><span class="bu">str</span>(x)<span class="sc">.</span>zfill(<span class="dv">2</span>)<span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(datatrain.shape[<span class="dv">1</span>])] <span class="op">+</span> [<span class="st">'label'</span>]</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> spark.createDataFrame(pdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>vecassembler <span class="op">=</span> VectorAssembler(</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  inputCols<span class="op">=</span>[<span class="ss">f'f</span><span class="sc">{</span><span class="bu">str</span>(x)<span class="sc">.</span>zfill(<span class="dv">2</span>)<span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(datatrain.shape[<span class="dv">1</span>])], </span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  outputCol<span class="op">=</span><span class="st">'features'</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> (</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    vecassembler</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>    .transform(df)</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    .select(<span class="st">'features'</span>, <span class="st">'label'</span>)</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    .withColumn(<span class="st">'validationIndicatorCol'</span>, f.rand(<span class="dv">222437</span>) <span class="op">&gt;</span> <span class="fl">0.7</span>)</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>df.persist()</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>dftrain <span class="op">=</span> df.<span class="bu">filter</span>(<span class="st">"validationIndicatorCol = 1"</span>)</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>dftrain.persist()</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>dfvalidation <span class="op">=</span> df.<span class="bu">filter</span>(<span class="st">"validationIndicatorCol = 0"</span>)</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>dfvalidation.persist()</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a><span class="co">#(dftrain, dfvalidation) = df.randomSplit([0.7, 0.3], seed=222437)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> objective(trial):</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    params <span class="op">=</span> {</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'n_estimators'</span>: <span class="dv">1000</span>,</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'missing'</span>: np.NaN,</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'learning_rate'</span>: trial.suggest_float(<span class="st">'eta'</span>, <span class="fl">0.01</span>, <span class="dv">1</span>),</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'max_depth'</span>: trial.suggest_int(<span class="st">'max_depth'</span>, <span class="dv">2</span>, <span class="dv">10</span>),</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'subsample'</span>: trial.suggest_float(<span class="st">'subsample'</span>, <span class="fl">0.5</span>, <span class="dv">1</span>),</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'colsample_bytree'</span>: trial.suggest_float(<span class="st">'colsample_bytree'</span>, <span class="fl">0.5</span>, <span class="dv">1</span>),</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>    classifier <span class="op">=</span> SparkXGBClassifier(<span class="op">**</span>params)</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>    evaluator <span class="op">=</span> BinaryClassificationEvaluator(metricName<span class="op">=</span><span class="st">'areaUnderROC'</span>)</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>    param_grid <span class="op">=</span> (</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>        ParamGridBuilder()</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>        .addGrid(classifier.learning_rate, [params[<span class="st">'learning_rate'</span>]])</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>        .addGrid(classifier.max_depth, [params[<span class="st">'max_depth'</span>]])</span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>        .addGrid(classifier.subsample, [params[<span class="st">'subsample'</span>]])</span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>        .addGrid(classifier.colsample_bytree, [params[<span class="st">'colsample_bytree'</span>]])</span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>        .build()</span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>    cv <span class="op">=</span> CrossValidator(</span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>        estimator<span class="op">=</span>classifier,</span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>        estimatorParamMaps<span class="op">=</span>param_grid,</span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a>        evaluator<span class="op">=</span>evaluator,</span>
+<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>        numFolds<span class="op">=</span><span class="dv">5</span></span>
+<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>    cv_model <span class="op">=</span> cv.fit(dftrain)</span>
+<span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb42-31"><a href="#cb42-31" aria-hidden="true" tabindex="-1"></a>    score <span class="op">=</span> cv_model.avgMetrics[<span class="dv">0</span>]</span>
+<span id="cb42-32"><a href="#cb42-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> score</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>study <span class="op">=</span> optuna.create_study(direction<span class="op">=</span><span class="st">'maximize'</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>study.optimize(objective, n_trials<span class="op">=</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>best_params <span class="op">=</span> study.best_params</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>classifier <span class="op">=</span> SparkXGBClassifier(<span class="op">**</span>best_params, early_stopping_rounds<span class="op">=</span><span class="dv">20</span>, validation_indicator_col<span class="op">=</span><span class="st">'validationIndicatorCol'</span>, eval_metric<span class="op">=</span><span class="st">'auc'</span>)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> classifier.fit(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>bst <span class="op">=</span> model.get_booster()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>model.get_feature_importances()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>evaluator <span class="op">=</span> BinaryClassificationEvaluator(metricName<span class="op">=</span><span class="st">'areaUnderROC'</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> evaluator.evaluate(model.transform(dfvalidation))</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Test score: </span><span class="sc">{</span>score<span class="sc">:.3f}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> (</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    model</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    .transform(dfvalidation)</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    .select(</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>      f.col(<span class="st">'label'</span>),</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>      vector_to_array(f.col(<span class="st">'probability'</span>))[<span class="dv">1</span>].alias(<span class="st">'probability'</span>)</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
